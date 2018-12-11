@@ -1,4 +1,4 @@
 # XCX
 this two small WX 
 
-### ����С����
+### Á我的两个小程序
