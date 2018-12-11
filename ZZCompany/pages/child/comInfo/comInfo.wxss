@@ -1,0 +1,23 @@
+/* pages/child/comInfo/comInfo.wxss */
+@import "/template/template.wxss";
+@import '../../../model/model.wxss';  
+.cssActive{
+  color: #00A2E9;
+}
+page{
+  background-color: #F9F9F9;
+}
+.weui-navbar{
+  background: #FFFFFF;
+}
+.img{
+  width: 109rpx;
+  height: 109rpx;
+}
+.thisone{
+  height: 150rpx!important;
+  margin-top: 15rpx;
+}
+.commom{
+ margin-top: 15rpx;
+}

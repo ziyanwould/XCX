@@ -1,0 +1,47 @@
+/* pages/child/Mesdetail/Mesdetail.wxss */
+page{
+  width: 100%;
+  height: 100%; 
+   background: #F1F5F6;
+}
+.allpage{
+ padding: 30rpx;
+ color: 040404;
+}
+.showTime{
+  font-size: 22rpx;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.mLeft image{
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 85rpx;
+}
+.mRight{
+  font-size: 32rpx;
+  padding-left: 14rpx;
+}
+.myserver{
+  display: flex;
+  justify-content: flex-start;
+   align-items:center;
+}
+.serverCount{
+  display: inline-block;
+  position: relative;
+  background: #FFFFFF;
+  font-size: 25rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+}
+.sanjiao{
+  position: absolute;
+   width:0; 
+    height:0; 
+    top: -30rpx;
+    border-left:30rpx solid transparent;
+    border-right:30rpx solid transparent;
+    border-bottom:30rpx solid #fff;
+}

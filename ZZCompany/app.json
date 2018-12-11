@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/logs/logs",
+    "pages/news/news",
+    "pages/user/user",
+    "pages/creation/creation",
+    "pages/child/log/log",
+    "pages/child/selectProject/selectProject",
+    "pages/child/comInfo/comInfo",
+    "pages/child/logon/logon",
+    "pages/child/PositionFrist/PositionFrist",
+    "pages/child/Positionsecond/Positionsecond",
+    "pages/child/map/map",
+    "pages/child/positionManagement/positionManagement",
+    "pages/child/collect/collect",
+    "pages/child/resume/resume",
+    "pages/child/Searchpage/Searchpage",
+    "pages/child/citySelect/citySelect",
+    "pages/child/position/position",
+    "pages/child/Message/Message",
+    "pages/child/Mesdetail/Mesdetail",
+    "pages/child/HRbeans/HRbeans",
+    "pages/child/member/member"
+
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"black"
+  }
+}

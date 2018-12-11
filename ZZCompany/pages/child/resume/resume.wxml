@@ -1,0 +1,40 @@
+<!--pages/child/resume/resume.wxml-->
+<import src="/template/nav" />
+ 
+  <view class='Tdtitle' wx:if='{{!send_collect}}'>
+    <text  wx:for="{{used_list}}" wx:key="*this" class="{{activeIndex==index?'active':''}}" id="{{index}}" bindtap="active">{{item.name}}</text>
+  </view>
+<view class="containers">
+   <scroll-view  scroll-y='{{scrollY}}' class='msg-list' bindscroll = 'onScroll'>
+    
+       <view wx:for="{{msgList}}"  wx:key="id"  class='msg-item' animation='{{item.wrapAnimation}}'> 
+
+            <view id='{{item.resume_id}}' bindtap='urlto' data-url='{{item.type}}' class='msg' animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+               
+               
+               
+            
+                  <template is='partTime' data='{{...item}}'/>
+             
+            </view>
+            <view class='msg-menu'>
+                <view id='{{item.resume_id}}' class='menu-delete' bindtap='onDeleteMsgTap' bindlongtap='onDeleteMsgLongtap'>
+                    取消收藏
+                </view>
+                <!-- <view id='{{item.resume_id}}' class='menu-mark' bindtap='onMarkMsgTap' bindlongtap='onMarkMsgLongtap'>
+                   {{ item.status=='公开' ? '设置保密' : '设置公开'}}
+                </view> -->
+
+            </view>
+       </view>
+    
+
+
+      <view class='noDt' wx:if='{{!pageshows}}'>
+          <image style='width:352rpx;height:305rpx;' src='http://www.liujiarong.top/WX/bannerTd.png'></image>
+            <view class='Dtcount'>{{send_collect?'暂无投递此职位简历':'暂无收藏'}}</view>
+            <view class='Dtcount'>{{send_collect?'尝试看一下别的职位':'快去收藏简历或新闻吧'}}</view>
+        </view>
+   </scroll-view>
+</view>
+

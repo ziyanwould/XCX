@@ -1,0 +1,26 @@
+<!--pages/child/Template/position.wxml-->
+  <view class="list company" bindtouchmove="move" wx:for="{{list}}" wx:key="item.id" bindtap="tapCompass">
+
+       <view class="list-item  compasLeft ">
+
+          <image wx:if="{{index==0}}" style='width:35rpx;height:35rpx;' src='http://www.liujiarong.top/WX/ComFirst.png'></image>
+          <image wx:if="{{index==1}}" style='width:35rpx;height:35rpx;' src='http://www.liujiarong.top/WX/ComSecond.png'></image>
+          <image wx:if="{{index==2}}" style='width:35rpx;height:35rpx;' src='http://www.liujiarong.top/WX/ComEnd.png'></image>
+          <text class="number" wx:if="{{index>2}}">{{index+1}}</text>
+
+         <image style="width:100rpx;height:100rpx;" src="{{item.pic_url}}" />
+      </view> 
+      <view class="compasRight">
+        <view class="Rone">
+          <view class='Ctitle'>{{item.name}}公司</view>
+          <view class='Chot'><image style='width:20rpx;height:23rpx;' src='http://www.liujiarong.top/WX/ComHot.png'></image><text>{{item.numbers}}</text></view>
+        </view>
+
+        <view class="Rtwo">
+            <text class='city'>广州</text>
+            <text class='feature'>{{item.short_description}}</text>
+            <text class='recruit'><text>{{item.cat_id}}</text>个在招职位</text>
+        </view>
+     
+      </view> 
+  </view>

@@ -1,0 +1,6 @@
+<import src="nav" />
+  <view class="flex fix_nav_wp {{isIphoneX?'iponex':''}}">
+  <block wx:for="{{navData}}" wx:key="{{this}}">
+      <template is="nav" data="{{...item}}"/>
+  </block>
+  </view> 

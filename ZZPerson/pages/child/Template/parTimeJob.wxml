@@ -1,0 +1,34 @@
+
+
+<view class='paTimejob' wx:for='{{list}}' wx:key="*this" bindtap="tapCompass" data-counts='{{item}}'>
+    <view class='sec'>
+      <view class='sec_left'>
+        <text class='titles'>{{item.Position_Title}}</text>
+        <text class='own' wx:if='{{item.Company_Name=="广州猎聘人力资源服务有限公司"}}' >自营</text>
+        <!-- <text class='own' wx:if='{{item.User_Id=="c9f0d806-7761-49e0-9c06-b0893b603cf9"}}' >自营</text> -->
+      </view> 
+      <view class='sec_right'>
+        <text class='pays'>{{item.Position_Year_Wage}}</text>
+      </view> 
+    </view>
+
+    <view class='sec'>
+       <view class='sec_left'>
+       <block wx:if='{{item.sho_position_gertificate[0].City}}'>
+         <text class='tag'>{{item.sho_position_gertificate[0].City}}</text>
+         <text class='tag'>{{item.sho_position_gertificate[0].Gertificate_Use}}</text>
+          <text class='tag'>{{item.sho_position_gertificate[0].Reg_Status}}</text>
+       </block>
+
+       <block wx:if='{{item.sho_position_gertificate.City}}'>
+         <text class='tag'>{{item.sho_position_gertificate.City}}</text>
+         <text class='tag'>{{item.sho_position_gertificate.Gertificate_Use}}</text>
+        </block>
+       </view>
+
+       <view class='sec_right'>
+         <text class='time'>{{item.Utime}}</text>
+         <text class='time' wx:if='{{item.Deliver_Time}}'>{{item.Deliver_Time}}</text>
+       </view>
+    </view>
+</view>

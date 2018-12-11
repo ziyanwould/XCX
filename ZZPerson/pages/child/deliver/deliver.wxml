@@ -1,0 +1,28 @@
+<!--pages/child/deliver/deliver.wxml-->
+<!-- <view class='Tdtitle'>
+    <text class='active'>全部</text> <text>全职</text> <text>兼职</text>
+</view> -->
+  <view class='Tdtitle'>
+    <text  wx:for="{{used_list}}" wx:key="*this" class="{{activeIndex==index?'active':''}}" id="{{index}}" bindtap="active">{{item.name}}</text>
+  </view>
+
+<view class='Wxlist' wx:if='{{pageshow}}'>
+    <!-- 未改版时候的样式 -->
+    <!-- <include src="/pages/child/Template/position.wxml"/> -->
+    <!-- <view class='nomore'>没有更多了</view> -->
+     <block wx:if="{{activeIndex==0}}">
+         <include src="../Template/parTimeJob.wxml"/>
+     </block>
+
+     <block wx:if="{{activeIndex==1}}">
+        <include src="../Template/fullTimeJob.wxml"/>
+     </block>
+
+      
+</view>
+
+<view class='noDt' wx:if='{{!pageshow && !otherNumber}}'>
+   <image style='width:352rpx;height:305rpx;' src='http://www.liujiarong.top/WX/bannerTd.png'></image>
+    <view class='Dtcount'>暂无记录</view>
+    <view class='Dtcount'>快去寻找心仪的职位吧</view>
+</view>

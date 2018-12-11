@@ -1,0 +1,14 @@
+<!--pages/child/selectProject/selectProject.wxml-->
+   <view class='preparation'>
+
+               <block wx:for="{{changeJob=='兼职'?CRL:Jobl}}"  wx:key="*this" wx:for-index="indexs">
+                      <view class='preTitle'>{{item.name}}</view>
+                      <view wx:for="{{item.seclist}}"  wx:key="*this" class="preCount {{xuhao==item.id?'active':''}}" bindtap="actives" data-value="{{item.name}}" 
+                      id='{{item.id}}' data-parent_id='{{item.parent_id}}'>
+                       {{item.name}}
+                      </view>
+              </block> 
+
+                  <button class="weui-btn surse" bindtap="selectClick">确定</button>
+    </view>
+

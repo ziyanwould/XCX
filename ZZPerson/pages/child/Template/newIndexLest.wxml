@@ -1,0 +1,15 @@
+<import src="/pages/child/Template/Template.wxml"/>
+
+     
+       <!-- <template is="tar_count" />  -->
+
+       <template is="banner"  data="{{...mydata}}"  /> 
+         
+       <!-- <template is="recommend"  data="{{...workType}}"/>  -->
+
+         <template is="recNew"  data="{{...mydata}}"/> 
+   
+          <include src="parTimeJob.wxml"/>   
+
+         <!-- <include src="fullTimeJob.wxml"/>   -->
+

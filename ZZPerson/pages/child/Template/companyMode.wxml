@@ -1,0 +1,30 @@
+<view class='section1'>
+   <view class='Cfirst' >
+     <view class='fLeft'>
+       <view class='lOne'>{{companys}}</view>
+       <view class='lTwo'>{{label}}</view>
+        <view class='lThird'>
+         <image style='width:104rpx;height:35rpx' src='{{attestation}}'></image>
+         <image style='width:202rpx;height:35rpx' src='{{types}}'></image>
+        </view>
+     </view>
+     <view class='fRight'>
+      <image style='width:118rpx;height:118rpx' src='{{companyPerson}}'></image>
+     </view>
+   </view>
+
+   <view class='Csecond' wx:if="{{hisText}}">
+    <view class='hisText'>历史访问<text>{{history}}</text>，今日访客：</view>
+    <view class='hisperson'>
+     <view class='personLeft'>
+       <block wx:for="{{list}}" wx:key="item.id">
+        <image src='{{item.piCurl}}'></image>
+       </block>
+     </view>
+     <view class='personRingt'>
+      <image  src='http://www.liujiarong.top/WX/heart.png'></image>
+      <text>860</text>
+     </view>
+   </view>
+ </view>
+</view>

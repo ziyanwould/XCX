@@ -1,0 +1,27 @@
+<!--pages/child/map/map.wxml-->
+
+  <view class="weui-cells__title mytitle">公司地址信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='translate'>
+                <view class="weui-cell__bd secondTitle">公司所在省市</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access secondTitle">{{adress}}</view>
+            </navigator>
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label secondTitle">公司详细地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input secondTitle" value='{{input}}' bindinput='watchinput' placeholder-class='secondTitle' placeholder="{{mapsplac}}"/>
+                </view>
+            </view>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='map'>
+                <view class="weui-cell__bd secondTitle">公司地图定位</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access secondTitle">{{maps}}</view>
+            </navigator>
+        </view>
+
+  
+  <!-- 加入联动动地址选择 -->
+<import src="/model/model.wxml"/>
+<view wx:if="" class="infoText">{{province}} {{city}} {{county}}</view>
+<template is="areaData" data="{{...item}}"/>

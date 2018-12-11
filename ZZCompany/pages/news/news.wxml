@@ -1,0 +1,32 @@
+<!--pages/news/news.wxml-->
+<include src="/template/bottom"/>
+<import src="/template/nav" />
+
+<template is="notLogin" data="{{...items}}"/> 
+<!-- <text>pages/news/news.wxml</text> -->
+
+
+<!-- <template  is='search' data='{{...seekData}}' /> -->
+
+<block wx:if='{{!inputShowed}}'>
+    <template wx:if='{{token}}'  is='searTitle'  data='{{...seekData}}' />
+    
+    <view class="count'  {{isIphoneX?'bottomPX':'bottomP'}}" >
+    <block wx:if='{{searSencod}}'>
+       <template  is='searSencod'  data='{{...lis}}'/>
+    </block>
+    <block  wx:if='{{!searSencod}}'>
+      <template wx:for="{{list}}" wx:key="{{this}}" is='partTime' data='{{...item}}'/>
+      
+        <view class='noDt' wx:if='{{!pageshows}}'>
+          <image style='width:352rpx;height:305rpx;' src='http://www.liujiarong.top/WX/bannerTd.png'></image>
+            <view class='Dtcount'>暂无推荐</view>
+            <view class='Dtcount'>尝试发布别的职位</view>
+        </view>
+    </block>
+    </view>
+    
+</block>
+
+
+

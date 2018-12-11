@@ -1,0 +1,25 @@
+<!--pages/child/Login/Login.wxml-->
+<view class='all'>
+  <view class='se1'>
+     <view>{{title}}</view> <view bindtap="tapType">{{titleOther}}</view>
+  </view>
+  <view class='se2'>
+    <view class='input'>
+     <input placeholder='{{inputT1}}' bindinput='sendverifcode'></input>
+    </view> 
+    <view class='input'>
+     <input placeholder='{{inputT2}}' bindinput='numbercode'></input>
+     <!-- <view wx:if="{{valMessPan}}" >{{valMess}}</view> -->
+       <button bindtap='getVerificationCode' disabled='{{disabled}}' class='time' wx:if="{{valMessPan}}" >{{time}}</button> 
+    </view>   
+
+  </view>
+  <view class='se3'>
+      <button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" type="primary">{{btnCot}}</button>
+      <view wx:if="{{dealPan}}">{{btnCot}}代表你已同意<text>《建筑猎聘用户协议》</text></view>
+     
+  </view>
+    <view class='se_end' bindtap="tapOther" wx:if="{{lastPan}}">
+    {{lastCot}}
+    </view>
+</view>

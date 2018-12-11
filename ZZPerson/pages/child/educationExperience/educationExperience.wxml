@@ -1,0 +1,73 @@
+<!--pages/child/educationExperience/educationExperience.wxml-->
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>学校名称</view>
+     <view class='sel_right'>
+       
+          <input wx:if="{{key}}"  bindinput='watchPassWord' data-self='infoChild.school'  style='padding-right:51rpx;' value='{{infoChild.school}}'></input> 
+          <input wx:if="{{!key}}" placeholder='请输入' placeholder-style='color:#dddddd' bindinput='watchPassWord' data-self='school'  style='padding-right:51rpx;' value='{{school}}'></input> 
+     </view>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>所学专业</view>
+     <view class='sel_right'>
+        
+         <input wx:if="{{key}}" bindinput='watchPassWord' data-self='infoChild.profession' style='padding-right:51rpx;' value='{{infoChild.profession}}'></input> 
+         <input wx:if="{{!key}}" placeholder='请输入' placeholder-style='color:#dddddd' bindinput='watchPassWord' data-self='specialty' style='padding-right:51rpx;' value='{{specialty}}'></input> 
+     </view>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>入学年月</view>
+    <picker class="weui-btn" mode="date" value="{{entrytime}}" fields="month" data-type='endDate' bindchange="bindendBefone">
+     <view class='sel_right'>
+          <text wx:if="{{key}}">{{infoChild.startTime}}</text>
+          <text wx:if="{{!key}}">{{Beforetime}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+     </view>
+    </picker>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>毕业年月</view>
+    <picker class="weui-btn" mode="date" value="{{entrytime}}" fields="month" data-type='endDate' bindchange="bindend">
+     <view class='sel_right'>
+          <text wx:if="{{key}}">{{infoChild.endTime}}</text>
+          <text wx:if="{{!key}}">{{GraduationYear}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+     </view>
+    </picker>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>学历</view>
+   
+     <view class='sel_right'bindtap="open">
+         <text wx:if="{{key}}">{{infoChild.educationBack}}</text>
+         <text wx:if="{{!key}}">{{education}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+     </view>
+  
+  </view>
+</view> 
+
+<!-- <view class='show'>
+  工作内容
+</view>
+<view class='text_count'>
+  <textarea placeholder='请输入公作内容...'>
+  </textarea>
+</view> -->
+<button bindtap='save' class='save'>保存</button>
+ <view wx:if="{{switchs}}" class='remove_this' bindtap="openConfirm">删除此教育经历</view> 
+

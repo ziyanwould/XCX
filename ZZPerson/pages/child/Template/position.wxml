@@ -1,0 +1,23 @@
+<!--pages/child/Template/position.wxml-->
+  <view class="list" bindtouchmove="move" wx:for="{{list}}" wx:key="item.id" bindtap="tapCompass" data-counts='{{item}}'>
+
+        <view class="list-item list-item-left">
+         <!-- <image style="width:100rpx;height:100rpx;" src="{{item.pic_url}}" /> 暂时隐去那个logo 后台数据没有-->
+           <image style="width:100rpx;height:100rpx;" src="http://www.liujiarong.top/WX/zzlogo.jpg" /> 
+      </view>  
+
+      <view class="list-item list-item-middle">
+        <view class="f-b f-black">{{item.Position_Title}}</view>
+        <view class="f-gray">{{item.Company_Name}}</view>
+        <view class="f-grays" wx:if="{{!citysinfo}}">{{item.City}} {{item.County}}  {{item.Education}}</view>
+         <!-- <view class="f-grays" wx:if="{{item.}}">{{item.City}} {{item.County}}  {{item.Education}}</view> -->
+      </view>
+
+      <view class="list-item list-item-right">
+         <view wx:if='{{item.Position_Month_Wage}}'>月薪：{{item.Position_Month_Wage}}</view>
+          <view wx:if='{{item.Position_Year_Wage}}'>年薪：{{item.Position_Year_Wage}}</view>
+         <view class="f-gray f30">{{item.Utime}}</view>
+
+      </view>
+
+  </view>

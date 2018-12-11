@@ -1,0 +1,238 @@
+
+/* pages/user/user.wxss */
+page{
+  height: 1000px;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.page{
+  padding-top: 1rpx;
+  background-color: #F9F9F9;
+  min-height: 100%;
+}
+.count{
+  margin: 40rpx 30rpx;
+  background-color: #FFFFFF;
+  padding: 30rpx 20rpx;
+  position: relative;
+  box-shadow:#C4C8CC 10rpx 10rpx 30rpx 5rpx;
+
+}
+.image0{
+  width: 37rpx;
+  height: 33rpx;
+}
+.image1{
+  width: 23rpx;
+  height: 33rpx;
+}
+.image2{
+  width: 33rpx;
+  height: 27rpx;
+}
+.image3{
+  width: 32rpx;
+  height: 36rpx;
+}
+.image4{
+  width: 30rpx;
+  height: 30rpx;
+}
+.image5{
+  width: 110rpx;
+  height: 110rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 10%;
+  
+}
+.image6{
+  width: 27rpx;
+  height: 28rpx;
+}
+.image7{
+  width: 28rpx;
+  height: 28rpx;
+}
+.image8{
+  width: 28rpx;
+  height: 20rpx;
+}
+.image9{
+  width: 25rpx;
+  height: 25rpx;
+}
+.toright{
+  width: 11rpx;
+  height: 23rpx;
+  padding-right: 23rpx;
+}
+.imgCen{
+  width: 52rpx;
+  height: 40rpx;
+  display: inline-block;
+}
+.Clist{
+  display: flex;
+  justify-content:flex-start;
+  align-items:center;
+  margin-bottom: 20rpx
+}
+.imgCen{
+  display: inline-flex;
+  justify-content:center ;
+  align-items:center;
+}
+.text0{
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: 700;
+
+}
+.text1,.text2,.text3{
+  font-size: 28rpx;
+  color: #000000;
+}
+.listms{
+border-bottom: 1.5rpx solid #ECECEC;
+padding-bottom: 30rpx;
+margin-bottom: 20rpx;
+
+}
+.edit{
+  width: 170rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background: #139AE3;
+  color: #FFFFFF;
+  border-radius: 48rpx;
+  font-size: 28rpx;
+}
+.list{
+  background: #FFFFFF;
+  height: 78rpx;
+  display: flex;
+  align-items:center;
+   justify-content: space-between;
+   margin:0 30rpx  2rpx 30rpx;
+}
+.quit{
+  margin: 160rpx 30rpx ;
+  background: #139AE3;
+  color: #FFFFFF;
+}
+.list .left{
+  display: flex;
+   justify-content:center;
+}
+.detail{
+  margin-top: 20rpx;
+}
+.noLogin{
+  margin: 40rpx 30rpx;
+  position: relative;
+  height: 540rpx;
+  background: url('http://www.liujiarong.top/WXImg/loginBack.png') repeat-x center center;
+ background-size: 722rpx 540rpx;
+ text-align: center;
+}
+.noLogin .wai{
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: 128rpx;
+ 
+}
+.noLogin .active{
+ animation: rotateplane 5.2s infinite ease-in-out;
+}
+.noLogin .nei{
+  position: absolute;
+  width: 106rpx;
+  height: 106rpx;
+  top: 165rpx;
+  left: 50%;
+  margin-left: -53rpx;
+    
+}
+.noLogin .text{
+  color: #FFFFFF;
+  margin-top: 40rpx;
+}
+.noLogin .text text{
+  display: inline-block;
+  font-size: 32rpx;
+} 
+.noLogin .text text:nth-of-type(1){
+ padding-right: 18rpx;
+ border-right: 2rpx solid #FFFFFF;
+ margin-right:  18rpx;
+} 
+@-webkit-keyframes rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+ 
+@keyframes rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+  }
+  .Cmmember{
+    width:28rpx;
+    height:28rpx;
+  }
+  .Hrdoug{
+    width:28rpx;
+    height:28rpx;
+  }
+  .Tclass{
+    font-size: 22rpx;
+    margin-right: 18rpx;
+    color: #FFD703;
+  }
+  /* 登录弹出框样式 */
+  @import "/template/login.wxss";  
+
+
+.buttonx {
+background-color:#FFFFFF!important;
+padding: 0;
+font-size:26rpx;
+line-height:normal;
+outline:none;
+list-style:none;
+border-radius:none;
+
+}
+.buttonx::after{
+border:none;
+}
+
+

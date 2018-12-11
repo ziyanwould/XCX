@@ -1,0 +1,102 @@
+/* pages/child/HRbeans/HRbeans.wxss */
+page{
+  background: #F9F9F9;
+}
+.beans1{
+  width: 38rpx;
+  height: 38rpx;
+}
+.beans2{
+  width: 42rpx;
+  height: 30rpx;
+}
+.title{
+  height: 180rpx;
+  background: #32A4E9;
+  display: flex;
+  flex-direction: column;
+  justify-content:  center;
+  align-items: center;
+}
+.title view:nth-of-type(1){
+color: #FFFFFF;
+font-size: 28rpx;
+}
+.title view:nth-of-type(2){
+color: #FFFFFF;
+font-size: 38rpx;
+display: inline-flex;
+ align-items: center;
+}
+.title view:nth-of-type(2) text{
+  display: inline-block;
+  margin-right: 28rpx;
+}
+
+.second{
+  height: 84rpx;
+  display: inline-flex;
+ align-items: center;
+}
+.second image{
+  display: inline-block;
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+}
+.second text{
+  font-weight: 600;
+}
+.childs{
+  width: 216rpx;
+  height: 132rpx;
+  border: 2rpx solid #ECECEC;
+  border-radius: 5rpx;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content:  center;
+  align-items: center;
+  margin-top: 30rpx;
+
+}
+.childs text:nth-of-type(1){
+  color: #000000;
+  font-size: 30rpx;
+}
+.childs text:nth-of-type(2){
+  color: #cccccc;
+  font-size: 24rpx;
+}
+.list{
+  background: #FFFFFF;
+   display: flex;
+  justify-content: space-between;
+  padding:0 30rpx;
+}
+.pay{
+ height: 100rpx;
+ line-height: 100rpx;
+ background: #FFFFFF;
+ margin-left: 30rpx;
+}
+.pay text:nth-of-type(2){
+  color: #ff9600;
+}
+.recharge{
+  height: 80rpx;
+  margin: 300rpx 30rpx 30rpx 30rpx;
+  background: #139AE3;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 80rpx;
+}
+.childs.actives{
+  border: 2rpx solid #32A4E9;
+  position: relative;
+}
+.beans3{
+  width: 40rpx;
+  height: 39rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

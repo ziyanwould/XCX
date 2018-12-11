@@ -1,0 +1,454 @@
+/* pages/template/Positondel.wxss */
+page{
+  background: #FFFFFF;
+  padding-bottom: 132rpx;
+}
+.section1{
+  background: #FFFFFF;
+  padding: 38rpx 35rpx;
+}
+.Cfirst{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.lOne{
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+.lTwo{
+  font-size: 26rpx;
+  color: #000000;
+  margin-bottom: 20rpx;
+}
+.lThird image{
+  margin-right: 30rpx;
+}
+.Csecond{
+
+}
+.hisText{
+ color: #b5b5b5;
+ font-size: 23rpx;
+  margin-bottom: 60rpx;
+}
+.hisText text{
+ color: #00b38a;
+
+}
+.personLeft image{
+ width: 60rpx;
+ height: 60rpx;
+ margin-right: 24rpx;
+}
+.personLeft::after{
+  content:"";
+  border-right: 1rpx solid #dcdddd;
+  position: relative;
+  top:-15rpx;
+  padding-right: 32rpx;
+}
+.personRingt image{
+  width: 53rpx;
+  height: 46rpx;
+}
+.hisperson{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.personRingt{
+  position: relative
+}
+.personRingt image{
+  margin-right: 30rpx;
+}
+.personRingt text{
+ position: absolute;
+ font-size:17rpx ;
+ background:red;
+ color: #FFFFFF;
+ padding: 5rpx;
+ border-radius: 50%;
+ top:-10rpx; 
+ left:40rpx; 
+}
+
+
+.section2{
+  /* margin-top: 20rpx; */
+  background: #FFFFFF;
+  padding: 0 35rpx;
+}
+.Setitled{
+   display: flex;
+   border-bottom: 1rpx solid #f9f9f9;
+   padding: 50rpx 0 40rpx 0;
+   /* margin-bottom: 40rpx; */
+   background: #FFFFFF;
+   margin-top: 30rpx;
+}
+.Setitled view{
+  flex:1;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 700;
+  }
+.Setitled image{
+  width: 18rpx;
+  height: 11rpx;
+  position: relative;
+  left: 50rpx;
+  top:-5rpx;
+}
+.Setitled .active{
+  color: #00b38a;
+}
+.count1{
+  font-size: 28rpx;
+  color: #999999;
+}
+.countMore{
+  height: 11rpx;
+  width: 100%;
+  text-align: center;
+}
+.countMore image{
+  height: 11rpx;
+  width: 18rpx;
+}
+
+.Setitle{
+
+   display: flex;
+  font-size: 34rpx;
+  color: #000000;
+  margin: 50rpx  auto 40rpx auto;
+  width: 480rpx;
+}
+.Setitle::before{
+   content:"";
+   width: 170rpx;
+  border-top: 1rpx solid #dcdddd;
+  position: relative;
+  top:30rpx;
+  left:-50rpx;
+}
+.Setitle::after{
+   content:"";
+   width: 170rpx;
+  border-top: 1rpx solid #dcdddd;
+  position: relative;
+  top:30rpx;
+  left: 50rpx;
+}
+.myMiddle view:nth-of-type(1){
+  font-size: 26rpx;
+  color: #333333;
+}
+.myMiddle view:nth-of-type(2){
+  font-size: 24rpx;
+  color: #666666;
+}
+.seend{
+  background: #FFFFFF;
+  color: #cbcbcb;
+  font-size: 25rpx;
+  text-align: center;
+  height: 200rpx;
+  line-height: 200rpx;
+  position: relative;
+}
+.myaddress{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom: 40rpx;
+
+}
+.myMiddle{
+  flex: 1;
+  padding-left: 30rpx;
+}
+.seend .buttonx{
+
+  margin-right: 35rpx;
+  position: absolute;
+  top: 50rpx;
+  right: 0;
+}
+.Secount{
+  padding-top: 40rpx;
+}
+
+/*新的在招职位*/
+.tags{
+  background: #FFFFFF;
+  padding: 35rpx 35rpx 0 35rpx;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+ 
+}
+.tagsChild{
+ 
+  font-size: 28rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  color: #d2d2d2;
+  border: 1rpx solid #d2d2d2;
+  text-align: center;
+  display:inline-block;
+  min-width: 114rpx;
+  padding: 0 10rpx;
+  border-radius:37rpx;
+  margin: 0  10rpx 20rpx 10rpx;
+
+}
+.tagsChild.active{
+ background: #02AE82;
+ color: #FFFFFF;
+
+
+}
+
+/*没有图片的列表*/
+.ListTable{
+  background: #FFFFFF;
+  padding: 35rpx;
+}
+.lte{
+  padding-top: 35rpx;
+  border-bottom: 1rpx solid #dcdddd;
+}
+.lte2,.lte1{
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 24rpx;
+
+}
+.Etitle{
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.Epay{
+  font-size: 30rpx;
+  color: #ff0000;
+}
+.lte2{
+  color: #999999;
+  font-size: 23rpx;
+}
+.ltb_left text{
+  display:inline-block;
+  padding-right: 15rpx;
+  border-right: 1rpx solid #D7D9D9;
+  margin-right: 15rpx;
+}
+.ltb_left text:last-child{
+ border: none;
+}
+.nomore{
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+  background: #FFFFFF;
+}
+/* 按钮的去除样式操作 */
+.buttonx{
+  background-color:#FFFFFF!important;
+  line-height:normal;
+  outline:none;
+  list-style: none;
+  border-radius: none;
+}
+.buttonx::after{
+  border: 0px;
+}
+
+
+
+
+
+.SimilarPosition{
+  background: #FFFFFF;
+  padding: 30rpx 0;
+  margin-top: 10rpx;
+}
+.titlePaing{
+  
+}
+.watchjl{
+  width: 90%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 31rpx;
+  background: #FBFBFB;
+  border: 2rpx solid #EFEFEF;
+  margin: 0 auto;
+}
+.list:nth-of-type(4){
+ border: none!important;
+}
+.JobDescription{
+  padding-bottom: 45rpx;
+  margin-bottom: 45rpx;
+  border-bottom: 1rpx solid #ECECEC;
+}
+.Jtitle{
+  font-size: 46rpx;
+  color: #010101;
+  margin-bottom: 40rpx;
+  
+}
+.salary{
+  color: #fd5f39;
+}
+.job{
+  font-size: 27rpx;
+  color: #151515;
+  margin-bottom: 30rpx;
+}
+.partition{
+  border-left: 1rpx solid #151515;
+  margin-left: 10rpx;
+  padding-left: 10rpx;
+}
+.soci{
+  font-size: 27rpx;
+  color: #999999;
+}
+.tianbai{
+ margin: 0 auto;
+ padding: 50rpx 0;
+}
+.section2{
+  margin-top: 10rpx;
+
+}
+.tag{
+  display: flex;
+  justify-content: space-around;
+  align-content:  space-around;
+  flex-wrap: wrap;
+}
+.child_tag{
+  font-size: 26rpx;
+  padding: 10rpx 15rpx ;
+  margin-left: 20rpx;
+  background:#41B7E6;
+  color:#FFFFFF;
+  border-radius: 64rpx; 
+  margin-bottom: 20rpx;
+}
+/* .child_tag::before{
+ position: relative;
+   content:"";
+   width:50px;
+   height:100px;
+   border-radius:50px 0 0 50px;
+} */
+.positionStatement{
+  color: #333333;
+  line-height: 43rpx;
+  font-size: 26rpx;
+}
+.hrInformation{
+  text-align: center;
+  margin: 40rpx 0;
+}
+.hrInformation{
+ font-size: 26rpx;
+ color: #777777;
+}
+.hrInformation text{
+  font-size: 29rpx;
+  color:#040404;
+  padding-right: 20rpx;
+}
+.person{
+  width: 118rpx;
+  height: 118rpx;
+ 
+}
+.lastInfo image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+}
+.lastInfo text{
+  font-size: 21rpx;
+  color: #777777;
+}
+.lastInfo{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  margin-top: 24rpx;
+  margin-bottom: 48rpx;
+}
+
+.SubmitResume{
+  width: 100%;
+  height: 130rpx;
+  border-top:1px solid #ECECEC  ;
+}
+.jobShare image{
+  width: 32rpx;
+  height: 38rpx;
+}
+.jobShare >view{
+  color: #00b38a;
+}
+.jobCollect image{
+  width: 41rpx;
+  height: 41rpx;
+}
+.jobShare ,.jobCollect{
+  font-size: 18rpx;
+}
+.resume{
+  width: 480rpx;
+  display:inline-block;
+align-items:center;
+font-size:33rpx;
+
+}
+.SubmitResume{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items:center;
+  
+ background: rgba(255, 255, 255, 0.9);
+/* padding: 0 35rpx;*/
+  
+}
+.SubmitResume >view{
+  margin: 0 25rpx;
+}
+/* 按钮的去除样式操作 */
+.buttonx{
+  background-color:#FFFFFF!important;
+  border-bottom: none;
+
+  font-size:18rpx;
+  line-height:normal;
+
+  outline:none;
+  list-style: none;
+  border-radius: none;
+
+}
+.buttonx::after{
+  border: 0px;
+}
+
+/*新版样式补丁*/
+.paTimejob:nth-of-type(1){
+ border-top: 20rpx solid #F7F8F8;
+}

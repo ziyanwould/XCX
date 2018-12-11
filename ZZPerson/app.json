@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/logs/logs",
+    "pages/user/user",
+    "pages/child/resume/resume",
+    "pages/child/deliver/deliver",
+    "pages/child/position/position",
+    "pages/child/couple/couple",
+    "pages/child/visitor/visitor",
+    "pages/child/ExpectWork/ExpectWork",
+    "pages/child/citySelect/citySelect",
+    "pages/child/ProfileEditor/ProfileEditor",
+    "pages/child/WorkExperience/WorkExperience",
+    "pages/child/educationExperience/educationExperience",
+    "pages/child/projectExperience/projectExperience",
+    "pages/child/selfDescription/selfDescription",
+    "pages/child/customPlate/customPlate",
+    "pages/child/Login/Login",
+    "pages/child/part-timeJob/part-timeJob",
+    "pages/child/Message/Message",
+    "pages/child/CompanyPage/CompanyPage",
+    "pages/child/grabble/grabble",
+    "pages/child/map/map",
+    "pages/AboutCompany/AboutCompany",
+    "avatarUpload/index/index",
+    "avatarUpload/upload/upload",
+    "pages/child/Resumelist/Resumelist",
+    "pages/child/Certificate/Certificate",
+    "pages/child/parTime/parTime",
+    "pages/child/selectProject/selectProject",
+    "pages/child/Mesdetail/Mesdetail"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0544DA",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color":"#666666",
+    "selectedColor":"#14AFFC",
+    "backgroundColor":"#F7F8F8",
+    "borderStyle":"black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "找兼职",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_curr.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "找全职",
+        "iconPath": "images/icon_find.png",
+        "selectedIconPath": "images/icon_find_curr.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/icon_user.png",
+        "selectedIconPath": "images/icon_user_curr.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

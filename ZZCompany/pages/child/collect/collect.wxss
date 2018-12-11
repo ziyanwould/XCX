@@ -1,0 +1,66 @@
+/* pages/child/collect/collect.wxss */
+@import "/pages/child/positionManagement/positionManagement.wxss";  
+@import "/template/template.wxss";  
+.msg {
+    background: #F6F7F7;
+}
+.countList.list{
+  border-bottom: 18rpx solid #F6F7F7;
+
+}
+.Tdtitle{
+  width: 100%;
+  padding:30rpx 0 40rpx 0;
+  border-bottom: 1rpx solid #F6F7F7;
+  background: #F6F7F7;
+  display: flex;
+  justify-content:center ;
+}
+.Tdtitle text{
+  display: inline-block;
+  border:1rpx solid #32A4E9 ;
+  border-right: none;
+  background: #F6F7F7;
+}
+.Tdtitle text:nth-of-type(2){
+  /* 此处数字有三项时候改为三 */
+    border-right: 1rpx solid #32A4E9 ;
+    border-top-right-radius: 10rpx;
+     border-bottom-right-radius: 10rpx;
+}
+.Tdtitle text:nth-of-type(1){
+  border-bottom-left-radius: 10rpx;
+  border-top-left-radius: 10rpx;
+}
+.Tdtitle text.active{
+ color: #FFFFFF;
+ background: #32A4E9;
+ 
+}
+
+.weui-search-bar {
+position:relative;
+padding:8px 10px;
+display:-webkit-box;
+display:-webkit-flex;
+display:flex;
+box-sizing:border-box;
+background-color:#F6F7F7;
+border-top:1rpx solid #F6F7F7;
+border-bottom:1rpx solid#F6F7F7;
+}
+.menu-delete {
+  background-color:#f7f8f8 ;
+  color:#cdcdcd;
+}
+.msg-menu {
+  background-color:#f7f8f8 ;
+  height: 238rpx;
+}
+.msg-item {
+  height: 238rpx;
+}
+ .partTime{
+
+    min-height: 160rpx;
+ }

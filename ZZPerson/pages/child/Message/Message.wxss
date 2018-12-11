@@ -1,0 +1,43 @@
+/* pages/child/Message/Message.wxss */
+/*列表框样式*/
+@import '/pages/child/Template/List.wxss';
+
+/* 待处理事项 */
+.Mlist{
+  padding: 20rpx 35rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  border: 1rpx solid #dcdddd;
+}
+.Tone image{
+  width: 85rpx;
+  height: 85rpx;
+}
+.list_left{
+display: flex;
+justify-content:space-between;
+align-items:center;
+}
+.Tnext{
+  font-size: 27rpx;
+}
+.list_right{
+  font-size: 17rpx;
+  color: #999999;
+}
+.Ttitle{
+  color:#333333;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+.Tcount{
+ color: #777777;
+
+}
+.Tnext{
+  margin-left: 24rpx;
+}
+.Tcount text{
+  color: #ffcc00;
+}

@@ -1,0 +1,295 @@
+/* pages/child/Template/List.wxss */
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.list{
+    width: 90%;
+    background: #fff;
+    margin: 10rpx auto;
+    display: flex;
+    padding-bottom: 5rpx;
+    border-bottom: 1px solid #D7D9D9;
+}
+.list:last-of-type{
+    border-bottom: none;
+}
+.list-item{
+    height: 120rpx;
+    text-align: center;
+    padding-top: 5px;
+    float: left;
+}
+.list-item-left{
+ width:20%;
+ text-align: left;
+}
+.list-item-right{
+width:20%;
+font-size: 20rpx;
+color:salmon;
+font-weight: bold;
+line-height: 40rpx;
+ text-align: right;
+}
+.list-item-middle{
+width:60%;
+font-size: 27.78rpx;
+text-align: left;
+ overflow:hidden; 
+    text-overflow:ellipsis;
+    white-space:nowrap;  
+}
+.f30{
+ font-size: 20rpx;
+ color: 999999;
+}
+.f-b{
+  font-weight: 400;
+}
+.f-black{
+  color:#333333;
+}
+.f-gray{
+  color: #777777;
+  font-weight: bold;
+ 
+}
+.f-grays{
+  color:#999999;
+}
+
+/**/
+.banner{
+  width: 100%;
+  position: relative;
+  
+}
+.baCount{
+   position: absolute;
+   z-index: 10;
+   top: 15rpx;
+   width: 100%;
+   display: flex;
+   justify-content:center; 
+}
+.baInput{
+   position: absolute;
+   z-index: 10;
+   bottom: 45rpx;
+   /* bottom: 35rpx; */
+   width: 100%;
+  
+}
+.baInput input{
+ width: 680rpx;
+ margin: 0 auto;
+ height: 70rpx;
+ background: #FFFFFF;
+ border-radius: 35px;
+ font-size: 14px;
+ text-align: center;
+  background: rgba(255, 255, 255, 0.5)
+}
+.baInput image{
+  position: absolute;
+  bottom: 10rpx;
+  width: 54rpx;
+  height: 54rpx;
+  left: 30%;
+  z-index: 20;
+}
+.baCount image{
+height: 140rpx;
+width:290rpx;
+margin: 0 auto;
+
+}
+
+
+/*推荐职位*/
+.recommend{
+  text-align: center;
+  font-size: 31rpx;
+  display: flex;
+  justify-content:center;
+  color: 555555;
+  border-bottom:20rpx solid #f7f8f8;
+
+ 
+}
+.tui{
+  margin-top: 20rpx;
+}
+.line{
+width:64rpx;
+height:2rpx;
+background:#ECECEC;
+margin: 38rpx 20rpx
+}
+
+
+/**index.wxss**/  
+  
+.userinfo {  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+}  
+  
+.userinfo-avatar {  
+  width: 128rpx;  
+  height: 128rpx;  
+  margin: 20rpx;  
+  border-radius: 50%;  
+}  
+  
+.userinfo-nickname {  
+  color: #aaa;  
+}  
+  
+.usermotto {  
+  margin-top: 200px;  
+}  
+  
+/**/  
+  
+scroll-view {  
+  width: 100%;  
+}  
+  
+.item {  
+  width: 90%;  
+  height: 300rpx;  
+  margin: 20rpx auto;  
+  background: brown;  
+  overflow: hidden;  
+}  
+  
+.item .img {  
+  width: 430rpx;  
+  margin-right: 20rpx;  
+  float: left;  
+}  
+  
+.title {  
+  font-size: 30rpx;  
+  display: block;  
+  margin: 30rpx auto;  
+}  
+  
+.description {  
+  font-size: 26rpx;  
+  line-height: 15rpx;  
+} 
+
+
+.item-style{  
+  padding: 30rpx;  
+  font-size: 40rpx;  
+  text-align: center;  
+  border-top: 2rpx solid #eee;  
+}  
+
+/*首页导航*/
+.tar_count{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #0544DA;
+  display: flex;
+  justify-content:center;
+}
+.tar_count navigator {
+  padding: 0 30rpx;
+  color: #96BDFD;
+  font-size: 32rpx;
+}
+.tar_count .active {
+ color: #FFFFFF;
+}
+/*公司列表的样式*/
+.company{
+  display: flex;
+}
+
+.number{
+  width:35rpx;height:35rpx;display:inline-block;background:#E5E5E5;color:#FFFFFF;
+  border-radius: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  font-size: 16rpx;
+}
+.compasLeft{
+width: 170rpx;
+display: inline-flex;
+justify-content:space-around;
+align-items:center;
+}
+.compasRight{
+ flex: 1;
+  padding-left: 10rpx;
+}
+.Rone{
+ height: 30rpx;
+ overflow: hidden;
+ display: flex;
+justify-content:space-between;
+align-items:center;
+padding: 10rpx 0; 
+}
+.Ctitle{
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 700;
+  overflow:hidden; /*超出一行文字自动隐藏*/
+    text-overflow:ellipsis;/*文字隐藏后添加省略号*/
+    white-space:nowrap;  /*强制不换行*/
+}
+.Chot{
+  font-size: 17rpx;
+  color: #b2b2b2;
+ 
+}
+.Chot image{
+  margin-right: 10rpx;
+}
+
+.Rtwo{
+  color:#999999;
+  font-size: 23rpx;
+ 
+}
+.Rtwo >text::after{
+ content: "";
+ border-right: 1px solid #999999;
+ padding-right:10rpx;
+ margin-right: 10rpx; 
+}
+.Rtwo >text:last-of-type:after{
+ border-right: none;
+  padding-right:0;
+ margin-right: 0; 
+}
+.recruit text{
+  color: #02c38a;
+}

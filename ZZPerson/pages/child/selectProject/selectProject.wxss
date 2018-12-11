@@ -1,0 +1,47 @@
+/* pages/child/selectProject/selectProject.wxss */
+/* 赛选部分样式 */
+.preparation {
+  padding: 0 30rpx 150rpx 30rpx;
+  position: relative;
+  background: #F4F4F4;
+}
+.preTitle{
+  display: block;
+  padding:15rpx 0; 
+  font-size: 27rpx;
+  color: #333333;
+}
+.preCount{
+  display:inline-block;
+  font-size: 25rpx;
+  padding: 19rpx 9rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #eeeeee;
+  border-radius: 5rpx;
+  margin: 15rpx 15rpx 15rpx 0;
+  color: #666666;
+  min-width: 116rpx;
+  text-align: center;
+}
+.preCount.active{
+  display:inline-block;
+  font-size: 25rpx;
+  padding: 19rpx 9rpx;
+  background: #02AE81;
+  border: 1rpx solid #02AE81;
+  border-radius: 5rpx;
+  margin: 15rpx 15rpx 15rpx 0;
+  color: #FFFFFF;
+}
+.surse{
+  position: fixed;
+  width:90%;
+  background: #00b389;
+  color:#FFFFFF;
+  margin: 50rpx 0rpx;
+  bottom: 0;
+}
+.section1{
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #E1E1E1
+}

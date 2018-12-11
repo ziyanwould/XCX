@@ -1,0 +1,21 @@
+<!--pages/child/Mesdetail/Mesdetail.wxml-->
+<view class='allpage'>
+    <view class='showTime'>
+      {{time}}
+    </view>
+   <view class='myserver'>
+        
+     <view class='mLeft'>
+     <image src='{{imgurl}}'></image>
+     </view>
+
+     <view class='mRight'>
+     {{title}}
+     </view>
+
+   </view>
+   <view class='serverCount'>
+   <view class='sanjiao'></view>
+    {{count}}
+   </view>
+</view>

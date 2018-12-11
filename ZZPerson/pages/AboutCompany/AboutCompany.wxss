@@ -1,0 +1,57 @@
+/* pages/AboutCompany/AboutCompany.wxss */
+.Lf image{
+  width: 104rpx!important;
+  height: 35rpx!important;
+}
+.lc_right image{
+  width: 118rpx;
+  height: 118rpx;
+}
+.listCompy{
+  border-top: 1rpx solid #EEEEEE;
+  
+}
+.lchild{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  margin: 40rpx 35rpx 0rpx 35rpx;
+   border-bottom: 1rpx solid #EEEEEE;
+   padding-bottom: 35rpx;
+}
+.Lf text{
+  font-size: 34rpx;
+  color: #010101;
+  margin-right: 20rpx;
+  display:inline-block;
+ 
+}
+.Ls{
+  font-size: 27rpx;
+  color: #666666;
+  margin-top: 16rpx;
+  margin-bottom: 10rpx;
+}
+.Lt{
+   font-size: 21rpx;
+   color: #999999;
+}
+.Lt text{
+   padding-right: 15rpx;
+  margin-right: 15rpx;
+  border-right:1rpx solid #999999;
+}
+.Lt text:nth-last-child(1){
+  padding-right: 0px;
+  margin-right: 0px;
+  border-right:none;
+}
+.nomore{
+   font-size: 21rpx;
+   color: #999999;
+   padding: 20rpx 0;
+   text-align: center;
+}
+.listCompy >view:nth-last-child(1){
+  border: none;
+}

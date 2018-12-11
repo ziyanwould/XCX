@@ -1,0 +1,114 @@
+<!--pages/child/ProfileEditor/ProfileEditor.wxml-->
+ <view class='selsect'>
+     <view class='sel_child' >
+        <view class='sel_left'>{{name}}</view>
+        <view class='sel_right'>
+            <!-- <text wx:if="">{{}}</text>  -->
+            <input placeholder='请输入' placeholder-style='color:#dddddd' style='padding-right:51rpx;' bindinput="bindname"  value='{{edit_name}}'></input> 
+            <!-- <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image> -->
+        </view>
+     </view>
+      <view class='sel_child' bindtap="open" >
+        <view class='sel_left'>{{sex}}</view>
+        <view class='sel_right'>
+             <text>{{edit_sex}}</text>  
+             <!-- <input  style='padding-right:51rpx;' value=''></input>  -->
+             <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+        </view>
+     </view>
+      <view class='sel_child' >
+        <view class='sel_left'>{{year}}</view>
+        <view class='sel_right'>
+            
+             <picker class="weui-btn" mode="date" value="{{date}}" start="{{date_end}}" fields="month" end="{{date}}" bindchange="bindDateChange">
+                 <text>{{edit_year}}</text> 
+              
+             <!-- <input  style='padding-right:51rpx;' value=''></input>  -->
+             <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+             </picker>
+        </view>
+     </view>
+</view> 
+
+ <view class='selsect pull'>
+      <view class='sel_child' >
+        <view class='sel_left'>{{education}}</view>
+        <view class='sel_right'>
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <text>{{edit_education}}</text>  
+              <!-- <input  style='padding-right:51rpx;' value=''></input>  -->
+              <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+              </picker>
+        </view>
+     </view>
+
+      <view class='sel_child' >
+        <view class='sel_left'>{{work}}</view>
+        <view class='sel_right'>
+
+            <picker bindchange="bindPickerwork" value="{{index}}" range="{{arrays}}">
+             <text>{{edit_work}}</text>  
+             <!-- <input  style='padding-right:51rpx;' value=''></input>  -->
+             <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+             </picker>
+
+        </view>
+     </view>
+</view>
+
+ <view class='selsect pull'>
+      <view class='sel_child' >
+        <view class='sel_left'>{{phone}}</view>
+        <view class='sel_right'>
+             <!-- <text>{{edit_education}}</text>   -->
+              <input placeholder='请输入' placeholder-style='color:#dddddd'  style='padding-right:51rpx;' bindinput="bindphone" value='{{edit_phone}}'></input>  
+             <!-- <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image>  -->
+        </view>
+     </view>
+
+      <view class='sel_child' >
+        <view class='sel_left'>{{email}}</view>
+        <view class='sel_right'>
+             <!-- <text>{{edit_work}}</text>   -->
+              <input placeholder='请输入' placeholder-style='color:#dddddd' style='padding-right:51rpx;' bindinput="bindemail" value='{{edit_email}}'></input>  
+             <!-- <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image>  -->
+        </view>
+     </view>
+</view>
+
+
+ <view class='selsect pull'>
+      <view class='sel_child' >
+        <view class='sel_left'>{{city}}</view>
+        <view class='sel_right' bindtap="click_city">
+              <text>{{edit_city}}</text>   
+              <!-- <input  style='padding-right:51rpx;' value='{{edit_phone}}'></input>   -->
+              <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image>  
+        </view>
+     </view>
+
+      <view class='sel_child' bindtap="open_stata">
+        <view class='sel_left'>{{state}}</view>
+        <view class='sel_right'>
+               
+               <text>{{edit_state}}</text>   
+               <!-- <input  style='padding-right:51rpx;' value='{{edit_email}}'></input>   -->
+               <image  src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+             
+
+        </view>
+     </view>
+</view>
+
+<view class='show'>
+  一句话 介绍
+</view>
+<view class='see_textarea'>
+  <textarea placeholder='集众人之力，成细节之美！' style='width:100%' value='{{edit_textarea}}' maxlength="{{noteMaxLen}}" bindinput="bindWordLimit"  class='text_count'>
+  </textarea>
+  <view class='Alert'>{{currentNoteLen|0}}/{{noteMaxLen}}</view>
+</view>
+
+<view class='padding'>
+   <button class='save' bindtap="openConfirm">保存</button>
+</view>

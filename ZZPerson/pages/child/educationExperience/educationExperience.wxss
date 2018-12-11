@@ -1,0 +1,2 @@
+/* pages/child/educationExperience/educationExperience.wxss */
+@import '../ExpectWork/ExpectWork.wxss';  

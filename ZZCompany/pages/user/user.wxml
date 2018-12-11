@@ -1,0 +1,105 @@
+<!--pages/user/user.wxml-->
+<!-- <text>pages/user/user.wxml</text> -->
+<include src="/template/bottom"/>
+<import src="/template/nav" />
+<template is="notLogin" data="{{...items}}"/> 
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+
+<view class='page'>
+  
+      <view class='count' wx:if='{{token}}'>
+          <view class='listms'>
+
+              <view class='Clist' wx:for='{{firlist}}' wx:key='{{this}}'>
+                <view class='imgCen'><image class='{{item.class}}' src='http://www.liujiarong.top/WXImg/{{item.pic}}.png'></image></view>
+                <text class='{{item.classt}}'>{{item.count!=null?item.count:"(未填写)"}}</text>
+              </view>
+
+          </view>
+
+              <view  class='Clist'><view class='imgCen'><image class='image4' src='http://www.liujiarong.top/WXImg/recommend.png'></image></view><text>企业介绍</text></view>
+              <view class='detail'>
+               {{Company_Intro!=null?Company_Intro:"(未填写)"}}
+              </view>
+         
+              <image class='image5' src='{{Company_Logo?Company_Logo:"http://www.liujiarong.top/WXImg/logos.png"}}'></image>
+              <button class='edit' bindtap='edit'>编辑</button>
+     </view>
+
+
+    <view class='noLogin' wx:if='{{!token}}' bindtap='login'>
+      <image class='wai {{items.show?"":"active"}}' src='http://www.liujiarong.top/WXImg/loginUse_1.png'></image>
+        <image class='nei' src='http://www.liujiarong.top/WXImg/uselogin.png'></image>
+       <view class='text'>
+         <text>登录</text>
+         <text>注册</text>
+       </view>
+    </view>
+    
+     <view class='list' wx:for='{{token?comlist:nolist}}' wx:key='{{this}}' bindtap='{{item.fn}}'>
+        <view class='left'>
+           <view class='imgCen'> <image class='{{item.class}}' src='http://www.liujiarong.top/WXImg/{{item.image}}.png'></image></view><text>{{item.mes}}</text>
+        </view>
+        <view class='right'>
+           <text class='{{item.Tclass}}' wx:if='{{item.RTitle}}'>{{item.RTitle}}</text>
+           <image class='toright' src='http://www.liujiarong.top/WXImg/toright.png'></image>
+        </view>
+     </view>
+
+    <button class='list buttonx'  open-type="contact" session-from="weapp">
+        <view class='left'>
+           <view class='imgCen'> 
+               <image style='width:28rpx;height:28rpx'  src='http://www.liujiarong.top/WX/images/wx_retroaction.png'></image>
+           </view>
+           <text>客服</text>
+        </view>
+        <view class='right'>
+        
+           <image class='toright' src='http://www.liujiarong.top/WXImg/toright.png'></image>
+        </view>
+     </button>
+
+     <button class='list buttonx'  open-type="openSetting" bindopensetting="handler" bindtap='mapinfo'>
+        <view class='left'>
+           <view class='imgCen'> 
+               <image style='width:28rpx;height:28rpx'  src='http://www.liujiarong.top/WX/images/wx_retroaction.png'></image>
+           </view>
+           <text>授权定位</text>
+        </view>
+        <view class='right'>
+               <text class='Tclass' >{{mapState?'已授权':'未授权'}}</text>
+           <image class='toright' src='http://www.liujiarong.top/WXImg/toright.png'></image>
+        </view>
+     </button>
+     
+     <button class='list buttonx'  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <view class='left'>
+           <view class='imgCen'> 
+               <image style='width:28rpx;height:28rpx'  src='http://www.liujiarong.top/WX/images/wx_retroaction.png'></image>
+           </view>
+           <text>授权用户信息</text>
+        </view>
+        <view class='right'>
+               <text class='Tclass' >{{SQ?'已授权':'未授权'}}</text>
+           <image class='toright' src='http://www.liujiarong.top/WXImg/toright.png'></image>
+        </view>
+     </button>
+     
+
+
+
+
+     <button class='quit' wx:if='{{token}}' bindtap='exit'>退出登录</button>
+
+</view>

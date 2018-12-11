@@ -1,0 +1,2 @@
+/* pages/child/customPlate/customPlate.wxss */
+@import '../ExpectWork/ExpectWork.wxss';  

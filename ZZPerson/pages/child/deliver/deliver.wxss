@@ -1,0 +1,5 @@
+/* pages/child/deliver/deliver.wxss */
+@import '/pages/child/CompanyPage/CompanyPage.wxss';
+/* @import '/pages/child/Template/List.wxss'; */
+@import '/pages/child/Template/NESLiss.wxss';
+@import '/pages/child/Template/commNull.wxss';

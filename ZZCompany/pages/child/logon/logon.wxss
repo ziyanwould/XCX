@@ -1,0 +1,8 @@
+/* pages/child/logon/logon.wxss */
+@import "/template/template.wxss";  
+@import '/model/model.wxss';
+
+page{
+  width: 100%;
+  height: 100%;
+}

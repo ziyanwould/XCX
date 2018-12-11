@@ -1,0 +1,166 @@
+<!--pages/child/Certificate/Certificate.wxml-->
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>证书类别</view>
+     <view bindtap='selectbook' class='sel_right' >
+
+          <text wx:if="{{key}}"> {{infoChild.NameCertificate}}</text> 
+          <text wx:if="{{!key}}" >{{project}}</text> 
+          <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+     </view>
+  </view>
+</view> 
+
+<!-- 增加输入框为证书名称 -->
+<view class='selsect' wx:if='{{!approveID}}'>
+  <view class='sel_child'>
+     <view class='sel_left'>证书名称</view>
+     <view class='sel_right'>
+
+         <input wx:if="{{key}}" bindinput='watchPassWord' data-self='infoChild.title' style='padding-right:51rpx;' value='{{infoChild.title}}'></input> 
+          <input wx:if="{{!key}}" placeholder-style='color:#dddddd'  placeholder='请输入'  bindinput='watchPassWord' data-self='Certificate_Title' style='padding-right:51rpx;' value=''></input> 
+        
+     </view>
+  </view>
+</view>
+<!-- end -->
+
+<!-- 增加有无B证 -->
+<view class='selsect' wx:if='{{wufo}}'>
+  <view class='sel_child'>
+     <view class='sel_left'>B证情况</view>
+     <view class='sel_right'bindtap="opend" id='3'>
+
+          <text wx:if="{{key}}">
+             <block wx:if="{{infoChild.b_card==1}}">带B证</block>
+             <block wx:if="{{infoChild.b_card==2}}">不带B证</block>
+             <block wx:if="{{infoChild.b_card==3}}">考B证</block>
+             <block wx:if="{{infoChild.b_card==4}}">情况不清</block>
+         
+          </text> 
+          <text wx:if="{{!key}}">
+             <block wx:if="{{b_card==1}}">带B证</block>
+             <block wx:if="{{b_card==2}}">不带B证</block>
+             <block wx:if="{{b_card==3}}">考B证</block>
+             <block wx:if="{{b_card==4}}">情况不清</block>
+          </text> 
+            <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+     </view>
+  </view>
+</view> 
+
+<!-- end -->
+<view class='selsect' wx:if='{{!approveID}}'>
+  <view class='sel_child'>
+     <view class='sel_left'>发证机构</view>
+     <view class='sel_right'>
+
+         <input wx:if="{{key}}" bindinput='watchPassWord' data-self='infoChild.organization' style='padding-right:51rpx;' value='{{infoChild.organization}}'></input> 
+          <input wx:if="{{!key}}" placeholder-style='color:#dddddd'  placeholder='请输入'  bindinput='watchPassWord' data-self='work' style='padding-right:51rpx;' value=''></input> 
+        
+     </view>
+  </view>
+</view> 
+
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>注册情况{{optional}}</view>
+     <view class='sel_right'bindtap="opend" id='0'>
+
+          <text wx:if="{{key}}">{{infoChild.registration}}</text> 
+          <text wx:if="{{!key}}">{{registration}}</text> 
+            <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+     </view>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>证书状态{{optional}}</view>
+     <view class='sel_right' bindtap="opend" id='1'>
+
+         <text wx:if="{{key}}"> {{infoChild.state}}</text> 
+          <text wx:if="{{!key}}">{{state}}</text> 
+            <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+     </view>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>证书用途{{optional}}</view>
+     <view class='sel_right' bindtap="opend" id='2'>
+
+            <text wx:if="{{key}}" >{{infoChild.useRe}}</text> 
+            <text wx:if="{{!key}}" >{{useRe}}</text> 
+            <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image> 
+     </view>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>证书所在地{{optional}}</view>
+     <view class='sel_right'bindtap="translate">
+          <!-- <view class='sel_right' bindtap='slectBookCity'> 20180605取消旧的地址选择-->
+         <text  wx:if="{{key}}" >{{infoChild.location}}</text> 
+         <text wx:if="{{!key}}" >{{location}}</text> 
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>  
+     </view>
+  </view>
+</view> 
+
+<block wx:if='{{!approveID}}'>
+ <view class='show'>
+  证书有效时间
+</view>
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>开始时间</view>
+    <picker class="weui-btn" mode="date" value="{{startTime}}"  fields="month"  data-type='endDate' bindchange="bindend">
+     <view class='sel_right'>
+         <text wx:if="{{key}}">{{infoChild.startTime}}</text>
+          <text wx:if="{{!key}}">{{startTime}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+     </view>
+    </picker>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>结束时间</view>
+       <picker class="weui-btn" mode="date" value="{{endTime}}"  fields="month" data-type='endDate' bindchange="bindendEnd">
+     <view class='sel_right'>
+         <text wx:if="{{key}}">{{infoChild.endTime}}</text>
+          <text wx:if="{{!key}}">{{endTime}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+     </view>
+     </picker>
+  </view>
+</view> 
+ <view class='show'> 
+</view>
+</block>
+
+<block wx:if='{{!approveID}}'>
+  <button bindtap='save' class='save'>保存</button>
+  <view wx:if="{{switchs}}" class='remove_this' bindtap="openConfirm">删除此证书信息</view> 
+</block>
+
+<block wx:if='{{approveID}}'>
+
+
+
+   <view class='rz'>认证代表你已同意<text>《建筑猎聘用户协议》</text></view>
+   <button  bindtap='approve'  class='save'>认证</button>
+
+</block>
+<!-- 加入联动动地址选择 -->
+<import src="../../../model/model.wxml"/>
+<view wx:if="" class="infoText">{{province}} {{city}} {{county}}</view>
+<template is="areaData" data="{{...item}}"/>
+
+

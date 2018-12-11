@@ -1,0 +1,5 @@
+@import '../resume/resume.wxss';  
+.sec2_3{
+
+  padding-bottom: 20rpx;
+}

@@ -1,0 +1,2 @@
+/* pages/child/selfDescription/selfDescription.wxss */
+@import '../ExpectWork/ExpectWork.wxss';  

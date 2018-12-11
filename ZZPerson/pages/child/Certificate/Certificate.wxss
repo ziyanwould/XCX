@@ -1,0 +1,12 @@
+/* pages/child/Certificate/Certificate.wxss */
+@import '../../../model/model.wxss';
+@import '../ExpectWork/ExpectWork.wxss';  
+.rz{
+  font-size: 26rpx;
+  border-top: 26rpx solid #F1F4F2;
+  padding: 30rpx 30rpx 0 30rpx;
+  color: #9e9e9e;
+}
+.rz text{
+  color: #333333
+}

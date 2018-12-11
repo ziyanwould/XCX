@@ -1,0 +1,13 @@
+
+<view class='show'>
+  自我描述
+</view>
+<view class='text_count'>
+  <textarea wx:if='{{key}}'style='width:100%' bindinput='watchPassWord' data-self='info.selfDescription.content' value='{{info.selfDescription.content}}' placeholder='详细描述一下你自己，字数控制在10-800字'>
+  </textarea>
+
+  <textarea wx:if='{{!key}}'style='width:100%' bindinput='watchPassWord' data-self='input' value='{{input}}' placeholder='详细描述一下你自己，字数控制在10-800字'>
+  </textarea>
+</view> 
+
+<button bindtap='save'  class='save'>保存</button>

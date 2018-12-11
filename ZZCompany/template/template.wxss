@@ -1,0 +1,944 @@
+.bannerImg image{
+  width:100%;
+}
+ .bannerImg{
+  width: 100%;
+  height: 360rpx;
+  overflow: hidden;
+
+} 
+.seeinput{
+  position: relative;
+  margin:0 15rpx;
+  top: -2rpx; 
+  border-radius: 10px;
+}
+.seeinput input{
+  display: block;
+  height: 48rpx;
+  background: #FFFFFF;
+  box-shadow: darkgrey 10rpx 10rpx 30rpx 5rpx ;/*框阴影*/
+  border-radius: 10px;
+  text-align: center;
+}
+.sde{
+  text-align: center;
+  font-size: 20rx;
+}
+/*兼职列表组样式*/
+ .partTime{
+   margin: 13rpx 20rpx;
+   background: #FFFFFF;
+   padding: 40rpx 30rpx;
+   border-radius: 15rpx;
+   display: flex;
+    align-items:center;
+    /* min-height: 160rpx; */
+ }
+ .partTime .left image{
+   width: 88rpx;
+   height: 88rpx;
+   border-radius: 88rpx;
+ }
+.partTime .right .title image{
+  width: 30rpx;
+  height: 30rpx;
+} 
+.partTime .right .title{
+ display: flex;
+}  
+.partTime .right .title text{
+ font-size: 34rpx;
+ color: #424242;
+ overflow: hidden;
+ text-overflow:ellipsis;
+ white-space: nowrap;
+ flex: 1;
+} 
+.partTime .right .name image{
+  width: 24rpx;
+  height: 24rpx;
+
+} 
+
+.partTime .right .name text{
+  font-size: 30rpx;
+  color: #737373;
+}  
+.partTime .right .message image{
+  width: 24rpx;
+  height: 24rpx;
+}
+.partTime .right .message text{
+ font-size: 26rpx;
+ margin-right: 12rpx;
+ padding-right: 12rpx;
+ border-right: 1rpx solid #e5e5e5;
+}
+.partTime .right .message text:last-child{
+ 
+ border-right:none;
+}
+.partTime .right .message{
+  display: inline-flex;
+  align-items:center;
+}
+.partTime .right,.partTime .left{
+  justify-content:flex-start;
+  position: relative;
+}
+
+.partTime .right{
+  padding-left: 20rpx;
+  flex: 1;
+}
+.partTime .right .other{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 60rpx;
+}
+  
+.partTime .right image{
+ margin-right:12rpx; 
+}
+.partTime .right .other{
+ display: inline-block;
+ width: 140rpx;
+ height: 54rpx;
+ border-radius: 54rpx;
+ background: #32A6E8;
+ color: #FFFFFF;
+ text-align: center;
+ line-height: 54rpx;
+}
+.bottomP{
+  padding-bottom: 110rpx;
+}
+.bottomPX{
+  padding-bottom: 140rpx;
+}
+
+.partTime .right .time{
+ 
+  position: absolute;
+  right: 0;
+  bottom: -30rpx;
+  display: inline-flex;
+  align-items:center;
+}
+/*文字颜色样式*/
+.stats{
+  color: #03a6a6;
+}
+.pay{
+  color: #fe644f;
+}
+/*全职下样式修改*/
+.partTime .right  .fullTime image{
+   width: 23rpx;
+   height: 23rpx;
+}
+.fullTime .education{
+  color: #ffd05b;
+}
+
+.fullTime .birthday{
+ color: #fe644f;
+}
+
+.fullTime .experience{
+  color: #1dc5f6;
+}
+/*发布职业的样式*/
+.page .title{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+  color: #96a1a6;
+  font-size: 26rpx;
+}
+.page .count,.page .input{
+  height: 94rpx;
+  background-color: #FFFFFF;
+  padding: 0 30rpx;
+  /*box-shadow:-2rpx 0px 8rpx #fff,0px -2rpx 8rpx #fff,0px 2rpx 8px #fff,2rpx 0px 8rpx #fff;*/
+  border-bottom: solid 1rpx #ecf2f2;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size: 25rpx;
+  
+}
+.page .iconfont{
+  font-size: 26rpx;
+  position: relative;
+  top: -10rpx;
+} 
+.page .Left text{
+  color: #000000;
+  white-space:nowrap;
+  overflow:visible;
+  text-overflow:ellipsis;
+
+}
+
+.page .Right text{
+  color: #365b8b;
+  position: relative;
+  right: 10rpx;
+}
+.plclass {
+ text-align: right;
+ color: #dddddd;
+
+
+}
+.textareaIn{
+  padding: 30rpx;
+  background: #FFFFFF;
+}
+.textareaIn textarea{
+width: 100%;
+height:150px;
+display:block;
+position:relative;
+
+}
+.pltext{
+  padding-top: 30rpx;
+   color: #dddddd;
+}
+.publish{
+  padding:30rpx  100rpx;
+  background: #FFFFFF;
+  margin: 1rpx 0;
+}
+.nowbtn{
+  background: #15A9FC!important;
+}
+.commom .Right input{
+  text-align: right;
+}
+.see_textarea{
+  position: relative;
+  padding: 30rpx;
+  font-size: 26rpx;
+  border-bottom: 2rpx solid #F4F4F4;
+  background: #FFFFFF;
+  height: 300rpx;
+}
+.Alert{
+  position: absolute;
+  bottom: 36rpx;
+  right: 36rpx;
+  font-size: 20rpx;
+  color: #a3a3a3;
+}
+/*登录注册样式*/
+.allLogo{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('http://www.liujiarong.top/WXImg/banners.png');
+  background-size: 100% 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.round{
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 66rpx;
+  background: #F3F3F3;
+  opacity: 1;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.inner{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background: #FFFFFF;
+  text-align: center;
+  line-height: 50rpx;
+
+}
+.sele1{
+  display: flex;
+  justify-content:space-between;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+.centerLogon{
+  position: relative;
+  padding: 0 58rpx;
+  width: 100%;
+}
+.allLogo .sele1::after{
+content: "";
+width: 100%;
+height: 8rpx;
+background: #F3F3F3;
+opacity: 0.7;
+position: absolute;
+top:30rpx;
+z-index: -1;
+
+}
+.thisab{
+  width: 100%;
+  height: 66rpx;
+  position: relative;
+  margin-bottom: 170rpx;
+}
+.logonIn .img1{
+  width: 38rpx;
+  height: 36rpx;
+}
+.logonIn{
+ display: flex;
+ align-items:center;
+ padding-bottom: 26rpx;
+ margin-bottom: 26rpx;
+border-bottom: 1.5rpx solid #FFFFFF;
+}
+.logonIn .img{
+  display: inline-block;
+  width: 70rpx;
+}
+.logonIn .title{
+ display: inline-block;
+ font-size: 32rpx;
+ color: #FFFFFF;
+}
+.logonIn .input{
+  font-size: 24rpx;
+  color: #FFFFFF;
+  flex: 1;
+}
+.loPlone{
+  color: #FFFFFF;
+}
+.logonIn .img2{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.allLogo .setp{
+  display: flex;
+  padding-top: 26rpx;
+}
+.allLogo .setp .seleft{
+  width: 160rpx;
+  height: 78rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  margin-right: 50rpx;
+  
+
+}
+
+.allLogo .setp .seright{
+   flex: 1;
+   height: 78rpx;
+   text-align: center;
+   line-height: 78rpx;
+   background: rgba(110,176,244,0.6);
+   color: #FFFFFF;
+   font-size: 36rpx;
+}
+.allLogo .setp .round{
+  border-radius: 78rpx;
+}
+.setp .img3{
+  width: 44rpx;
+  height: 32rpx;
+}
+.logoIm{
+  margin-top: 30rpx;
+  display: flex;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  justify-content:space-between;
+  padding-bottom: 100rpx;
+}
+.logoIm .mesLeft text{
+ color: #75b6f8;
+}
+.logoIm .mesRight text{
+  display: inline-block;
+  width: 138rpx;
+  height: 45rpx;
+  text-align: center;
+  line-height: 45rpx;
+   background: rgba(0,0,0,0.3);
+   border-radius: 45rpx;
+}
+.allLogo .uploa{
+position: relative;
+width: 400rpx;
+height: 280rpx;
+margin:0 auto 50rpx auto;
+/* text-align: center;
+line-height: 280rpx; */
+/* background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
+background-size: 8px 1px;
+background-repeat: repeat-x; */
+border: 3rpx #FFFFFF dashed;
+display: flex;
+justify-content:center;
+align-items: center;
+}
+.allLogo  .img4{
+  width: 374rpx;
+  height: 269rpx;
+
+}
+.imgUp{
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 83rpx;
+background: rgba(255, 255, 255, 0.6);
+text-align: center;
+line-height: 83rpx;
+font-size: 32rpx;
+}
+.imgFont{
+  font-size: 24rpx;
+  color: #FFFFFF;
+  text-align: center;
+}
+.imgarea{
+  width: 35rpx;
+  height: 33rpx;
+}
+.allLogo  .imgpass{
+  width: 30rpx;
+  height: 36rpx;
+
+}
+
+.allLogo  .logUse{
+  width: 30rpx;
+  height: 35rpx;
+
+}
+.allLogo  .logcall{
+  width: 36rpx;
+  height: 35rpx;
+
+}
+.allLogo  .logfaty{
+  width: 33rpx;
+  height: 37rpx;
+
+}
+.logphone{
+  width: 23rpx;
+  height: 35rpx;
+}
+
+.allLogo  .time[disabled],.allLogo  .time{
+ background: rgba(0,0,0,0.01);
+  display: inline-block;
+  line-height:normal;
+  border:none;
+  outline:none;
+  list-style: none;
+  border-radius: none;
+  position: absolute;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  right: 58rpx;
+  z-index: 99;
+
+}
+.allLogo  .time::after{
+  border: none;
+}
+
+/* 登录弹出层样式 */
+.maskLayer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  
+}
+.wxlogo{
+  width: 59rpx;
+  height: 43rpx;
+  margin-right: 21rpx;
+}
+.wxPhone{
+  width: 28rpx;
+  height: 46rpx;
+  margin-right: 52rpx;
+}
+.masCount{
+  width: 560rpx;
+  height: 500rpx;
+  background: #FFFFFF;
+  border-radius:10rpx; 
+  position: relative;
+}
+.masTitle{
+  color: #848484;
+  font-size: 33rpx;
+  text-align: center;
+  margin: 65rpx 0;
+}
+.masClose{
+  position: absolute;
+  right: 15rpx;
+  top:0;
+  font-size: 50rpx;
+  color: #848484;
+}
+.masCount .Btn{
+  margin: 0 50rpx 30rpx 50rpx;
+}
+.Btn:last-of-type{
+  font-size: 23rpx;
+  color: #909090;
+  text-align: center;
+}
+.weui-btn{
+  display: flex;
+  align-items: center;
+  font-size: 33rpx;
+   justify-content: center;
+}
+
+/* 登录注册底下切换 */
+.switcher{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 280rpx;
+}
+.swtitle{
+  background: url('http://www.liujiarong.top/WXImg/white.png') no-repeat center center;
+  background-size: 597rpx 2rpx;
+  text-align: center;
+  color: #FFFFFF;
+}
+.swicon button::after{
+border:0rpx;
+}
+.swicon button{
+outline:none;
+list-style: none;
+border-radius: none;
+background: rgba(0,0,0,0.01);
+width: 84rpx;
+height: 144rpx;
+font-size: 24rpx;
+color: #FFFFFF;
+word-break:keep-all;           /* 不换行 */
+white-space:nowrap;          /* 不换行 */
+text-align: center;
+line-height:260rpx;
+text-indent:-10rpx;
+margin: 0 24rpx;
+
+
+}
+.swicon{
+  width: 100%;
+  height: 144rpx;
+  display: flex;
+   justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+}
+.swWx button{
+   background: url('http://www.liujiarong.top/WXImg/rowx.png') no-repeat top center;
+   background-size: 84rpx 84rpx;
+}
+.wxAcco button{
+  background: url('http://www.liujiarong.top/WXImg/rounPhone.png') no-repeat top center;
+   background-size: 84rpx 84rpx;
+}
+.swPone button{
+  background: url('http://www.liujiarong.top/WXImg/routher.png') no-repeat top center;
+   background-size: 84rpx 84rpx;
+}
+
+
+/* 简历详情页兼职 */
+.personMes{
+  position: relative;
+  margin: 0 20rpx;
+  /* height: 550rpx; */
+  height: auto;
+}
+.shLeft{
+  margin-top: 10rpx;
+}
+.actives{
+  height: 480rpx;
+}
+.personMes .person1{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 30rpx;
+  background:#FFFFFF;
+  position: absolute;
+  top: -128rpx;
+  /* box-shadow: #FAD2FC 5rpx 5rpx 15rpx 3rpx ;框阴影 */
+  box-shadow: #EFEFEF 5rpx 15rpx 18rpx 3rpx;
+}
+.personMes .person2{
+  /* height: 200rpx; */
+  padding-top: 180rpx;
+  /* background:rgba(245, 205, 25, 0.2); */
+  margin: 0 10rpx;
+}
+.redetailWom{
+  width: 26rpx;
+  height: 26rpx;
+}
+.redetailPerson{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 88rpx;
+}
+.redetailTime{
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.personMes .person1 .first{
+  margin:30rpx 30rpx 17rpx 30rpx;
+  display: flex;
+  justify-content:space-between;
+}
+.personMes .person1 .first .nameSex text{
+ font-size: 36rpx;
+ color: #000000;
+}
+.personMes .person1 .first .nameSex image{
+ margin-left: 10rpx;
+}
+.personMes .person1 .first .tags text{
+  display: inline-block;
+  height: 33rpx;
+  border-radius: 38rpx;
+  border: 2rpx solid #DBDBDB;
+  padding: 5rpx 10rpx;
+  text-align: center;
+  line-height: 35rpx;
+  margin-right: 15rpx;
+  margin-top: 20rpx;
+  color: #DBDBDB;
+}
+.personMes .person1 .second{
+  margin: 0rpx 30rpx; /* 30rpx 30rpx; */
+  color: #848484;
+  font-size: 24rpx;
+}
+.personMes .person1 .second text{
+ float: right;
+}
+.personMes .person1 .third{
+  border-top: 1rpx dashed #F1F0F4;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  justify-content:space-between;
+  padding-bottom: 20rpx;
+}
+.personMes .person1 .third .tLeft{
+ font-size: 28rpx;
+ color: #5b5b5b;
+}
+.personMes .person1 .third .tRight{
+ font-size: 22rpx;
+ color: #5b5b5b;
+
+}
+.personMes .person1 .third .tRight image{
+  margin-right: 10rpx;
+}
+.success_circle{
+ height: 255rpx!important;
+}
+.redetail01{
+  width: 30rpx;
+  height: 30rpx;
+}
+.redetail02{
+  width: 30rpx;
+  height: 30rpx;
+}
+.redetail03{
+  width: 31rpx;
+  height: 31rpx;
+}
+.redetail04{
+  width: 32rpx;
+  height: 32rpx;
+}
+.redetail05{
+  width: 31rpx;
+  height: 31rpx;
+}
+.redetail06{
+  width: 28rpx;
+  height: 28rpx;
+}
+.redetail07{
+  width: 29rpx;
+  height: 30rpx;
+}
+.redetail08{
+  width: 27rpx;
+  height: 27rpx;
+}
+.redetail09{
+  width: 41rpx;
+  height: 41rpx;
+}
+.personMes .showDe{
+  position: relative;
+
+}
+.personMes .active{
+  position: relative;
+  top: -10rpx;
+}
+.personMes .showDe .list{
+  display: flex;
+  align-items:center;
+  padding: 18rpx 0;
+  color: #5b5b5b;
+  font-size: 27rpx;
+  height: 35rpx;
+}
+.personMes .showDe .list image{
+  margin-right: 10rpx;
+}
+.personMes .shRight{
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.personMes .showDe .shRight .list{
+  display:flex;
+  justify-content:flex-end;
+}
+.redetail11{
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.redetail12{
+  width: 23rpx;
+  height: 21rpx;
+}
+
+.redetail13{
+  width: 23rpx;
+  height: 23rpx;
+}
+
+.redetail14{
+  width: 26rpx;
+  height: 22rpx;
+}
+
+.redetail15{
+  width: 25rpx;
+  height: 23rpx;
+}
+/*简历列表页里信息*/
+.positionCount{
+  background: #EFEFEF;
+ padding-bottom: 140rpx;
+}
+.positionCount .evaluate{
+ background: #FFFFFF;
+ padding: 0 30rpx;
+ border-top: 24rpx solid #EFEFEF;
+}
+.positionCount .title{
+  font-size: 34rpx;
+  color: #5b5b5b;
+  padding: 30rpx 0 20rpx 0;}
+.positionCount .evaluate .count{
+
+  font-size: 27rpx;
+  /* line-height: 35rpx; */
+  padding-bottom: 30rpx;
+}
+.positionCount .work{
+  background: #FFFFFF;
+   border-top: 24rpx solid #EFEFEF;
+   padding: 0 30rpx 30rpx 30rpx;
+}
+.positionCount .time{
+  font-size: 27rpx;
+  color: #5b5b5b;
+  padding-bottom: 20rpx;
+}
+.positionCount  .tags1{
+  padding-bottom: 10rpx;
+}
+.positionCount   image{
+  margin-right: 10rpx;
+}
+.positionCount .tags1 {
+   color: #5b5b5b;
+   font-size: 26rpx;
+}
+.positionCount .tags2 {
+  color: #a3a3a3;
+    font-size: 26rpx;
+}
+.positionCount .secondTitle{
+ padding-top: 20rpx;
+}
+.positionCount .secondCount{
+  font-size: 27rpx;
+  padding-top: 10rpx;
+  /* padding-bottom: 30rpx; */
+}
+.positionCount  .work .list{
+  border-top: 1rpx  dotted #F1F0F4;
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+}
+.positionCount  .work .list:nth-of-type(2){
+  border: none!important;
+  padding: 0!important;
+  margin: 0!important;
+}
+.positionCount .project{
+  background: #FFFFFF;
+   border-top: 24rpx solid #EFEFEF;
+    padding: 0 30rpx 30rpx 30rpx;
+}
+.positionCount .project{
+  background: #FFFFFF;
+   border-top: 24rpx solid #EFEFEF;
+    padding: 0 30rpx 30rpx 30rpx;
+}
+.positionCount  .project .list{
+  border-top: 1rpx  dotted #F1F0F4;
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+}
+.positionCount .project .list:nth-of-type(2){
+  border: none!important;
+  padding: 0!important;
+  margin: 0!important;
+}
+.positionCount  .project .list{
+  border-top: 1rpx  dotted #F1F0F4;
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+}
+.positionCount .tags3{
+  font-size: 26rpx;
+  color: #a3a3a3;
+}
+.positionCount .secondTitle{
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.positionCount .education{
+    background: #FFFFFF;
+   border-top: 24rpx solid #EFEFEF;
+    padding: 0 30rpx 30rpx 30rpx;
+}
+.positionCount .thirdCount{
+  font-size: 27rpx;
+}
+.positionCount .tags5{
+  font-size: 29rpx;
+}
+.positionCount  .education .list{
+  border-top: 1rpx  dotted #F1F0F4;
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+}
+.positionCount .education .list:nth-of-type(2){
+  border: none!important;
+  padding: 0!important;
+  margin: 0!important;
+}
+.positionCount .thirdCount text:nth-of-type(2),.positionCount .thirdCount text:nth-of-type(3){
+ color: #a3a3a3;
+ margin-left: 40rpx;
+}
+.positionCount .credentail{
+    background: #FFFFFF;
+   border-top: 24rpx solid #EFEFEF;
+    padding: 0 30rpx 30rpx 30rpx;
+}
+.positionCount  .credentail .list{
+  border-top: 1rpx  dotted #F1F0F4;
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+}
+.positionCount .credentail .list:nth-of-type(2){
+  border: none!important;
+  padding: 0!important;
+  margin: 0!important;
+}
+.positionCount .fourTCount{
+  margin-top: 5rpx;
+  font-size: 27rpx;
+}
+.positionCount .fourTCount view{
+  margin-top: 15rpx;
+ 
+}
+.positionClick{
+  width: 95%;
+  padding: 30rpx;
+  position: fixed;
+  bottom: 0;
+  background: #FFFFFF;
+} 
+.positionClic .pright image,.positionCli .pright text{
+  display: block;
+}
+.positionClick{
+  display: flex;
+}
+.positionClick .pright{
+  width: 102rpx;
+}
+.positionClick button{
+  flex: 1;
+  background: #00A2E9;
+}
+.positionClick .button-hover{
+  
+  background: #00A2E9;
+}
+
+.pright{
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

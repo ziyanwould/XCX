@@ -1,0 +1,65 @@
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>公司名称</view>
+     <view class='sel_right'>
+        
+         <input wx:if='{{key}}' style='padding-right:51rpx;' bindinput='watchPassWord' data-self='infoChild.company' value='{{infoChild.company}}'></input> 
+         <input wx:if='{{!key}}'placeholder='请输入' placeholder-style='color:#dddddd' style='padding-right:51rpx;' bindinput='watchPassWord' data-self='company' value='{{company}}'></input> 
+     </view>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>你的职位</view>
+     <view class='sel_right' bindtap='selectWork'>
+          <text wx:if='{{!key}}' >{{position}}</text> 
+         <text wx:if='{{key}}' >{{infoChild.post}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+          <!-- //20180531取消书写输入职位信息 -->
+          <!-- <input wx:if='{{key}}' style='padding-right:51rpx;' bindinput='watchPassWord' data-self='infoChild.post' value='{{infoChild.post}}'></input> 
+           <input wx:if='{{!key}}' style='padding-right:51rpx;' bindinput='watchPassWord' data-self='position' value='{{position}}'></input>  -->
+
+     </view>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>入职时间</view>
+    <picker class="weui-btn" mode="date" start="1949-09-01"  value="{{entrytime}}" fields="month"  bindchange="bindend">
+     <view class='sel_right'>
+         <text wx:if='{{key}}'>{{infoChild.startTime}}</text>
+         <text wx:if='{{!key}}'>{{entrytime}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+     </view>
+    </picker>
+  </view>
+</view> 
+
+<view class='selsect'>
+  <view class='sel_child'>
+     <view class='sel_left'>离职时间</view>
+    <picker class="weui-btn" mode="date" start="1949-09-01"  value="{{entrytime}}" fields="month"  bindchange="bindDateChange">
+     <view class='sel_right'>
+         <text wx:if='{{key}}'>{{infoChild.endTime}}</text>
+         <text wx:if='{{!key}}'>{{endtime}}</text>
+         <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
+     </view>
+    </picker>
+  </view>
+</view> 
+
+<view class='show'>
+  工作内容
+</view>
+<view class='text_count'>
+  <textarea placeholder='请输入公作内容...' style='width:100%' wx:if="{{key}}" bindinput='watchPassWord' data-self='infoChild.jobContent' value='{{infoChild.jobContent}}'>
+  </textarea>
+    <textarea placeholder='请输入公作内容...' style='width:100%' wx:if="{{!key}}" bindinput='watchPassWord' data-self='input' value='{{input}}'>
+  </textarea>
+</view>
+<button bindtap='save' class='save'>保存</button>
+<view wx:if="{{switchs}}" class='remove_this' bindtap="openConfirm">删除此工作经历</view>
+

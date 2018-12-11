@@ -1,0 +1,153 @@
+<!--index.wxml-->
+  <!-- 引入登录注册和选择组件 -->
+<import src="../child/Template/Template.wxml"/>
+<template is="notLogin" data="{{...items}}" /> 
+<!-- end -->
+ <!-- 未登陆的页面 -->
+  <view class='notLogin' wx:if="{{!key}}"  bindtap="loging">
+     <view class='logLeft'>
+      <view>点击登录</view>
+      <view>登录后查看更多信息</view>
+     </view>
+     <view class='logRight'>
+        <image src='http://www.liujiarong.top/WX/notLogin.png' ></image>
+     </view>
+  </view>
+ <!-- end -->
+
+<!-- 登陆后出现的页面 -->
+<block wx:if="{{key}}">
+  <view class="container" bindtap='myself'>
+    <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" wx:if="{{userInfo.avatarUrl}}" catchtap='upload'  src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <open-data wx:if="{{!userInfo.avatarUrl}}" catchtap='upload' style="border-radius:128rpx;" class="userinfo-avatar" type="userAvatarUrl"></open-data>
+  </view>
+  <view class='title'>
+        <text class="userinfo-nickname" wx:if="{{userInfo.nickName}}">{{userInfo.nickName}} </text> 
+        <open-data wx:if="{{!userInfo.nickName}}" class="userinfo-nickname" class="userinfo-nickname" type="userNickName" open-gid="xxxxxx"></open-data>
+        <!-- 男生 -->
+        <image  wx:if='{{userInfo.gender!="女"}}' src='http://www.liujiarong.top/WX/images/wx_men.png' class="gender" ></image>
+        <!-- 女生 -->
+          <image  wx:if='{{userInfo.gender=="女"}}' src='http://www.liujiarong.top/WX/wx_woman.png' class="gender" ></image>
+        <!-- 已经认证 -->
+        <image wx:if='{{userInfo.verify_status==3||identif}}' src='http://www.liujiarong.top/WX/images/wx_approve.png' class="approve" ></image>
+        <!-- 未认证 -->
+        <image wx:if='{{!(userInfo.verify_status==3||identif)}}' src='http://www.liujiarong.top/WX/unapprove.png' class="approve" ></image>
+         <!-- 编辑触碰按钮 -->
+          <navigator class="Bj"  url="../../child/ProfileEditor/ProfileEditor">
+            <image class='bj' src='http://www.liujiarong.top/WX/wx_redact.png'></image>
+            编辑
+          </navigator>  
+  </view>
+     <text class="titie_h2">{{userInfo.remark}}</text> 
+     <!-- <view class="titie_h3">影响力<text>{{influence}}</text>，高于<text>{{ influence_per}}</text>的同行</view>  -->
+</view>
+  <!-- 隐去未开发完成的内容 -->
+ <!-- <view class='section'>
+ <view class='se1'>
+       <view bindtap="jumpToMyPage" data-url="/pages/child/ProfileEditor/ProfileEditor">
+    <view class='se_f1'><image src='http://www.liujiarong.top/WX/images/pig.png'></image></view>
+    <view class='se_f2' ><text>编辑资料</text></view>
+    </view>
+  </view> 
+ <view class='se2'>
+        <view>
+     <view class='se_f1'><text style='display: inline-block;margin-right: 9rpx;'>8</text>
+     <image src='http://www.liujiarong.top/WX/images/wx_add.png' style='position: relative; top: 3rpx;'></image></view>
+      <view class='se_f2'><text>会员加好友名额</text></view>
+      </view>
+ </view> 
+ <view class='se3'> 
+    <view>
+        <view class='se_f1'> <image src='http://www.liujiarong.top/WX/images/safety.png'></image></view>
+         <view class='se_f2'><text>隐私策略</text></view>
+    </view>
+  
+ </view>
+ </view> -->
+</block>
+
+<!-- end -->
+<!-- 跳转版块 -->
+<view class='wx_feature' wx:if='{{!net}}'>
+  <!-- <view class='sec1' bindtap="jumpToMyPage" data-url="/pages/child/Resumelist/Resumelist">
+      <view class='fun_left'>
+        <image src='http://www.liujiarong.top/WX/images/wx_resume.png'></image>
+        <text class='xod'>简历</text>
+      </view>
+      
+      <view class='fun_right'>
+        <block wx:if="{{key}}"><text>完整程度：</text><em>75%</em></block><image src='http://www.liujiarong.top/WX/images/wx_unfold.png' ></image>
+      </view>
+  </view> -->
+   <view class='sec1' wx:for="{{jobList}}" wx:key="item.id"   bindtap="jumpToMyPage" data-url="{{item.url}}">
+      <view class='fun_left'>
+        <image src='http://www.liujiarong.top/WX/images/{{item.pic}}.png' ></image>
+        <text class='xod'>{{item.name}}</text>
+      </view>
+      
+      <view class='fun_right'>
+      <text>{{item.text}}</text>
+        <image src='http://www.liujiarong.top/WX/images/wx_unfold.png' ></image>
+      </view>
+  </view>
+
+   <button class='sec1 buttonx'  open-type="contact" session-from="weapp">
+      <view class='fun_left'>
+        <image src='http://www.liujiarong.top/WX/images/wx_retroaction.png' ></image>
+        <text class='xod'>客服</text>
+      </view>
+      
+      <view class='fun_right'>
+        <image src='http://www.liujiarong.top/WX/images/wx_unfold.png' ></image>
+      </view>
+  </button>
+
+     <button class='sec1 buttonx'  wx:if="{{!bingetinfo}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >
+      <view class='fun_left'>
+        <image src='http://www.liujiarong.top/WX/wxSq1.png' ></image>
+        <text class='xod'>未授权</text>
+      </view>
+      
+      <view class='fun_right'>
+        <image src='http://www.liujiarong.top/WX/images/wx_unfold.png' ></image>
+      </view>
+  </button>
+
+    <button class='sec1 buttonx'  wx:if="{{bingetinfo}}" disabled='disabled' >
+      <view class='fun_left'>
+        <image src='http://www.liujiarong.top/WX/wxSq2.png' ></image>
+        <text class='xod'>已授权</text>
+      </view>
+      
+      <view class='fun_right'>
+        <image src='http://www.liujiarong.top/WX/images/wx_unfold.png' ></image>
+      </view>
+  </button>
+ 
+
+</view>
+  <!-- end -->
+  <!-- 网络错误 -->
+    <view class='noDt' wx:if='{{net}}'>
+  <image style='width:352rpx;height:305rpx;' src='http://www.liujiarong.top/WX/bannerTd.png'></image>
+    <view class='Dtcount'>网络或服务器故障</view>
+    <view class='Dtcount'>请您稍后重试，给您带来不便，抱歉！</view>
+</view>
+<!--获取信息另一种方式-->
+ <!-- <open-data type="userNickName" open-gid="xxxxxx"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userGender" lang="zh_CN"></open-data>  -->
+<!--获取信息另一种方式end-->
+
+  <!-- 登陆后出现的页面2 -->
+ <view class='end_num' wx:if="{{key}}" bindtap='exit'>
+      <navigator class="active"  >退出当前账号</navigator>  
+</view> 
+<!-- end -->
+
+<!-- 弹出简历输入名称 -->
+<modal hidden="{{hiddenmodalput}}" title="请输入{{resumeName}}简历名称" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text'placeholder="请输入  (仅用于识别,不可修改)" value='{{resumeInput}}' bindinput='watchinput' />  
+</modal>  
+<!-- 输入名称结束 -->

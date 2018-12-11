@@ -1,0 +1,21 @@
+/**index.wxss**/
+/*弹窗口*/
+@import "../child/Template/Template.wxss";  
+/*下拉样式*/
+@import '../../utils/refreshView.wxss';
+/*列表框样式*/
+@import '/pages/child/Template/List.wxss';
+@import '/pages/child/Template/NESLiss.wxss';
+.active{
+ color: #00b289;
+}
+/*刷新加载的样式*/
+.refresh-block{
+  background-color:#0544DA;
+}
+.refresh-block .refreshing_text{
+  color:#FFFFFF;
+}
+.loadMore-block{
+   background-color:#FFFFFF;
+}

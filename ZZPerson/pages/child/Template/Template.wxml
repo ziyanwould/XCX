@@ -1,0 +1,106 @@
+<!--pages/child/Template/Template.wxml-->
+<!-- 登录注册 -->
+ <template name="notLogin" >
+  <view class='maskLayer' style='height:{{height}}px' wx:if="{{show}}">
+     <view class='masCount' >
+        <view class='masTitle'>
+          登录或注册{{masTitle}}
+        </view>
+        <text class='masClose' bindtap="urlclose">×</text>
+          <view class='Btn'>
+              <button class="weui-btn" wx:if="{{fages}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >
+              <image class='wxlogo'  src='http://www.liujiarong.top/WX/wxLogo.png'></image>
+              微信帐号快速登录
+              </button>
+              <button class="weui-btn" wx:if="{{!fages}}" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >
+                  <image class='wxlogo'  src='http://www.liujiarong.top/WX/wxLogo.png'></image>
+                  <text style='padding-left:65rpx;'>下一步</text>
+              </button>
+          </view>
+          <view class='Btn'>
+            <button class="weui-btn" type="default" bindtap="urlTo">
+            <image class='wxPhone' src='http://www.liujiarong.top/WX/wxLogoPhone.png'></image>
+            手机号注册/登录
+            </button>
+        </view>
+        <view class='Btn' bindtap="urlTo2">
+         其他方式登录
+        </view>
+     </view>
+  </view>
+</template> 
+
+<!-- 发现组件 -->
+ <template name="tar_count" >
+    <view class='tar_count'>
+      <navigator   url="/pages/child/selectProject/selectProject">发现</navigator>  
+      <!-- <navigator  url="/pages/child/map/map">人脉</navigator> pages/child/Resumelist/Resumelist -->
+       <navigator  url="/pages/child/Resumelist/Resumelist">人脉</navigator>
+      <navigator  class="{{active}}" url="/pages/child/Message/Message" >消息</navigator> 
+     
+    </view>
+ </template>
+
+  <!-- 背景搜索组件 -->
+  <template name="banner" >
+      <view class='banner' bindtouchmove="move">
+             <swiper indicator-dots="true" 
+        autoplay="true" interval="5000" duration="500" circular="true"> 
+      <!-- <block wx:for="{{arr}}"> 
+        <swiper-item> 
+            <image src="{{item}}" class="slide-image" width="355" height="150"/> 
+        </swiper-item> 
+      </block>  -->
+      <swiper-item class='banner' bindtouchmove="move"> 
+            <image src="http://www.liujiarong.top/WX/images/banner_rc.png" style="width:100%;background-color:black;" class="slide-image"/> 
+             <view class='baCount'>
+         <image src='http://www.liujiarong.top/WX/images/logo.png'></image>
+       
+      </view> 
+        </swiper-item> 
+           <swiper-item> 
+            <image src="http://www.liujiarong.top/WXImg/personLUN.png" style="width:750rpx;height:300rpx;background-color:black;" class="slide-image" /> 
+        </swiper-item> 
+        <swiper-item> 
+            <image src="http://www.zhongzhu71.com/UploadImgs/20180126//20180126173209232.jpg" style="width:100%;background-color:black;" class="slide-image" /> 
+        </swiper-item> 
+</swiper>
+      <view class='baInput' bindtap="seek">
+           <input type="text" class="input" disabled='disabled' placeholder-class="input-place" placeholder="{{seektype}}"/>
+             <image src='http://www.liujiarong.top/WX/images/search.png'></image>   
+      </view>
+
+     </view>
+
+ </template>
+<!-- 推荐组件 -->
+
+ <template name="recommend">
+      <view class='recommend' bindtouchmove="move">
+        <view class="line"></view>
+        <view class='tui'>
+           <text style='padding:0 10rpx'  wx:for="{{used_list}}" wx:key="*this" class="{{activeIndex==index?'active':''}}" id="{{index}}" bindtap="active">{{item.name}}</text>
+        </view>
+      <view class="line"></view>
+    </view>
+ </template>
+
+ <template name="recNew">
+ <view class='recommend' >
+        <view class="line"></view>
+        <view class='tui'>
+           <text style='padding:0 10rpx'  >为您推荐</text>
+        </view>
+      <view class="line"></view>
+    </view>
+ </template>
+
+  <template name="recNew2">
+   <view class='recommend' >
+        <view class="line"></view>
+        <view class='tui'>
+           <text style='padding:0 10rpx'  >您感兴趣</text>
+        </view>
+      <view class="line"></view>
+    </view>
+ </template>

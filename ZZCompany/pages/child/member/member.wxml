@@ -1,0 +1,21 @@
+<!--pages/child/member/member.wxml-->
+<view class='first'>
+   <view class='f1Left'><image class='mberPerson' src='{{logo}}'></image></view>
+   <view class='f1Right'>
+     <view>{{nameCompany}}</view>
+     <view><image class="{{vips=='高级会员'?'mberVIP2':'mberVIP1'}}" src="http://www.liujiarong.top/WXImg/{{vips=='高级会员'?'mberVIP2':'mberVIP1'}}.png"></image> <text>（有效期至{{Etime_String}})</text></view>
+   </view>
+</view>
+
+<view class='second' wx:for='{{list}}' wx:key='{{index}}'>
+   <view class='title'><image class='{{item.img1}}' src='http://www.liujiarong.top/WXImg/{{item.img1}}.png'></image> <text>{{item.vip}}</text> <text>{{item.pay}}/年</text></view>
+   <view class='xian'></view>
+   <view class='list'>
+       <view wx:for='{{item.lists}}' wx:key='{{index}}' wx:for-item="items">
+        <image class='{{items.img}}' src='http://www.liujiarong.top/WXImg/{{items.img}}.png'></image> 
+        <text>{{items.text}}</text>
+       </view>
+       
+   </view>
+   <view class='config' id='{{item.Product_Id}}' data-pay='{{item.pay}}' bindtap='pays'>立即开通</view>
+</view>

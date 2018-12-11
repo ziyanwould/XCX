@@ -1,0 +1,203 @@
+<!--pages/child/resume/resume.wxml-->
+
+
+<view class='resume_title'>
+  <view class='title_s1'>
+
+     <view class='s1_left'>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text> 
+        <view class='title_s2'>
+          <text class="">{{userInfo.gender}}/{{userInfo.city}}市/{{userInfo.job_years}}</text> 
+        </view>
+        <view class='title_s3'>
+          <text class="">{{userInfo.remark}}</text> 
+        </view>
+        <!-- 编辑触碰按钮 隐去20180703取消在简历页可以编辑的功能-->
+          <!-- <navigator class="Bj"  url="../../child/ProfileEditor/ProfileEditor">
+            <image class='bj' src='http://www.liujiarong.top/WX/wx_redact.png'></image>
+            编辑
+          </navigator>   -->
+        
+     </view>
+
+     <view   class="s1_right">
+      <!-- <image class="userinfo-avatar avatar"  src="{{src}}"  bindtap="upload"   background-size="cover"></image> 20180703撤销掉更换头像功能-->
+       <image class="userinfo-avatar avatar"  src="{{src}}"    background-size="cover"></image>
+     </view>
+
+  </view>
+
+     <view class='phone'>
+       <em><image src='http://www.liujiarong.top/WX/wx_phone.png'></image></em><text>{{userInfo.phone}}</text>
+     </view>
+     <view class='email'>
+       <em><image src='http://www.liujiarong.top/WX/wx_post.png'></image></em><text>{{userInfo.email}}</text>
+     </view>
+
+      <view class='s2'>
+         <view class='s2_all'>
+          <view class='s2_left'>
+            目前状态
+          </view>
+
+          <view class='s2_right'>
+             <text>{{userInfo.job_status}}</text>
+             <image src='http://www.liujiarong.top/WX/images/wx_unfold.png' ></image>
+          </view>
+        </view>
+      </view>
+</view>
+
+<view class='section2'>
+ 
+    <view class='sec2_1'>
+      <text>期望工作</text>
+        <navigator url="../../child/ExpectWork/ExpectWork?type=expectWork">
+            编辑
+        </navigator>  
+    </view>
+
+    <view class='sec2_2'>
+           {{resume.expectWork.work}}
+    </view>
+
+     <view class='sec2_3'>
+          <!-- {{resume.expectWork.city}}/ -->{{resume.expectWork.positionType}} /  {{resume.expectWork.monthlyPay}}￥
+    </view>
+    <view class='content' wx:if="{{resume.expectWork.moreInfo}}">
+          <view class='content_title'>
+            标题
+          </view>
+          <view class='content_count'>
+           {{resume.expectWork.moreInfo}}
+         </view>
+      </view>
+</view>
+
+<view class='section3'>
+
+   <view class='s3_title'>工作经验</view>
+   <block wx:for="{{resume.workExperience}}" wx:key="this" >
+   <view class='sec_child'>
+     <!-- <view class='Schild1'><image src='http://www.liujiarong.top/WX/wx_zhongzhu71.png'></image></view> -->
+     <view class='Schild2'>
+        <view class='text1'>{{item.post}}</view>
+        <view class='text2'>{{item.company}}</view>
+        <view class='text3'>{{item.startTime}} - {{item.endTime}}</view>
+     </view>
+     <view class='Schild3'><navigator url="../../child/WorkExperience/WorkExperience?id={{index}}&type=workExperience">编辑</navigator></view>     
+   </view>
+    <view class='content' wx:if="{{item.jobContent}}">
+            <view class='content_title'>
+            工作内容
+            </view>
+            <view class='content_count'>
+             {{item.jobContent}}
+          </view>
+    </view>
+   </block>
+   
+   
+   <view class='add_child' bindtap='addnew' data-url='../../child/WorkExperience/WorkExperience'>
+     <image src='http://www.liujiarong.top/WX/wx_add.png'></image><text>添加工作经验</text>
+   </view>
+</view>
+
+<view class='section3'>
+   <view class='s3_title'>教育经验</view>
+
+   <view class='sec_child' wx:for="{{resume.education}}" wx:key="this">
+     <view class='Schild1'><image style=' width: 87rpx;height: 87rpx;' src='https://api.17liepin.com/images/college/{{item.college_icon}}.jpg'></image></view>
+     <view class='Schild2'>
+        <view class='text1'>{{item.school}}</view>
+        <view class='text2'>{{item.educationBack}}/{{item.profession}}</view>
+        <view class='text3'>毕业时间：{{item.graduate}}</view>
+     </view>
+     <view class='Schild3'><navigator url="../educationExperience/educationExperience?id={{index}}&type=education">编辑</navigator></view>     
+   </view>
+
+   <view class='add_child' bindtap='addnew' data-url='../educationExperience/educationExperience'>
+     <image src='http://www.liujiarong.top/WX/wx_add.png'></image><text>添加教育经验</text>
+   </view>
+</view>
+
+<view class='sec_other'>
+   
+    <view class='other_title'><text>证书信息</text></view>
+    
+    <view class='mybook' wx:for='{{resume.certificate}}' wx:key="this">
+      <view class='sec_book'>
+        <view class='sec_book1'>{{item.NameCertificate}}</view>
+        <view class='sec_book2'>{{item.organization}}</view>
+        <view wx:if="{{tem.registration || item.state || item.useRe || item.location}}" class='sec_book2'> 
+        {{item.registration}}/{{item.state}}/{{item.useRe}}/{{item.location}}</view>
+        <view class='sec_book3'>{{item.startTime}} -- {{item.endTime}}</view>
+      </view>
+
+      <view class='other_title'>
+        <navigator url="/pages/child/Certificate/Certificate?id={{index}}&type=certificate">编辑</navigator>
+      </view>
+
+    </view>
+   
+    
+     <view class='add_child' bindtap='addnew' data-url='/pages/child/Certificate/Certificate'>
+       <image src='http://www.liujiarong.top/WX/wx_add.png'></image><text>添加证书信息</text>
+     </view>
+</view>
+
+<view class='section3'>
+   <view class='s3_title'>项目经验</view>
+
+   <view class='experience' wx:for="{{resume.projectExperience}}" wx:key="{{this}}"> 
+      <view class='exp1'>
+          <view class='exp1_left'><text>{{item.projectName}}</text><image src='http://www.liujiarong.top/WX/wx_Link.png'></image> </view>
+          <view class='exp1_right'><navigator url="../projectExperience/projectExperience?id={{index}}&type=projectExperience">编辑</navigator> </view>
+      </view>
+      <!-- <view class='exp2'>{{item.role}}</view> -->
+      <view class='exp3'>{{item.startTime}} -- {{item.endTime}}</view>
+      <view class='content'>
+          <view class='content_title'>
+            工作内容
+          </view>
+          <view class='content_count'>
+           {{item.projectContent}}
+         </view>
+      </view>
+   </view>
+
+   <view class='add_child' bindtap='addnew' data-url='../projectExperience/projectExperience'>
+     <image src='http://www.liujiarong.top/WX/wx_add.png'></image><text>添加项目经验</text>
+   </view>
+</view>
+
+<view class='sec_other'>
+    <view class='other_title'><text>自我描述</text><navigator url="../selfDescription/selfDescription?type=selfDescription.content">编辑</navigator></view>
+    <view class='sec_count'>
+     {{resume.selfDescription.content}}
+    </view>
+</view>
+
+<block>
+    <view class='sec_other' wx:for="{{resume.userDefine}}" wx:key="*this">
+        <view class='other_title'><text>{{item.title}}</text><navigator url="/pages/child/customPlate/customPlate?id={{index}}&type=userDefine">编辑</navigator></view>
+        <view class='sec_count'>
+        {{item.content}}
+        </view>
+    </view>
+</block>
+
+<view class='add_child' style='background:#FFFFFF;' bindtap="jumpToMyPage">
+     <image src='http://www.liujiarong.top/WX/wx_add.png'></image><text>添加自定义板块</text>
+   </view>
+ <!-- <view class='sec_other'>
+    <view class='other_title'><text>公司</text><navigator url="">编辑</navigator></view>
+    <view class='sec_count'>
+     广东中住七一网络科技有限公司
+    </view>
+</view>  -->
+
+<view class='notes'>
+   简历更新于{{resume.updateTime}}
+</view>
+

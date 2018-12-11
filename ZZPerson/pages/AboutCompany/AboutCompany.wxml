@@ -1,0 +1,15 @@
+<!--pages/AboutCompany/AboutCompany.wxml-->
+<view class='listCompy'>
+  <view class='lchild' wx:for="{{lisChild}}" wx:key="this">
+     <view class='lc_left'>
+     <view class='Lf'><text>腾讯</text><image  src='http://www.liujiarong.top/WX/approve.png'></image></view>
+     <view class='Ls'>腾讯</view>
+     <view class='Lt'><text>北京</text><text>5个在招聘职位</text><text>0个面试评价</text></view>
+    </view>
+     <view class='lc_right'>
+      <image src='http://www.liujiarong.top/WX/compayLogo.png'></image>
+    </view>
+  </view>
+
+    <view class='nomore'>没有更多了</view>
+</view>

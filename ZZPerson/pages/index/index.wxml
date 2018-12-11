@@ -1,0 +1,21 @@
+<!--index.wxml-->
+
+<!-- <include src="../../utils/refreshHeaderView.wxml"/>
+<include src="../../utils/loadMoreFooterView.wxml"/> -->
+
+<!-- 引入登录注册和选择组件 -->
+<import src="../child/Template/Template.wxml"/>
+
+
+ <!-- 引入列表样式 -->
+ <!-- <include src="../child/Template/List.wxml"/> -->
+ <block  wx:if='{{!net}}'>
+  <template is="notLogin" data="{{...items}}"/> 
+  <include src="../child/Template/newIndexLest.wxml"/>
+  </block>
+  <view class='noDt' wx:if='{{net}}'>
+  <image style='width:352rpx;height:305rpx;' src='http://www.liujiarong.top/WX/bannerTd.png'></image>
+    <view class='Dtcount'>网络或服务器故障</view>
+    <view class='Dtcount'>请您稍后重试，给您带来不便，抱歉！</view>
+</view>
+

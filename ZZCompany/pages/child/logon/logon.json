@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "建筑human",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "backgroundTextStyle": "white",
+  "enablePullDownRefresh": true
+}

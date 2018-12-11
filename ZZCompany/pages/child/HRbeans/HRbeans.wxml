@@ -1,0 +1,30 @@
+<!--pages/child/HRbeans/HRbeans.wxml-->
+<view class='title'>
+  <view>余额</view>
+  <view><text>{{Lp_fee}}</text><image class='beans1' src='http://www.liujiarong.top/WXImg/beans1.png'></image></view>
+</view>
+<view class='second'>
+   <image class='beans2' src='http://www.liujiarong.top/WXImg/beans2.png'></image><text>猎聘豆充值</text>
+</view>
+<view class='list'>
+    <view class='childs {{activeindex==item.Product_Id?"actives":""}}' wx:for='{{list1}}' wx:key='{{this}}' id='{{item.Product_Id}}' data-pay='{{item.base_price}}' bindtap='config'>
+      <text>{{item.Name}}</text>
+      <text>￥{{item.base_price}}</text>
+      <image wx:if='{{activeindex==item.Product_Id}}' class='beans3' src='http://www.liujiarong.top/WXImg/beans3.png'> </image>
+    </view>
+</view>
+<view class='list'>
+    <view class='childs {{activeindex==item.Product_Id?"actives":""}}' wx:for='{{list2}}' wx:key='{{this}}' id='{{item.Product_Id}}' data-pay='{{item.base_price}}' bindtap='config'>
+      <text>{{item.Name}}</text>
+      <text>￥{{item.base_price}}</text>
+      <image wx:if='{{activeindex==item.Product_Id}}'  class='beans3' src='http://www.liujiarong.top/WXImg/beans3.png'> </image>
+    </view>
+</view>
+
+
+<view class='pay'>
+  <text>实付金额：</text>
+  <text>{{detailPay}}元</text>
+</view>
+
+<view class='recharge' bindtap='pays'>确认充值</view>

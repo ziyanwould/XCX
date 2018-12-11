@@ -1,0 +1,38 @@
+<!--pages/child/Message/Message.wxml-->
+<!-- <import src="/pages/child/Template/Template.wxml"/> -->
+ <!-- 导航组件 
+<template is="tar_count" data="{{...itemz}}"/>  -->
+<!-- 搜索功能 -->
+<!-- <include src="/pages/child/Template/search.wxml"/> -->
+
+
+<view class='Mlist'>
+  <view class='list_left'>
+      <view class='Tone'>
+        <image  src='http://www.liujiarong.top/WX/geRen.jpg'></image>
+      </view>
+      <view class='Tnext'>
+         <view class='Ttitle'>待处理事项</view>
+          <view class='Tcount'><text>{{list.length}}</text>个请求待处理</view>
+      </view>
+  </view>
+  <view class='list_right'>
+  <!-- 03-02 -->
+  </view>
+</view>
+
+<view class='Mlist' wx:for="{{list}}" wx:key="this" bindtap='Ondetail'  data-value='{{item}}'>
+  <view class='list_left'>
+      <view class='Tone'>
+        <image style='border-radius:85rpx'  src='http://www.liujiarong.top/WX/messageHr.jpg'></image>
+      </view>
+      <view class='Tnext'>
+         <view class='Ttitle'>{{item.Title}}</view>
+          <view class='Tcount'><text>{{item.Status==0?'未读':'已读'}}</text> {{item.Detail}}</view>
+      </view>
+  </view>
+  <view class='list_right'>
+  <!-- 03-02 -->
+  </view>
+</view>
+

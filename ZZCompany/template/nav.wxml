@@ -1,0 +1,698 @@
+
+<!-- 自定义导航栏组件 -->
+<template name="nav">
+      <view class="nav_link" bindtap="{{fn}}">
+        <button class="defalut_btn {{current==0?'':'on_cor'}}">
+          <block wx:if="{{style==0}}">
+                <icon class="iconfont {{ico}} del_ico idx_ico"></icon>
+                <text class="txt">{{name}}</text>
+          </block>
+          <block wx:if="{{style==1}}">
+                <view class="plus_wp">
+                  <image src='../../images/plus_ico.png' class="plus_ico" />
+                </view>
+                <text class="txt txt_fb">{{name}}</text>
+          </block>
+        </button> 
+      </view>
+</template>
+
+<!-- 背景图组价 -->
+<template name="banner">
+  
+
+     
+             <swiper indicator-dots="true"  autoplay="true" interval="5000" duration="500" circular="true"> 
+    
+       
+        <swiper-item  > 
+         <view class='bannerImg'>
+          <image src='http://www.liujiarong.top/WXImg/bannnernew2.png'></image>
+        </view>
+        </swiper-item> 
+
+        <swiper-item> 
+           <view class='bannerImg'>
+          <image src='http://www.zhongzhu71.com/UploadImgs/20171123//20171123170556212.png'></image>
+        </view>
+        </swiper-item> 
+
+        <swiper-item> 
+           <view class='bannerImg'>
+          <image src='http://www.zhongzhu71.com/UploadImgs/20171123//20171123165431252.png'></image>
+        </view>
+        </swiper-item> 
+</swiper>
+      
+
+    
+</template>
+
+<template name="banner1">
+  <view class='bannerImg'>
+    <!-- <image src='http://www.liujiarong.top/WXImg/redetailBan.png'></image> -->
+  </view>
+</template>
+
+<!--搜索组件-->
+<template name='seek'>
+  <view class='seeinput'>
+   <input placeholder-class='sde' placeholder='搜索' disabled='disabled' bindtap='{{fn}}'></input>
+  </view>
+</template>
+<!-- 旧的兼职/全职简历模板 -->
+<!-- <template name='partTime'>
+  <view class='partTime' bindtap='{{fn}}' data-id='{{resume_id}}'>
+    <view class='left'>
+        <image src='{{person?person:"http://www.liujiarong.top/WXImg/person.png"}}'></image>
+    </view>
+    <view class='right'>
+      <view class='title'>
+         <image src='http://www.liujiarong.top/WXImg/nan.png'></image><text>{{tille}}</text>
+      </view>
+      <view class='name'>
+         <image  src='http://www.liujiarong.top/WXImg/{{sex=="男"?"name":"nv"}}.png'></image><text>{{name}}</text>
+      </view>
+       <view class='message' wx:if='{{!education}}'>
+         <image src='http://www.liujiarong.top/WXImg/area.png'></image><text>{{area}}</text>
+         <image src='http://www.liujiarong.top/WXImg/stats.png'></image><text class='stats'>{{stats}}</text>
+         <image src='http://www.liujiarong.top/WXImg/pay.png'></image><text class='pay'>{{pay==(-1)?'面议':pay}}</text>
+      </view>
+      <!-- 全职版块应有信息 -->
+      <!-- <view class='message fullTime' wx:if='{{education}}'>
+         <image src='http://www.liujiarong.top/WXImg/education.png'></image><text class='education'>{{education}}</text>
+         <image src='http://www.liujiarong.top/WXImg/birthday.png'></image><text class='birthday'>{{birthday}}</text>
+         <image src='http://www.liujiarong.top/WXImg/experience.png'></image><text class='experience'>{{experience==null?'1年':experience}}</text>
+      </view>
+      <view class='other' wx:if='{{!log}}'>
+       查看简历
+      </view>
+       <view class='time' wx:if='{{!log}}'>
+           <image style='width:20rpx;height:20rpx;' src='http://www.liujiarong.top/WXImg/upTime.png'></image>
+           <text style='font-size:20rpx;color:#CED4D9;'>{{time}}</text>
+      </view>
+    </view>
+
+  </view>
+</template> --> 
+<!-- 兼职/全职简历模板 -->
+<template name='partTime'>
+  <view class='partTime' bindtap='{{fn}}' data-id='{{resume_id}}'>
+    <view class='left'>
+        <image src='{{person?person:"http://www.liujiarong.top/WXImg/person.png"}}'></image>
+    </view>
+    <view class='right'>
+      <view class='title'>
+         <text>{{tille}}</text>
+      </view>
+      <view class='name'>
+         <!-- <image  src='http://www.liujiarong.top/WXImg/{{sex=="男"?"name":"nv"}}.png'></image>--><text>{{name}}</text> 
+      </view>
+       <view class='message' wx:if='{{!education}}'>
+         <text>{{sex}}</text>
+         <text>{{area=='不限不限'?'不限':area}}</text>
+         <text>{{stats}}</text>
+         <text >{{pay==(-1)?'面议':pay}}</text>
+      </view>
+      <!-- 全职版块应有信息 -->
+      <view class='message fullTime' wx:if='{{education}}'>
+        <text>{{education}}</text>
+        <text>{{birthday}}</text>
+        <text>{{experience==null?'1年':experience}}</text>
+      </view>
+      <!-- <view class='other' wx:if='{{!log}}'>
+       查看简历
+      </view> -->
+       <view class='time' wx:if='{{!log}}'>
+           <image style='width:30rpx;height:30rpx;' src='http://www.liujiarong.top/WXImg/upTime.png'></image>
+           <text style='font-size:25rpx;color:#CED4D9;padding-top:6rpx;'>{{time}}</text>
+      </view>
+    </view>
+
+  </view>
+</template>
+
+<!-- 发布职位组建 -->
+<template name='creation'>
+     <view class='commom' wx:for='{{select}}' wx:for-item='items' wx:key='{{this}}'>
+
+        <view class='title' wx:if='{{items.comTitle}}'>
+         {{items.comTitle}}
+        </view>
+        <block wx:for='{{items.child}}' wx:for-item='child'  wx:key='{{this}}'>
+
+       
+            <view class='count' wx:if='{{child.countTitle}}' bindtap='{{child.fn}}'>
+              <view class='Left'><text>{{child.countTitle}}</text></view>
+              <view class='Right'><text>{{child.countCount}}</text> <icon class="iconfont icon-xiayiye del_ico idx_ico"></icon></view>
+            </view>
+       
+            <block wx:if='{{!showTextarea}}'>
+              <view class='input' wx:if='{{!child.countTitle}}'>
+                <view class='Left'><text>{{child.inputTitle}}</text></view>
+                <view class='Right'><input placeholder='{{child.inputPlace}}' data-value='{{child.watchinput}}' bindinput='{{child.fn}}'  placeholder-class='plclass' value='{{child.input}}'></input></view>
+              </view>
+             </block>
+        </block>
+     </view>
+      
+      <block wx:for='{{textarea}}' wx:key='{{this}}'  wx:key='{{this}}'>
+        <view class='textarea' wx:if='{{!showTextarea}}'>
+          <view class='title'>
+          {{item.textareaTitle}}
+          </view>
+          <view class='textareaIn see_textarea'>
+          <textarea bindinput='{{item.fn}}'  placeholder='{{item.placeTitle}}' placeholder-class='pltext' maxlength="{{item.noteMaxLen}}" value='{{item.textarea}}'></textarea>
+           <view wx:if='{{item.noteMaxLen}}' class='Alert'>{{item.currentNoteLen|0}}/{{item.noteMaxLen}}</view>
+          </view>
+        </view>
+      </block>
+      <view class='publish'>
+         <button class="weui-btn nowbtn" bindtap='{{fn}}'  type="primary">{{publish}}</button>
+      </view>
+</template>
+
+
+<!-- 注册版块 -->
+<template name='logon'>
+
+   <view class='allLogo'>
+      
+      <view class='centerLogon'>
+        <!-- 进度条 -->
+        <view class='thisab'>
+          <view class='sele1'>
+
+            <view class='round' wx:for='{{step}}' wx:key='{{this}}'>
+                <view class='inner' wx:if='{{item.active}}'>
+                  <text>{{item.num}}</text>
+                </view>
+            </view>
+
+          </view>
+        </view>
+        <!-- 填写信息板块 -->
+        <block wx:if='{{mesInput}}'>
+        <view class='logonIn' wx:for='{{inputList}}' wx:key='{{this}}' bindtap='{{item.fun}}'>
+           <view class='img'><image src='http://www.liujiarong.top/WXImg/{{item.img}}'  class='{{item.classx}}'></image></view>
+           <view class='title'>{{item.title}}</view>
+           <view class='input'><input value='{{item.value}}' type='{{item.type}}' data-id='{{index}}' bindinput='{{item.fn}}' disabled='{{item.dis}}' placeholder='{{item.placeholder}}' placeholder-class='{{item.placlass}}'></input></view>
+             <button bindtap='{{item.fn2}}' disabled='{{item.disabled}}' class='time' wx:if="{{item.valMessPan}}" >{{item.time}}</button> 
+        </view>
+        </block>
+        <!-- 上传证书版块 -->
+        <block wx:if='{{credImg}}'>
+          <view class='uploa' bindtap='{{Ccie.fn}}'>
+            <image src='{{Ccie.img}}' class='{{Ccie.classx}}'></image>
+            <view class='imgUp'>{{Ccie.uptext}}</view>
+          </view>
+          <view class='imgFont'>{{Ccie.other}}</view>
+        </block>
+       <!-- 上一步与下一步 -->
+       
+       <view class='setp'>
+         <view class='seleft' bindtap='{{lastSetp}}'>
+           <image src='http://www.liujiarong.top/WXImg/logoleft.png' class='img3'></image>
+         </view>
+         <view class='seright' bindtap='{{nextSetp}}'>
+          {{nextText}}
+         </view>
+       </view>
+
+       <!-- 代表注册和已有账号 -->
+       <view class='logoIm'>
+          <view class='mesLeft' wx:if='{{mes}}'>
+             {{mesLeft}}<text>{{mesRight}}</text>
+          </view>
+
+           <view class='mesRight' wx:if='{{Acc}}'>
+           <text bindtap='swictchTO'>{{AccText}}</text>
+          </view>
+       </view>
+
+        
+          
+      </view>
+
+   </view>
+
+</template>
+
+ <!-- 登录弹出组件 -->
+ <template name="notLogin" >
+  <view class='maskLayer' style='height:{{height}}px' wx:if="{{show}}" >
+     <view class='masCount' >
+        <view class='masTitle'>
+          登录或注册{{masTitle}}
+        </view>
+        <text class='masClose' bindtap="urlclose">×</text>
+          <view class='Btn'>
+              <button class="weui-btn" wx:if="{{fages}}" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >
+              <image class='wxlogo'  src='http://www.liujiarong.top/WX/wxLogo.png'></image>
+              微信帐号快速登录
+              </button>
+          </view>
+          <view class='Btn'>
+            <button class="weui-btn" type="default" bindtap="urlTo">
+            <image class='wxPhone' src='http://www.liujiarong.top/WX/wxLogoPhone.png'></image>
+            手机号注册/登录
+            </button>
+        </view>
+        <view class='Btn' bindtap="urlTo2">
+         企业名登录
+        </view>
+     </view>
+  </view>
+</template> 
+
+<!-- 登录组件 -->
+<template name='Login'>
+   <view class='allLogo'>
+      <view class='centerLogon'>
+        <!-- 填写信息板块 -->
+        <block wx:if='{{mesInput}}'>
+        <view class='logonIn' wx:for='{{inputList}}' wx:key='{{this}}' bindtap='{{item.fun}}'>
+           <view class='img'><image src='http://www.liujiarong.top/WXImg/{{item.img}}'  class='{{item.classx}}'></image></view>
+           <view class='title'>{{item.title}}</view>
+           <view class='input'><input value='{{item.value}}' type='{{item.type}}' data-id='{{index}}' bindinput='{{item.fn}}' disabled='{{item.dis}}' placeholder='{{item.placeholder}}' placeholder-class='{{item.placlass}}'></input></view>
+             <button bindtap='{{item.fn2}}' disabled='{{item.disabled}}' class='time' wx:if="{{item.valMessPan}}" >{{item.time}}</button> 
+        </view>
+        </block> 
+       <!-- 上一步与下一步 -->   
+       <view class='setp'>
+         <!-- <view class='seleft' bindtap='{{lastSetp}}'>
+           <image src='http://www.liujiarong.top/WXImg/logoleft.png' class='img3'></image>
+         </view> -->
+         <view class='seright round' bindtap='{{nextSetp}}'>
+          {{nextText}}
+         </view>
+       </view>
+
+       <!-- 代表注册和已有账号 -->
+       <view class='logoIm'>
+          <view class='mesLeft' wx:if='{{mes}}'>
+             {{mesLeft}}<text>{{mesRight}}</text>
+          </view>
+
+           <view class='mesRight' wx:if='{{Acc}}'>
+           <text bindtap='{{AccFn}}'>{{AccText}}</text>
+          </view>
+       </view>  
+          
+      </view>
+    <view class='switcher'>
+      <view class='swtitle'>其他登录方式</view>
+      <view class='swicon'>
+        <view class='swWx'>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信</button>
+        </view>
+        <view class='wxAcco' wx:if='{{switcher}}'>
+          <button bindtap='icoIpone'> 短信</button>
+      </view>
+      <view class='swPone' wx:if='{{!switcher}}'>
+          <button bindtap='AccNumber'> 账号</button>
+      </view>
+      </view>
+      </view>
+   </view>
+</template>
+
+<!-- 详情页的人物信条 -->
+
+<template name='personMes'>
+  <view class='personMes {{!switchde?"actives":""}}'>
+
+      <view class="person1 {{switchde?'':'success_circle'}}" >
+        <view class='first'>
+           <view class='fLeft'>
+              <view class='nameSex'>
+                <text>{{resumePart.baseUserData.real_name}}</text><image class='redetailWom' src="{{resumePart.baseUserData.sex=='女'?'http://www.liujiarong.top/WXImg/redetailWom.png':''}}"></image>
+              </view>
+               <view class='tags'>
+                <text>{{resumePart.baseUserData.age}}岁</text>
+                 <text>{{resumePart.baseUserData.education}}</text>
+                  <text>{{resumePart.baseUserData.job_years}}</text>
+              </view>
+           </view>
+
+           <view class='fRight'>
+            <image class='redetailPerson' src='{{resumePart.baseUserData.header_img?resumePart.baseUserData.header_img:"http://www.liujiarong.top/WXImg/person.png"}}'></image>
+           </view>
+        </view>
+
+        <view class='second' wx:if='{{switchde}}'>
+          社保所在地：{{resumePart.baseUserData.province?resumePart.baseUserData.province+'-':''}}{{resumePart.baseUserData.city?resumePart.baseUserData.city:"无"}} <text>证书：{{resumePart.certificate[0].title}}</text>
+        </view>
+
+        <view class='third'>
+           <view class='tLeft'>{{resumePart.expectWork.moreInfo}}</view>
+            <view class='tRight'>
+            <image class='redetailTime'  src='http://www.liujiarong.top/WXImg/redetailTime.png'></image><text>{{resumePart.updateTime}}</text>
+            </view>
+        </view>
+      </view>
+
+      <view class='person2'>
+
+        <view class='showDe' wx:if='{{switchde}}'>
+         <view class='shLeft'>
+           <view class='list'><image class='redetail01' src='http://www.liujiarong.top/WXImg/redetail01.png'></image>证书类别：{{resumePart.certificate[0].ger_type_name}}</view>
+            <view class='list'><image class='redetail03' src='http://www.liujiarong.top/WXImg/redetail03.png'></image>证书状态：{{resumePart.certificate[0].state}}</view>
+             <view class='list'><image class='redetail05' src='http://www.liujiarong.top/WXImg/redetail05.png'></image>证书用途：{{resumePart.certificate[0].useRe}}</view>
+                <view class='list'><image class='redetail02' src='http://www.liujiarong.top/WXImg/redetail02.png'></image>注册情况：{{resumePart.certificate[0].registration}}</view>
+             <view class='list'><image class='redetail04' src='http://www.liujiarong.top/WXImg/redetail04.png'></image>证书所在地：
+            <block wx:if='{{resumePart.certificate[0].province!="不限"}}'>
+             {{resumePart.certificate[0].province?resumePart.certificate[0].province+'-':''}}
+            </block>
+
+            <!-- <block wx:if='{{resumePart.certificate[0].province=="不限"}}'>
+             {{resumePart.certificate[0].province?resumePart.certificate[0].province+'-':''}}
+            </block> -->
+             {{resumePart.certificate[0].location}}
+             </view>
+                <view class='list' wx:if='{{resumePart.certificate[0].b_card!=0}}'><image class='redetail01' src='http://www.liujiarong.top/WXImg/redetail01.png'></image>B证状态：
+                  <block wx:if="{{resumePart.certificate[0].b_card==1}}">带B证</block>
+                  <block wx:if="{{resumePart.certificate[0].b_card==2}}">不带B证</block>
+                  <block wx:if="{{resumePart.certificate[0].b_card==3}}">考B证</block>
+                  <block wx:if="{{resumePart.certificate[0].b_card==4}}">情况不清</block> 
+                </view>
+         </view>
+         <!-- <view class='shRight'>
+               <view class='list'><image class='redetail02' src='http://www.liujiarong.top/WXImg/redetail02.png'></image>注册情况：{{resumePart.certificate[0].registration}}</view>
+             <view class='list'><image class='redetail04' src='http://www.liujiarong.top/WXImg/redetail04.png'></image>证书所在地：
+            <block wx:if='{{resumePart.certificate[0].province!="不限"}}'>
+             {{resumePart.certificate[0].province?resumePart.certificate[0].province+'-':''}}
+            </block>
+
+            <!-- <block wx:if='{{resumePart.certificate[0].province=="不限"}}'>
+             {{resumePart.certificate[0].province?resumePart.certificate[0].province+'-':''}}
+            </block> -->
+             <!-- {{resumePart.certificate[0].location}}
+             </view>
+                <view class='list' wx:if='{{resumePart.certificate[0].b_card!=0}}'><image class='redetail01' src='http://www.liujiarong.top/WXImg/redetail01.png'></image>B证状态：
+                  <block wx:if="{{resumePart.certificate[0].b_card==1}}">带B证</block>
+                  <block wx:if="{{resumePart.certificate[0].b_card==2}}">不带B证</block>
+                  <block wx:if="{{resumePart.certificate[0].b_card==3}}">考B证</block>
+                  <block wx:if="{{resumePart.certificate[0].b_card==4}}">情况不清</block> 
+                </view>
+         </view> --> 
+       </view>
+
+        <view class='showDe active' wx:if='{{!switchde}}'>
+         <view class='shLeft'>
+           <view class='list'><image class='redetail01' src='http://www.liujiarong.top/WXImg/redetail01.png'></image>期望职位：{{resumePart.expectWork.work}}</view>
+            <view class='list'><image class='redetail07' src='http://www.liujiarong.top/WXImg/redetail07.png'></image>期望薪资：{{resumePart.expectWork.monthlyPay}}元/月</view>
+             <view class='list'><image class='redetail08' src='http://www.liujiarong.top/WXImg/redetail08.png'></image>工作类型：{{resumePart.expectWork.positionType}}</view>
+               <view class='list'><image class='redetail06' src='http://www.liujiarong.top/WXImg/redetail06.png'></image>求职状态：{{resumePart.baseUserData.job_status}}</view>
+         </view>
+         <!-- <view class='shRight'>
+             
+             <view class='list'><image class='redetail08' src='http://www.liujiarong.top/WXImg/redetail08.png'></image>工作类型：{{resumePart.expectWork.positionType}}</view>
+               <view class='list'><image class='redetail06' src='http://www.liujiarong.top/WXImg/redetail06.png'></image>求职状态：{{resumePart.baseUserData.job_status}}</view>
+         </view> -->
+       </view>
+
+      </view>
+  </view>
+
+</template>
+
+<template name='positionCount'>
+  <view class='positionCount'>
+  <!-- 评价与自我介绍 -->
+  <view class='evaluate'>
+    <view class='title'>
+     {{explain}}
+    </view>
+    <view class='count'>
+     <!-- 1、人品公诚勤勇、端正朴实，作风务实严谨，能吃苦耐劳；能承受加班和出差，能适应施工现场工作；<br/>
+     2、熟悉国家及相关行业有关工程的法律法规。<br/>
+     3、熟悉建设工程方案的编制、审核工作；工程资料的编制收集管理工作；工程竣工验收的相关工作。<br/> -->
+       {{resumePart.selfDescription.content}}
+    </view>
+  </view>
+  <block wx:if='{{fullTime}}'>
+  <!-- 工作经历 -->
+  <view class='work'>
+    <view class='title'>
+     工作经历
+    </view>
+    <view class='list' wx:for='{{resumePart.workExperience}}' wx:key='{{this}}'>
+      <view class='time'>
+      {{item.startTime}}--{{item.endTime}}
+      </view>
+      <view class='tags1'><image class='redetail11' src='http://www.liujiarong.top/WXImg/redetail11.png'></image>{{item.company}}</view>
+      <view class='tags2'><image class='redetail12' src='http://www.liujiarong.top/WXImg/redetail12.png'></image>{{item.post}}</view>
+      <view class='secondTitle'>工作内容：</view>
+      <view class='secondCount'>
+      {{item.jobContent}}
+      </view>
+    </view>
+
+    
+  </view>
+  <!-- 项目经历 -->
+  <view class='project'>
+    <view class='title'>
+     项目经历
+    </view>
+
+    <view class='list'  wx:for='{{resumePart.projectExperience}}' wx:key='{{this}}'>
+     <view class='time'>
+      {{item.startTime}}--{{item.endTime}}
+     </view>
+      <view class='tags3'><image class='redetail13' src='http://www.liujiarong.top/WXImg/redetail13.png'></image>{{item.projectName}}</view>
+      <view class='secondTitle'>项目内容：</view>
+      <view class='secondCount'>
+      {{item.projectContent}}
+      </view>
+    </view>
+
+
+  </view>
+  <!-- 教育经历 -->
+  <view class='education'>
+    <view class='title'>
+    教育经历
+    </view>
+    <view class='list'  wx:for='{{resumePart.education}}' wx:key='{{this}}'>
+      <view class='time'>
+     {{item.startTime}}--{{item.endTime}}
+      </view>
+      <view class='thirdCount'>
+      <image class='redetail14' src='http://www.liujiarong.top/WXImg/redetail14.png'></image>
+      <text>{{item.school}}</text>
+        <text>{{item.profession}}</text>
+        <text>{{item.educationBack}}</text>
+      </view>
+    </view>
+   
+  
+  </view>
+  <!-- 证书信息 -->
+  <view class='credentail'>
+    <view class='title'>
+      证书信息
+     </view>
+   
+     
+     <view class='list' wx:for='{{resumePart.certificate}}' wx:key='{{this}}'>
+       <view class='time'>
+        {{item.startTime}}--{{item.endTime}}
+       </view> 
+       <view class='tags5'><image class='redetail15' src='http://www.liujiarong.top/WXImg/redetail15.png'></image>{{item.NameCertificate}}</view>
+       <view class='fourTCount'>
+          <view>证书单位：{{item.organization}} </view>
+          <view>证书名称：{{item.title}} </view>
+          <view>证书类别：{{item.ger_type_name}} </view>
+          <block wx:if="{{item.b_card==1}}">B证情况：带B证</block>
+          <block wx:if="{{item.b_card==2}}">B证情况：不带B证</block>
+          <block wx:if="{{item.b_card==3}}">B证情况：考B证</block>
+          <block wx:if="{{item.b_card==4}}">B证情况：情况不清</block>
+          <view>证书状态：{{item.state}} </view>
+          <view>证书用途：{{item.useRe}} </view>
+          <view>注册情况：{{item.registration}} </view>
+          <view>证书所在地：{{item.location}} </view>
+       </view>
+    
+     </view> 
+  </view>
+  <!-- 自定义板块 -->
+  <view class='evaluate' wx:for='{{resumePart.userDefine}}' wx:key='{{this}}'>
+    <view class='title'>
+     {{item.title}}
+    </view>
+    <view class='count'>
+  
+       {{item.content}}
+    </view>
+  </view>
+  </block>
+ </view>
+</template>
+
+<!-- 底部按钮效果 -->
+<template name='positionClick'>
+ <view class='positionClick'>
+     <button class="weui-btn" hover-class='button-hover' bindtap='{{fun}}' type="primary">{{buyType}}</button>
+     <view class='pright' bindtap='clickshou'>
+      <image class='redetail09' src='http://www.liujiarong.top/WXImg/{{names?"readyCollect":"redetail09"}}.png'></image>
+      <text>{{names?'取消':'收藏'}}</text>
+     </view>
+ </view>
+</template>
+
+<!-- 推荐组建 之搜索 -->
+<template name='search'>
+   
+    <view class="page__bd">
+            <view class="weui-search-bar">
+                <view class="weui-search-bar__form">
+                    <view class="weui-search-bar__box">
+                        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                            <icon type="clear" size="14"></icon>
+                        </view>
+                    </view>
+                    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                        <icon class="weui-icon-search" type="search" size="14"></icon>
+                        <view class="weui-search-bar__text">搜索</view>
+                    </label>
+                </view>
+                <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+            </view>
+            <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+                <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">
+                        <view>实时搜索文本</view>
+                    </view>
+                </navigator>
+                <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">
+                        <view>实时搜索文本</view>
+                    </view>
+                </navigator>
+                <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">
+                        <view>实时搜索文本</view>
+                    </view>
+                </navigator>
+                <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">
+                        <view>实时搜索文本</view>
+                    </view>
+                </navigator>
+            </view>
+    </view>
+</template>
+
+<!-- 推荐组建 之标题 -->
+<template name='searTitle'>
+      <view class='position headerSeach'>
+      <view class="headright {{clickactive==0?'headleft':''}}" bindtap='screen1'>{{titleName?titleName:'请选择类别'}}</view>
+      <view class="headright {{clickactive==1?'headleft':''}}" bindtap='screen2'>筛选</view>
+    </view>
+
+    <view class='sort' wx:if='{{scondSeek}}' >
+      <text class="{{!paixu?'active':''}}" bindtap='paixu1'>智能排序</text> <text class="{{paixu?'active':''}}" bindtap='paixu2'>时间排序</text>
+    </view>
+</template>
+
+
+<!-- 推荐组建 之二级筛选--> 
+<template name='searSencod'>
+    <view class='changeEdit'>
+      <view class='title'>兼职</view>
+      <view class='editCount'>
+        <text wx:for='{{part}}' wx:key='{{this}}' class="{{xuhao==item.ID?'active':''}}" bindtap="actives" data-value="{{item.Name}}" 
+                      id='{{item.ID}}' data-type='0' >{{item.Name}}</text>
+        <!-- <text>房地产</text>
+        <text>三脚架对对对</text>
+        <text>都市我我四啊啊</text>
+        <text>地级市杜</text>
+        <text>上岛咖啡模块</text>
+        <text>订单</text>
+        <text>实打实</text>
+        <text>爽肤水</text> -->
+      </view>
+
+      <view class='title'>全职</view>
+      <view class='editCount'>
+        <text wx:for='{{full}}' wx:key='{{this}}' class="{{xuhao==item.ID?'active':''}}" bindtap="actives" data-value="{{item.Name}}" 
+                      id='{{item.ID}}'  data-type='1' >{{item.Name}}</text>
+        <!-- <text>房地产</text>
+        <text>三脚架对对对</text>
+        <text>都市我我四啊啊</text>
+        <text>地级市杜</text>
+        <text>上岛咖啡模块</text>
+        <text>订单</text>
+        <text>实打实</text>
+        <text>爽肤水</text> -->
+      </view>
+      <button class="weui-btn" bindtap='pushsure' style='background: #1B87E0;margin-bottom: 24rpx;' type="primary">确定</button>
+   </view>
+</template>
+
+<!-- 推荐组建 之列表 -->
+<template name='searchList'>
+        <view class='countList list' >
+          <view id='{{ID}}' bindtap='urlto'>
+            <view class='lfirst'>
+              <view class='left'>
+                <text>{{Position_Title}}</text>
+                <text>{{Type_Id==0?'兼职':'全职'}}</text>
+              </view>
+              <view class='right'>
+                <text>{{Is_Public==1?'下架':'上架'}}</text>
+                <text wx:if='{{Audit_Status==0}}'>等待审核</text>
+                <text wx:if='{{Audit_Status==1}}'>等待审核</text>
+                <text wx:if='{{Audit_Status==2}}'>通过</text>
+                <text wx:if='{{Audit_Status==3}}'>不审核</text>
+
+                <!-- 暂时隐去刷新功能 -->
+                <!-- <text bindtap='refresh'>刷新</text> -->
+              </view>
+            </view>
+            
+            <view class='lsecond'>
+                <view class='left'>
+              {{sho_position_gertificate[0].Province}}{{sho_position_gertificate[0].City}}
+              {{Province}}{{City}}{{County}}
+                </view>
+                <view class='right'>
+              {{Utime}}
+                </view>
+            </view>
+        </view>
+          <view class='lthird'  id='{{ID}}' bindtap='collecting'>
+             查看投递的简历
+          </view>
+
+         <!-- //内容一样备份用 -->
+                <!-- <view class='lfirst'>
+            <view class='left'>
+              <text>土木工程师-注册岩土工程师{{item.Position_Title}}</text>
+              <text>兼职{{item.Type_Id==0?'兼职':'全职'}}</text>
+            </view>
+            <view class='right'>
+              <text>上架{{item.Is_Public==0?'上架':'下架'}}</text>
+              <text wx:if='{{item.Audit_Status==0}}'>等待分配</text>
+              <text wx:if='{{item.Audit_Status==1}}'>等待审核</text>
+              <text wx:if='{{item.Audit_Status==2}}'>通过</text>
+              <text wx:if='{{item.Audit_Status==3}}'>不审核</text>
+              <text bindtap='refresh'>刷新</text>
+            </view>
+          </view>
+          
+          <view class='lsecond'>
+              <view class='left'>
+              广东广州市{{item.Province}}{{item.City}}
+              </view>
+              <view class='right'>
+              2018-05-20{{item.Utime}}
+              </view>
+          </view> -->
+        </view>
+        
+</template>

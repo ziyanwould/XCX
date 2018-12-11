@@ -1,0 +1,206 @@
+/**app.wxss**/
+/*弹窗口*/
+@import "/pages/child/Template/Template.wxss";   
+/**/
+.container {
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  background: #FFFFFF;
+
+} 
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 128rpx;
+  margin-right: 36rpx;
+  
+}
+.title{
+  width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.userinfo-nickname {
+
+  color: #000;
+  font-size: 28rpx;
+}
+.gender{
+  width:15rpx;
+  height:19rpx;
+  margin: 0 8rpx;
+}
+.approve{
+  width: 83rpx;
+  height: 28rpx;
+}
+.titie_h2{
+  font-size: 26rpx;
+  padding: 28rpx 0;
+}
+.titie_h3{
+  font-size: 20rpx;
+  color: #909da3;
+}
+.titie_h3 text{
+  color: #ffa92f;
+}
+.section{
+  font-size: 26rpx;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  background: #FFFFFF;
+  padding-bottom: 28rpx;
+}
+.se1,.se2,.se3{
+  flex: 1;
+  display: flex;
+    justify-content:center;
+  align-items:center;
+}
+.se1,.se2{
+  border-right: 1rpx solid #DDE6E9;
+}
+.se1 image{
+  width: 27rpx;
+  height: 31rpx;
+}
+.se1 image{
+  width: 27rpx;
+  height: 31rpx;
+}
+.se2 image{
+  width: 23rpx;
+  height: 23rpx;
+}
+.se3 image{
+  width: 21rpx;
+  height: 25rpx;
+}
+.se_f1{
+  text-align: center;
+}
+page{
+  background: #EEEFF3;
+}
+
+
+.wx_feature{
+  width: 100%;
+  margin-top: 10rpx;
+  background: #FFFFFF;
+  font-size: 26rpx;
+}
+.fun_left image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.fun_right image{
+  width: 11rpx;
+  height: 18rpx;
+}
+.sec1{
+  display: flex;
+  justify-content:space-between;
+   align-items:center;
+   height: 100rpx;
+   padding-left: 46rpx;
+   padding-right: 36rpx;
+   border: 1rpx solid #EEEFF3;
+}
+.fun_lef,.fun_right{
+  display: inline-flex;
+  align-items:center;
+ 
+}
+.xod{
+  position: relative;
+  top: -10rpx;
+  left: 18rpx;
+}
+.fun_right image{
+  display: inline-block;
+  padding-left: 28rpx;
+}
+.fun_right em{
+   color: #30C37C;
+}
+.end_num navigator{
+  margin-top: 10rpx;
+  color: #909da3;
+  background: #FFFFFF;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  font-size: 22rpx;
+}
+.end_num{
+  padding-bottom: 100rpx;
+}
+/* 按钮的去除样式操作 */
+.buttonx{
+  background-color:#FFFFFF!important;
+  border-bottom: 1rpx solid #EEEFF3;
+
+  font-size:26rpx;
+  line-height:normal;
+
+  outline:none;
+  list-style: none;
+  border-radius: none;
+
+}
+.buttonx::after{
+  border: 0px;
+}
+/* 未登录状态的样式 */
+.notLogin .logRight image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.notLogin{
+  background: #FFFFFF;
+  padding: 40rpx 30rpx 50rpx 30rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logLeft view:nth-of-type(1){
+  font-size: 42rpx;
+  font-weight: 500;
+}
+.logLeft view:nth-of-type(2){
+  font-size: 30rpx;
+
+}
+/**增加编辑*/
+.bj{
+  width: 23rpx;
+  height: 27rpx;
+
+}
+.Bj{
+  /* position: absolute; */
+  font-size: 26rpx;
+  /* right: 0;
+  top:24rpx; */
+  padding: 10rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}

@@ -1,0 +1,13 @@
+<!--pages/child/Template/List.wxml-->
+<import src="/pages/child/Template/Template.wxml"/>
+<scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 
+     
+       <!-- <template is="tar_count" />  -->
+
+       <template is="banner"  data="{{...mydata}}"  /> 
+         
+       <template is="recommend"  data="{{...workType}}"/> 
+   
+       <include src="/pages/child/Template/position.wxml"/>
+
+  </scroll-view>

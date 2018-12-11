@@ -1,0 +1,5 @@
+/* pages/child/resume/resume.wxss */
+  @import "/pages/child/collect/collect.wxss";  
+  .Tdtitle {
+    padding: 50rpx 0 40rpx 0;
+  }

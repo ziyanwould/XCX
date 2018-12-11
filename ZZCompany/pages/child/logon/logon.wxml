@@ -1,0 +1,15 @@
+<!--pages/child/logon/logon.wxml-->
+<import src="/template/nav" />
+<block wx:if='{{!logine}}'>
+  <template is="logon" data='{{...useDa}}'/> 
+</block>
+
+<block wx:if='{{logine}}'>
+   <template is="Login" data='{{...useDa}}'/>
+</block>
+
+
+<!-- 加入联动动地址选择 -->
+<import src="/model/model.wxml"/>
+<view wx:if="" class="infoText">{{province}} {{city}} {{county}}</view>
+<template is="areaData" data="{{...item}}"/>

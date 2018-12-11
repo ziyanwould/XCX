@@ -1,0 +1,93 @@
+/* pages/child/Login/Login.wxss */
+page{
+  width: 100%;
+  height: 100%;
+ 
+}
+.all{
+  height: 100%;
+  margin: 0 60rpx;
+  position: relative;
+}
+.se1{
+  padding-top: 70rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.se1 view:nth-child(1){
+  color: #000000;
+  font-size: 36rpx;
+
+}
+.se1 view:nth-child(2){
+  color: #02af83;
+  font-size: 28rpx;
+  padding-right: 26rpx;
+
+}
+.se2{
+  padding: 22rpx 0;
+  margin-top: 22rpx;
+}
+.se2 >view{
+  border-bottom: 1rpx solid #e5e6e8;
+  margin-bottom: 22rpx;
+}
+.se2 input{
+  padding: 22rpx 0;
+  font-size: 32rpx;
+  color: #c9c9c9;
+  
+}
+.se2 .input{
+
+  position: relative;
+}
+.se2 .input view{
+
+  position: absolute;
+  font-size: 28rpx;
+  color: #000000;
+  right: 0;
+  top: 24rpx;
+
+}
+.se3{
+  margin-top: 70rpx;
+}
+.se3 view{
+  margin-top: 40rpx;
+ font-size: 30rpx;
+ color: #808080;
+}
+.se3 text{
+
+ color: #000000;
+}
+.se_end{
+
+ position: absolute;
+  color: #02af83;
+  font-size: 28rpx;
+  bottom: 60rpx;
+}
+.time{
+  background-color:#FFFFFF!important;
+  display: inline-block;
+  line-height:normal;
+  border:none;
+  outline:none;
+  list-style: none;
+  border-radius: none;
+  position: absolute;
+  font-size: 28rpx;
+  color: #000000;
+  right: 0;
+  top: 24rpx;
+  z-index: 99;
+
+}
+.time::after{
+  border: none;
+}

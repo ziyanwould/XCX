@@ -1,0 +1,92 @@
+<!--pages/child/position/position.wxml-->
+<view class='section1'>
+   <view class='JobDescription'>
+     <view class='Jtitle'>{{message.title}}</view>
+     <view class='job'>
+     <text class='salary'>{{message.year_wages}}{{message.month_wages}}</text>/{{jobType=='兼职'?'年':'月'}}
+     <text class='partition'>{{message.type}}</text></view>
+     <view class='soci' wx:if='{{message.job_fir_type}}'>{{message.job_fir_type}}：{{message.job_sec_type}}</view>
+      <view class='soci' wx:if='{{message.certificate["0"]}}'>{{message.certificate[0].fir_type_name}} : {{message.certificate[0].sec_type_name}}</view>
+   </view>
+   <view class='Cfirst'>
+     <view class='fLeft'>
+       <view class='lOne'>{{message.company.name}}</view>
+       
+       <!-- <view class='lTwo'>{{label}}</view> -->
+        <!-- <view class='lThird'>
+         <image style='width:104rpx;height:35rpx' src='{{attestation}}'></image>
+         <image style='width:202rpx;height:35rpx' src='{{types}}'></image>
+        </view> -->
+     </view>
+     <view class='fRight'>
+      <image style='width:118rpx;height:118rpx' src='{{message.company.logo?message.company.logo:companyPerson}}'></image>
+     </view>
+   </view>
+
+
+</view>
+
+<view class='section2'>
+
+
+    
+ 
+   <view class='Seaddress'>
+     <view class='Setitle tianbai'>职位描述</view>
+     <view class='tag' wx:if='{{message.certificate["0"]}}'>
+            <!-- <view class='child_tag' >{{message.certificate["0"].fir_type_name}} </view>
+            <view class='child_tag' >{{message.certificate["0"].sec_type_name}} </view> -->
+            <view class='child_tag' >{{message.certificate["0"].city}} </view>
+              <view class='child_tag' >{{message.certificate["0"].cert_use}} </view>
+            <view class='child_tag' >{{message.certificate["0"].reg_status}} </view>
+             <view class='child_tag' >{{message.certificate["0"].cert_status}} </view>
+
+             
+     </view>
+    <view class='tag' wx:if='{{message.city}}'>
+  <!-- 全职 -->
+      <view class='child_tag' >{{message.city}} </view>
+      <view class='child_tag' >{{message.education}} </view>
+      <view class='child_tag' >{{message.job_exp}} </view>
+      <view class='child_tag' >{{message.need_count}} </view>
+    </view>
+     <view class='positionStatement'>
+       <view>岗位职责：</view>
+       <view class='psCount'>
+        {{message.remark}}
+       </view>
+
+        <!-- <view style='margin-top:60rpx;'>任职资格：</view>
+        <view class='psCount'>
+         
+        </view> -->
+     </view>
+     <view class='Setitle ' style='width:520rpx'>职位发布者</view>
+     <view class='hrInformation'>
+           <image style='border-radius:85px;' class='person' src='http://www.liujiarong.top/WX/xcxHR.jpg'></image>
+           <view class='useDegin'><text>{{name}}</text>{{Ntype}}</view>
+           <view class='lastInfo'> <image src='http://www.liujiarong.top/WX/wx_lively.png'></image><text>最近活跃：{{hour}}小时前</text></view>
+            <view class='tag'>
+            <!-- 暂时隐去标签 -->
+             <!-- <view class='child_tag'  wx:for="{{tags}}" wx:key="item.id">
+             {{item.count}}
+           </view> -->
+     </view>
+     </view>
+     <view class='Setitle'>工作地址</view>
+
+     <view class='myaddress'  wx:for="{{list2}}" wx:key="item.id" bindtap="map" data-lat='{{item.lat}}' data-lon='{{item.lon}}'  data-area='{{item.address2}}'>
+       <view class='myLeft'>
+         <image style='width:28rpx;height:38rpx' src='http://www.liujiarong.top/WX/location.png'></image>
+       </view>
+       <view class='myMiddle'>
+         <view>{{item.address1}}</view>
+         <view>{{item.address2}}</view>
+       </view>
+       <view class='myRight'>
+           <image style='width:11rpx;height:18rpx' src='http://www.liujiarong.top/WX/Forwardarrow.png'></image>
+       </view>
+     </view>
+
+   </view>
+</view>

@@ -1,0 +1,33 @@
+/* pages/news/news.wxss */
+@import "/pages/child/posOrgin/posOrgin.wxss";  
+/**index.wxss**/
+.active{
+  background:#00A2E9;
+color:#FFFFFF;
+
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+/*引用组件样式*/
+@import "/template/template.wxss";  
+page{
+  background: #F6F7F7;
+}

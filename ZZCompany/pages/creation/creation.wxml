@@ -1,0 +1,40 @@
+<!--pages/creation/creation.wxml-->
+<import src="/template/nav" />
+<template is="notLogin" data="{{...items}}"/> 
+<block wx:if='{{!show}}'>
+ <include src="/template/bottom"/>
+</block>
+
+
+<view class="page  {{isIphoneX?'bottomPX':'bottomP'}}">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar" wx:if='{{!show}}'>
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'cssActive' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);background-color:#00A2E9;"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                   
+                      <template is='creation' data='{{...otherms}}'/>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+
+                       <template is='creation' data='{{...allms}}'/>
+                </view>
+             
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<!-- 加入联动动地址选择 -->
+<import src="/model/model.wxml"/>
+<view wx:if="" class="infoText">{{province}} {{city}} {{county}}</view>
+<template is="areaData" data="{{...item}}"/>
+

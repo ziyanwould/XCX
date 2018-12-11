@@ -1,0 +1,125 @@
+<!--pages/child/grabble/grabble.wxml-->
+<view class='pageAll'>
+  <!-- 头部搜索页 -->
+  <view class='psection1'>
+    <!-- <view class='tcount1' wx:if="{{gps}}" bindtap="jumpCity">{{city}} <image style='width:18rpx; height:11rpx;' src='http://www.liujiarong.top/WX/Comup.png'></image></view> -->
+
+      <view class='tcount1' wx:if="{{gps}}" bindtap="open" >{{changeJob}} <image style='width:18rpx; height:11rpx;' src='http://www.liujiarong.top/WX/Comup.png'  wx:if="{{company}}"></image></view>
+
+    <view class="Pinput" >
+     <input class=" {{!gps ? 'active' : ''}}" value='{{count}}' confirm-type="search" auto-focus="true"  bindconfirm="urlTime"  bindinput='watchPassWord'></input>
+     <image style='width:52rpx; height:52rpx;' src='http://www.liujiarong.top/WX/images/search.png'></image></view>
+    <view class='tcount2'  wx:if="{{gps}}" bindtap="urlTime">{{Fbutton}}</view>
+  </view>
+  <!-- 搜索内容呈现页 -->
+   <view class='psection2'>
+     <!-- 默认未搜索前页面 -->
+      <view class='seachBefore' wx:if="{{pageShow && selectD}}">
+         <view class='se1'>
+           <view class='se1Title'>
+            <text>历史搜索</text> <image bindtap='remove' style='width:27rpx; height:31rpx;' src='http://www.liujiarong.top/WX/WXdelect.png'></image>
+           </view>
+          <view class='se1Count'>
+             <!-- <text wx:for="{{history}}" wx:key="item.id">{{item.count}}</text>   -->
+               <text wx:for="{{historys}}" bindtap='gitval' data-val='{{item}}' wx:key="item.id">{{item}}</text>  
+          </view>
+         </view>
+
+           <view class='se2'>
+          <!-- 20180530暂时隐去 -->
+           <!-- <view class='se2Title'>
+            <text>猜你想搜</text>
+           </view> -->
+           <!-- <view class='se2Count'>
+              <text wx:for="{{enjoy}}" bindtap='gitval' data-val='{{item.name}}' wx:key="item.id">{{item.name}}</text>  
+           </view>  -->
+
+         </view>
+      </view>
+       <block wx:if="{{!pageShow}}"> 
+        <!-- 需要可置顶，可固定的职位筛选栏 -->
+        <view class='gps'  wx:if='{{company}}'>
+          <view wx:for="{{changeJob=='兼职'?used_list:used_lists}}"  wx:key="*this" class="{{activeIndex==index?'active':''}}" id="{{index}}" bindtap="active">{{item.name}} 
+          <image style='width:18rpx; height:11rpx' src="{{activeIndex==index?'http://www.liujiarong.top/WX/Comup2.png':'http://www.liujiarong.top/WX/Comup.png'}}"></image>
+          </view>
+        
+        </view>
+          <block wx:if="{{selected}}">
+          <!-- 搜索出来的公司板块 -->
+          <view class='seachCompay'  wx:if='{{!company}}'>
+             <!-- <include src="/pages/child/Template/companyMode.wxml"/> -->
+
+             <view class='section1' wx:for="{{searchList}}" wx:key="*this">
+                <view class='Cfirst' >
+                  <view class='fLeft'>
+                    <view class='lOne'>{{companys}}</view>
+                    <view class='lTwo'>{{label}}</view>
+                      <view class='lThird'>
+                      <image style='width:104rpx;height:35rpx' src='{{attestation}}'></image>
+                      <image style='width:202rpx;height:35rpx' src='{{types}}'></image>
+                      </view>
+                  </view>
+                  <view class='fRight'>
+                    <image style='width:118rpx;height:118rpx' src='{{companyPerson}}'></image>
+                  </view>
+                </view>
+              </view>
+
+             <view class='otherCompany' bindtap="clickMCity">
+              <text>查看全部13个相关公司</text>
+              <image style='width:11rpx; height:18rpx' src='http://www.liujiarong.top/WX/Forwardarrow.png'></image>
+             </view>
+            </view>
+           <!-- 搜索出来的列表 -->
+           <view class='Wxlist' wx:if='{{company}}'>
+           <!-- <include src="/pages/child/Template/position.wxml"/> -->
+            <block wx:if='{{changeJob == "兼职" ?true : false}}'>
+                <include src="../Template/parTimeJob.wxml"/>
+            </block>
+            <block wx:if='{{changeJob != "兼职" ?true : false}}'>
+                <include src="../Template/fullTimeJob.wxml"/>
+            </block>
+              <view class='noDt' wx:if='{{(!pageshows) && !otherNumber}}'>
+                  <image style='width:352rpx;height:305rpx;' src='http://www.liujiarong.top/WX/bannerTd.png'></image>
+                    <view class='Dtcount'>暂无相关职位</view>
+                    <view class='Dtcount'>尝试换个关键字吧</view>
+                </view>
+           </view>
+          </block>
+           <!-- 二级赛选内容  与搜索出来的公司板块，搜索出来的列表两者只显示一个-->
+           <block wx:if="{{!selected}}">
+             <view class='preparation'>
+              
+               <block wx:for="{{changeJob=='兼职'?CRL:Jobl}}"  wx:key="*this" wx:for-index="indexs">
+                      <view class='preTitle'>{{item.name}}</view>
+                      <view wx:for="{{item.seclist}}"  wx:key="*this" class="preCount {{xuhao==item.id?'active':''}}" bindtap="actives" data-value="{{item.name}}" 
+                      id='{{item.id}}' data-parent_id='{{item.parent_id}}'>
+                       {{item.name}}
+                      </view>
+              </block> 
+                  <!-- 确定和取消 -->
+                  <view class='surse'>
+                   <button class="usebtn u1" bindtap="selectClick">确定</button>
+                   <button class="usebtn u2" bindtap="Noselect">取消</button>
+                  </view>
+                  
+              </view>
+                
+           </block>
+      </block>
+      <!-- 搜索提示框 -->
+      <view class='searchResult' wx:if="{{!selectD}}">
+
+       <block wx:for="{{searchList}}" wx:for-item="itemfactory" wx:key="0">
+
+        <view class='seacChild' bindtap='gitval' wx:for="{{itemfactory.seclist}}" wx:key="this" 
+         data-val='{{item.name}}' data-id='item.id' data-parentId='item.parent_id' >
+          <image style='width:30rpx; height:33rpx;' src='http://www.liujiarong.top/WX/searchResult.png'></image>
+          {{item.name}}
+        </view>
+
+       </block> 
+      </view>
+  </view>
+ 
+</view>

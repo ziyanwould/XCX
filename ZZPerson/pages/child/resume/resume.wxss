@@ -1,0 +1,306 @@
+/* pages/child/resume/resume.wxss */
+page{
+  background: #F1F4F2;
+}
+
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  margin-right: 36rpx;
+  
+}
+.title_s1{
+  display: flex;
+  justify-content:space-between;
+  background: #FFFFFF;
+  margin-top: 1rpx;
+}
+.s1_left{
+  padding-left: 35rpx;
+  padding-top: 20rpx;
+  position: relative;
+  flex: 1;
+}
+.userinfo-nickname{
+  font-size: 48rpx;
+  color: 0e050b;
+}
+.title_s2{
+  font-size: 28rpx;
+   padding-top: 10rpx;
+}
+.title_s3{
+  font-size: 26rpx;
+  color: #9a9a9a;
+  padding-top: 10rpx;
+}
+.bj{
+  width: 23rpx;
+  height: 27rpx;
+
+}
+.Bj{
+  position: absolute;
+  font-size: 26rpx;
+  right: 0;
+  top:24rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.phone image{
+  width: 21rpx;
+  height: 23rpx;
+}
+.email image{
+  width: 31rpx;
+  height: 23rpx;
+}
+.phone,.email{
+font-size: 27rpx;
+background-color: #FFF;
+padding-top: 30rpx;
+ padding-left: 35rpx;
+}
+.phone{
+padding-top: 50rpx;
+}
+.email{
+  padding-bottom: 40rpx;
+}
+.phone em,.email em{
+ display: inline-block;
+ width: 70rpx;
+}
+.s2_right image{
+ width: 11rpx;
+ height: 18rpx;
+}
+.s2{
+  background: #FFFFFF;
+  padding:0 30rpx;
+}
+.s2_all{
+  border-top: 2rpx solid #F1F4F2;
+  height: 100rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size: 28rpx;
+}
+.s2_left{
+  color: #0e050b;
+}
+.s2_right{
+  color: #999999;
+}
+.s2_right text{
+  display: inline-block;
+  margin-right: 25rpx;
+}
+
+.section2{
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  background: #FFFFFF;
+}
+
+.sec2_1{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top: 35rpx;
+  padding-bottom: 56rpx;
+}
+.sec2_1 text{
+  color: #0e050b;
+  font-size: 36rpx;
+}
+.sec2_1 navigator{
+  color: #15ae8b;
+  font-size: 26rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  
+}
+.sec2_2{
+  font-size: 32rpx;
+  color: #0e050b;
+  margin-bottom: 20rpx;
+}
+.sec2_3{
+  color: #999999;
+  font-size: 29rpx;
+  padding-bottom: 72rpx;
+}
+.section3{
+  padding: 0 30rpx;
+  background: #FFFFFF;
+  margin-bottom: 20rpx;
+}
+.s3_title{
+ color: #0e050b;
+ font-size: 36rpx;
+ padding-top: 36rpx;
+ padding-bottom: 36rpx;
+}
+.sec_child{
+  padding-left:36rpx;
+}
+.Schild1 image{
+  width: 84rpx;
+  height: 27rpx;
+}
+.text1{
+  font-size: 32rpx;
+  color: #0e050b;
+  padding-bottom: 16rpx;
+}
+.text2{
+  font-size: 29rpx;
+  color: #999999;
+  padding-bottom: 16rpx;
+}
+.text3{
+  font-size: 24rpx;
+  color: #999999;
+  padding-bottom: 76rpx;
+}
+.Schild3 navigator{
+  color: #15ae8b;
+  font-size: 26rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.sec_child{
+  display: flex;
+}
+.Schild2{
+  flex: 1;
+}
+.Schild1{
+ width: 135rpx;
+}
+.add_child{
+  border-top: 2rpx solid #F1F4F2;
+  color: #0e050b;
+  font-size: 29rpx;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  height: 100rpx;
+}
+.add_child image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 20rpx;
+}
+.exp1{
+display: flex;
+justify-content:space-between;
+}
+.exp1_left image{
+  width: 22rpx;
+  height: 22rpx;
+  padding-left: 8rpx;
+}
+.exp1_left{
+  font-size: 32rpx;
+}
+.exp1_right navigator{
+  font-size: 26rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.exp1{
+  color: #15ae8b;
+}
+.exp2{
+  font-size: 29rpx;
+  color: #999999;
+  padding-bottom: 10rpx;
+}
+.exp3{
+  font-size: 24rpx;
+  color: #999999;
+    padding-bottom: 20rpx;
+}
+.content_title{
+  font-size: 29rpx;
+  color: #0e050b;
+}
+.content_count{
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 32rpx;
+  padding:32rpx 0;
+}
+.sec_other{
+  background: #FFFFFF;
+  margin-bottom: 20rpx;
+  padding: 0 30rpx;
+}
+.other_title{
+  display: flex;
+  justify-content:space-between;
+}
+.sec_other{
+padding-top: 20rpx;
+}
+.other_title text{
+  font-size: 36rpx;
+}
+.other_title navigator{
+  font-size: 26rpx;
+  color: #15ae8b;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.sec_count{
+  padding: 50rpx 0;
+  color: #999999;
+  font-size: 29rpx;
+}
+.notes{
+  color: #999999;
+  font-size: 20rpx;
+  text-align: center;
+  padding-top: 60rpx;
+  padding-bottom: 150rpx;
+}
+
+/**/
+.avatar{
+    width: 5rem;
+    height: 5rem;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+}
+/*证书版块*/
+.sec_other .sec_book{
+  padding:35rpx 0;
+  color:#999999;
+  font-size:29rpx;
+
+}
+.sec_book1{
+ color:#0e050b;
+  font-size:32rpx;
+
+}
+.sec_book2{
+
+   color:#999999;
+  font-size:29rpx;
+}
+.sec_book3{
+ color:#999999;
+  font-size:26rpx;
+  
+}
+.mybook{
+  display: flex;
+  justify-content:space-between;
+}

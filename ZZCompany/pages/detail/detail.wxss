@@ -1,0 +1,6 @@
+/* pages/detail/detail.wxss */
+/*引用组件样式*/
+@import "/template/template.wxss";  
+page{
+  background: #F6F7F7;
+}

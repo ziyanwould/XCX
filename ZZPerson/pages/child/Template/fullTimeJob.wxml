@@ -1,0 +1,42 @@
+<view class='paTimejob fullTimeJob' wx:for='{{list}}' wx:key='*this'  bindtap="tapCompass" data-counts='{{item}}'>
+     <view class='fullLight' wx:if='{{item.Company_Logo}}'>
+        <!-- <image src='http://www.liujiarong.top/WX/company.png'></image> -->
+         <image src='{{item.Company_Logo}}'></image>
+    </view> 
+    <view class='fullRight'>
+      <view class='sec'>
+        <view class='sec_left'>
+          <text class='titles'>{{item.Position_Title}}</text>
+          <text class='own' wx:if='{{item.Company_Name=="广州猎聘人力资源服务有限公司"}}' >自营</text>
+          <!-- <text class='own' wx:if='{{item.User_Id=="c9f0d806-7761-49e0-9c06-b0893b603cf9"}}' >自营</text> -->
+        </view> 
+        <view class='sec_right'>
+          <text class='pays'>{{item.Position_Month_Wage}}</text>
+        </view> 
+      </view>
+      <view class='sec'>
+        <view class='sec_left'>
+          <text class='tag'>{{item.City}}</text>
+          <text class='tag'>{{item.County}}</text>
+           <text class='tag'>{{item.Education}}</text>
+        </view>
+
+        <view class='sec_right'>
+          <text class='time'>{{item.Utime}}</text>
+            <text class='time' wx:if='{{item.Deliver_Time}}'>{{item.Deliver_Time}}</text>
+        </view>
+      </view>
+        <view class='sec'>
+        <view class='sec_left self'>
+          <image class='tagcompany' src='http://www.liujiarong.top/WX/tagcompay.png'></image>
+          <text class='count'>{{item.Company_Name}}</text>
+        </view>
+
+        <view class='sec_right'>
+          <text class='distance'>{{item.KM}}</text>
+        </view>
+      </view>
+    </view>
+    
+
+</view>

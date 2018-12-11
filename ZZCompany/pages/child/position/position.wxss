@@ -1,0 +1,2 @@
+/* pages/child/position/position.wxss */
+@import '/template/Positondel.wxss';

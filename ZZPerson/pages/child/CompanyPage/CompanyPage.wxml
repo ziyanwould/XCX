@@ -1,0 +1,80 @@
+<!--pages/child/CompanyPage/CompanyPage.wxml-->
+<include src="/pages/child/Template/companyMode.wxml"/>
+
+ <view class='Setitled'>
+      <view class="{{unfold ? 'active' : ''}}" bindtap='change1'>公司主页</view>
+      <view class="{{!unfold ? 'active' : ''}}" bindtap='change2'>在招职位<image src='http://www.liujiarong.top/WX/Comup.png'></image></view>
+</view>
+
+
+
+<block wx:if="{{unfold}}">
+   <view class='section2'>
+  
+   <view class='Secount'>
+     <view class='count1'> 
+       中住71（www.zhongzhu71.com）是广东中住七一网络科技有限公司创办经营的中国领先的城市建设领域服务供应平台，致力通过共享为城市建设领域提供专业化、定制化、一站式服务。
+       服务范围涵盖建筑行业各门类培训、企业资质、企业认证、知识产权、人才猎聘、项目咨询、工程咨询、管理咨询、法律服务、金融服务、财税服务等近百项服务。
+      </view>
+      <view class='countMore'>
+         <image src='{{counturl}}'></image>
+       </view>
+     </view>
+    
+ 
+   <view class='Seaddress'>
+     <view class='Setitle'>工作地址</view>
+
+     <view class='myaddress'  wx:for="{{list2}}" wx:key="item.id" bindtap="map" data-lat='{{item.lat}}' data-lon='{{item.lon}}'  data-area='{{item.address2}}'>
+       <view class='myLeft'>
+         <image style='width:28rpx;height:38rpx' src='http://www.liujiarong.top/WX/location.png'></image>
+       </view>
+       <view class='myMiddle'>
+         <view>{{item.address1}}</view>
+         <view>{{item.address2}}</view>
+       </view>
+       <view class='myRight'>
+           <image style='width:11rpx;height:18rpx' src='http://www.liujiarong.top/WX/Forwardarrow.png'></image>
+       </view>
+     </view>
+
+
+   </view>
+</view>
+
+
+  <view class='seend'>
+  <text>Powered by human.com</text>
+ <button open-type='share' style='width:100rpx;height:100rpx' class='buttonx'>
+  <image style='width:100rpx;height:100rpx;position:relative;left:-28rpx;' src='http://www.liujiarong.top/WX/CompanyShare.png'></image>
+  </button>
+</view>
+
+
+
+</block>
+
+<block wx:if="{{!unfold}}">
+
+ <view class='tags'>
+    <view class="tagsChild {{item.nunber==10 ? 'active' : ''}}" wx:for="{{list3}}" wx:key="item.id">
+     {{item.name}}
+    </view>
+ </view>
+
+ <view class='ListTable'>
+    <view class='lte' wx:for="{{listd}}" wx:key="item.id" >
+      <view class='lte1'><text class='Etitle'>运营专员</text><text class='Epay'>8K-10K</text></view>
+      <view class='lte2'>
+        <view class='ltb_left'>
+          <text>广州</text> <text>客村</text> <text>设计类</text> <text>{{item.easy_name}}</text>
+        </view>
+         <view class='ltb_right'>
+            {{item.chapter_media}}
+        </view>
+      </view>
+    </view>
+ </view>
+
+ <view class='nomore'>没有更多了</view>
+</block>
