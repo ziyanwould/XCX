@@ -45,7 +45,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    page=0;
+    page=1;
     this.getMessage()
   },
 
@@ -61,8 +61,6 @@ Page({
    */
   onShow: function () {
     let that = this;
-    page = 0;
-    that.getMessage()
     that.setData({
       list: []
     })

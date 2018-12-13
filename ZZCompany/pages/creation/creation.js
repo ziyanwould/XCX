@@ -617,7 +617,7 @@ Page({
     this.selsect(arry, ele)
   },
   education(){
-    let arry = ["高中", "大专", "本科", "硕士","博士以上","不限"];
+    let arry = ["高中以下", "大专", "本科", "硕士","博士以上","不限"];
     let ele = 'allms.select[1].child[4].countCount';
     this.selsect(arry, ele)
   },

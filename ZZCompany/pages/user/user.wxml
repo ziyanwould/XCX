@@ -30,7 +30,9 @@
 
               <view  class='Clist'><view class='imgCen'><image class='image4' src='http://www.liujiarong.top/WXImg/recommend.png'></image></view><text>企业介绍</text></view>
               <view class='detail'>
-               {{Company_Intro!=null?Company_Intro:"(未填写)"}}
+              <text>
+                  {{Company_Intro!=null?Company_Intro:"(未填写)"}}
+              </text> 
               </view>
          
               <image class='image5' src='{{Company_Logo?Company_Logo:"http://www.liujiarong.top/WXImg/logos.png"}}'></image>

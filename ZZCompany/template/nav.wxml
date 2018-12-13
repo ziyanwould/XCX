@@ -428,7 +428,8 @@
      <!-- 1、人品公诚勤勇、端正朴实，作风务实严谨，能吃苦耐劳；能承受加班和出差，能适应施工现场工作；<br/>
      2、熟悉国家及相关行业有关工程的法律法规。<br/>
      3、熟悉建设工程方案的编制、审核工作；工程资料的编制收集管理工作；工程竣工验收的相关工作。<br/> -->
-       {{resumePart.selfDescription.content}}
+     <text>{{resumePart.selfDescription.content}}</text>
+    
     </view>
   </view>
   <block wx:if='{{fullTime}}'>

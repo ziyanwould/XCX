@@ -42,6 +42,33 @@ Page({
     //var height = '100%';
     that.getmessage();
     that.remain();
+    //提示有菜单
+    try {
+      let value = wx.getStorageSync('nav')
+
+      if (value == 0) {
+        console.log('value', value)
+        wx.showModal({
+          title: '操作提示',
+          content: '尊敬的用户，在列表轻按侧滑，可以展开菜单。',
+          confirmText: "不再提示",
+          cancelText: "关闭",
+          success: function (res) {
+            console.log(res);
+            if (res.confirm) {
+              console.log('用户点击主操作')
+              try {
+                wx.setStorageSync('nav', '1')
+              } catch (e) { }
+            } else {
+              console.log('用户点击辅助操作')
+            }
+          }
+        });
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
   },
 
   ontouchstart: function (e) {

@@ -104,7 +104,8 @@
 <view class='sec_other'>
     <view class='other_title'><text>自我描述</text><navigator url="../selfDescription/selfDescription?type=selfDescription.content&parTime=true">编辑</navigator></view>
     <view class='sec_count'>
-     {{resume.selfDescription.content}}
+    <text>{{resume.selfDescription.content}}</text>
+   
     </view>
 </view>
 

@@ -135,25 +135,25 @@ Page({
         'class':'image0',
         'pic':'business',
         'classt':'text0',
-        'count':'广东中住七一网络科技有限公司'
+        'count':''
       },
       {
         'class': 'image1',
         'pic': 'site',
         'classt': 'text1',
-        'count': '广州市中山大学科技园B座1818'
+        'count': ''
       },
       {
         'class': 'image2',
         'pic': 'Email',
         'classt': 'text2',
-        'count': '15622102239@qq.com'
+        'count': ''
       },
          {
         'class': 'image3',
         'pic': 'network',
         'classt': 'text3',
-        'count': 'www.zhongzhu71.com'
+        'count': ''
       }
     ]
   },
@@ -258,7 +258,7 @@ Page({
         });
       }
     })
-
+    that.getMessage();
   },
 
   /**
@@ -762,6 +762,35 @@ Page({
       // reject()
     });
  
+  }
+  ,
+  //20180529 信息数
+  getMessage: function () {
+
+    var that = this;
+    utils.post('api/message/get_count', {
+      'status':0
+    }, that.data.login_token).then((res) => {
+      console.log(res);//正确返回结果
+      console.log("信息记录", res)
+
+      if (res.count == 0) {
+        that.setData({
+          'comlist.[5].RTitle': '',
+        });
+      } else {
+        that.setData({
+          'comlist.[5].RTitle': `${res.count} 条未读  `,
+        });
+      }
+
+    }).catch((errMsg) => {
+      console.log(errMsg);//错误提示信息
+      wx.hideLoading();
+      //reject()
+    });
+
+
   }
   
 })

@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarTitleText": "建筑猎聘",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "backgroundTextStyle": "white",
+  "enablePullDownRefresh": true
+}

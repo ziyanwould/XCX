@@ -296,6 +296,11 @@ Page({
            'datas.buyType': '查看联系信息',
            busying: true
          })
+       } else if (res.data.message == "不需要购买"){
+         that.setData({
+           'datas.buyType': '查看联系信息',
+           busying: true
+         })
        }
        //resolve()
      }).catch((errMsg) => {
@@ -337,6 +342,20 @@ Page({
   hrclose(){
     this.setData({
       useinfo:false
+    })
+  },
+
+  bindphone: function (e) {
+    console.log(e)
+
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.id,
+      success: function () {
+        console.log('拨打电话成功')
+      },
+      fail: function () {
+        console.log("拨打电话失败")
+      }
     })
   }
 })

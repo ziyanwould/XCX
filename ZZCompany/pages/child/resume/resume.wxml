@@ -19,7 +19,7 @@
             </view>
             <view class='msg-menu'>
                 <view id='{{item.resume_id}}' class='menu-delete' bindtap='onDeleteMsgTap' bindlongtap='onDeleteMsgLongtap'>
-                    取消收藏
+                   删除简历
                 </view>
                 <!-- <view id='{{item.resume_id}}' class='menu-mark' bindtap='onMarkMsgTap' bindlongtap='onMarkMsgLongtap'>
                    {{ item.status=='公开' ? '设置保密' : '设置公开'}}

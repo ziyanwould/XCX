@@ -737,33 +737,21 @@ createResume:function(createpostion){
   getMessage: function () {
     var that = this;
     var setdata = {
-      "pageIndex": 1,
-      "pageSize": 50
+      'status': 0
     }
     // common.request('api/resume/deliver_log', {
-    common.request('api/message/get_list', {
+    common.request('api/message/get_count', {
       params: setdata,
       success: function (res) {
-        console.log("信息记录", res)
+        console.log("信息记录", res.data.data.count)
 
-        //common.deleteEmptyProperty(res);
-        // var res = JSON.stringify(res);
-        console.log('格式化消息', res);
-      
-          var list = 0;
-          for (var i = 0; i < res.data.data.list.length; i++) {
-            if (res.data.data.list[i].Status==0){
-              list++;
-            }
-          }
-          console.log('list', list)
-        if (list==0){
+        if (res.data.data.count==0){
           that.setData({
             'jobList[5].text':'',
           });
         }else{
           that.setData({
-            'jobList[5].text': `${list} 条未读`,
+            'jobList[5].text': `${res.data.data.count} 条未读`,
           });
         }
          

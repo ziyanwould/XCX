@@ -1,7 +1,7 @@
 // pages/child/Message/Message.js
 var app = getApp()
 var common = require('../../../utils/util.js');
-var page = 0;
+var page = 1;
 var pageSize = 10;
 
 
@@ -51,7 +51,7 @@ Page({
     that.setData({
       token: token.login_token
     })
-    page = 0;
+    page = 1;
     that.getMessage()
   },
 
@@ -67,8 +67,7 @@ Page({
    */
   onShow: function () {
     let that = this;
-    page = 0;
-    that.getMessage()
+
     that.setData({
       list:[]
     })
@@ -103,7 +102,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    ++page;
+    page++;
     wx.showLoading({
       title: '玩命加载中',
     })
@@ -122,6 +121,7 @@ Page({
       title: 'loading...',
     });
     var that = this;
+    console.log('页面信息',page, pageSize)
     common.post('api/message/get_list', {
       "pageIndex": page,
       "pageSize": pageSize
