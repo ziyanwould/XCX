@@ -22,7 +22,7 @@
   
 
      
-             <swiper indicator-dots="true"  autoplay="true" interval="5000" duration="500" circular="true"> 
+             <!-- <swiper indicator-dots="true"  autoplay="true" interval="5000" duration="500" circular="true"> 
     
        
         <swiper-item  > 
@@ -33,16 +33,26 @@
 
         <swiper-item> 
            <view class='bannerImg'>
-          <image src='http://www.zhongzhu71.com/UploadImgs/20171123//20171123170556212.png'></image>
+          <!-- <image src='http://www.zhongzhu71.com/UploadImgs/20171123//20171123170556212.png'></image> -->
+           <!-- <image src='http://www.liujiarong.top/WXImg/bannnernew3.png'></image>
         </view>
         </swiper-item> 
 
         <swiper-item> 
            <view class='bannerImg'>
-          <image src='http://www.zhongzhu71.com/UploadImgs/20171123//20171123165431252.png'></image>
+          <!-- <image src='http://www.zhongzhu71.com/UploadImgs/20171123//20171123165431252.png'></image> -->
+           <!-- <image src='http://www.liujiarong.top/WXImg/bannnernew4.png'></image>
         </view>
-        </swiper-item> 
-</swiper>
+        </swiper-item>  
+        </swiper> -->
+            <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}' bindchange="bindchange"  circular="{{circular}}" style="height:{{imgheights[current]}}rpx;">
+    <block wx:for='{{imgList}}' wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad"/>
+      </swiper-item>
+      </block>
+    </swiper>
+
       
 
     

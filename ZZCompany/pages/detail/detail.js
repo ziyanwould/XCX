@@ -47,7 +47,32 @@ Page({
       fn: 'seek',
     }
     ,
-    list: []
+    list: [],
+    mydata: {
+      seektype: "搜索职位",
+      //图片地址
+      imgList: ['http://www.liujiarong.top/WX/bannnernew1.png', 'http://www.liujiarong.top/WX/bannnernew2.png'],
+      //是否采用衔接滑动  
+      circular: true,
+      //是否显示画板指示点  
+      indicatorDots: true,
+      //选中点的颜色  
+      indicatorcolor: "#000",
+      //是否竖直  
+      vertical: false,
+      //是否自动切换  
+      autoplay: true,
+      //自动切换的间隔
+      interval: 2500,
+      //滑动动画时长毫秒  
+      duration: 100,
+      //所有图片的高度  
+      imgheights: [],
+      //图片宽度 
+      imgwidth: 750,
+      //默认  
+      current: 0
+    }
 
 
   },
@@ -263,5 +288,27 @@ Page({
       url: "/pages/child/Searchpage/Searchpage?permanent=2"//全职简历
       // url:"/pages/child/Positionsecond/Positionsecond"   
     })
+  },
+    /**轮播图 */
+  imageLoad: function (e) {//获取图片真实宽度  
+    var imgwidth = e.detail.width,
+      imgheight = e.detail.height,
+      //宽高比  
+      ratio = imgwidth / imgheight;
+    console.log(imgwidth, imgheight)
+    //计算的高度值  
+    var viewHeight = 750 / ratio;
+    var imgheight = viewHeight;
+    var imgheights = this.data.mydata.imgheights;
+    //把每一张图片的对应的高度记录到数组里  
+    imgheights[e.target.dataset.id] = imgheight;
+    this.setData({
+      'mydata.imgheights': imgheights
+    })
+  },
+  bindchange: function (e) {
+    // console.log(e.detail.current)
+    this.setData({ 'mydata.current': e.detail.current })
   }
+
 })

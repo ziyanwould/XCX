@@ -1,9 +1,10 @@
 <!--pages/creation/creation.wxml-->
 <import src="/template/nav" />
 <template is="notLogin" data="{{...items}}"/> 
-<block wx:if='{{!show}}'>
+<!-- 去掉自定义发布 -->
+<!-- <block wx:if='{{!show}}'>
  <include src="/template/bottom"/>
-</block>
+</block> -->
 
 
 <view class="page  {{isIphoneX?'bottomPX':'bottomP'}}">

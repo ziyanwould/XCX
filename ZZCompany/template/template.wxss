@@ -6,7 +6,11 @@
   height: 360rpx;
   overflow: hidden;
 
-} 
+}
+swiper image {
+  width: 100%;
+  height: auto;
+}  
 .seeinput{
   position: relative;
   margin:0 15rpx;

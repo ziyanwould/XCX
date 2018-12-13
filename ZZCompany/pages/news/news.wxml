@@ -1,6 +1,9 @@
 <!--pages/news/news.wxml-->
-<include src="/template/bottom"/>
+<!-- 去掉自定义发布 -->
+<!-- <include src="/template/bottom"/> -->
+
 <import src="/template/nav" />
+
 
 <template is="notLogin" data="{{...items}}"/> 
 <!-- <text>pages/news/news.wxml</text> -->

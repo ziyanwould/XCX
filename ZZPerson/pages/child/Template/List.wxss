@@ -80,10 +80,19 @@ text-align: left;
 
 /**/
 .banner{
-  width: 100%;
+  /* width: 100%; */
   position: relative;
   
 }
+
+.banner image{
+    width: 100%;
+    height: auto;
+}
+.banner swiper{
+  min-height: 150px;
+} 
+/****/
 .baCount{
    position: absolute;
    z-index: 10;

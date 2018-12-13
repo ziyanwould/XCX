@@ -31,5 +31,49 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "",
     "navigationBarTextStyle":"black"
-  }
+  } , 
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#14AFFC",
+    "backgroundColor": "#F7F8F8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "兼职人才",
+        "iconPath": "images/ico1_1.png",
+        "selectedIconPath": "images/ico1_2.png"
+      },
+      {
+        "pagePath": "pages/detail/detail",
+        "text": "全职人才",
+        "iconPath": "images/ico2_1.png",
+         "selectedIconPath": "images/ico2_2.png"
+      },
+      {
+        "pagePath": "pages/creation/creation",
+        "text": "发布",
+        "iconPath": "images/ico3_1.png",
+        "selectedIconPath": "images/ico3_2.png"
+      },
+        {
+          "pagePath": "pages/news/news",
+          "text": "推荐",
+          "iconPath": "images/ico4_1.png",
+          "selectedIconPath": "images/ico4_2.png"
+        },
+          {
+            "pagePath": "pages/user/user",
+            "text": "公司",
+            "iconPath": "images/ico5_1.png",
+            "selectedIconPath": "images/ico5_2.png"
+          }
+
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }

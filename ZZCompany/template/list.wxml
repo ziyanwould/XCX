@@ -1,10 +1,14 @@
-<include src="bottom"/>
+<!-- 去掉自定义发布 -->
+<!-- <include src="bottom"/> -->
+
 <import src="nav" />
 <template is="notLogin" data="{{...items}}"/> 
 <block>
- <template is="banner" />
+ <template is="banner" data="{{...mydata}}"/>
  <template is='seek' data='{{...seek}}'/>
 </block>
+
+
 <view class="count'  {{isIphoneX?'bottomPX':'bottomP'}}">
  <block wx:for="{{list}}" wx:key="{{this}}">
    <template is='partTime' data='{{...item}}'/>
