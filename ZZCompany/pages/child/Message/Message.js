@@ -51,8 +51,7 @@ Page({
     that.setData({
       token: token.login_token
     })
-    page = 1;
-    that.getMessage()
+ 
   },
 
   /**
@@ -71,6 +70,8 @@ Page({
     that.setData({
       list:[]
     })
+    page = 1;
+    that.getMessage()
   },
 
   /**

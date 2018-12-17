@@ -7,7 +7,7 @@
      <view class='s1_left'>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text> 
         <view class='title_s2'>
-          <text class="">{{userInfo.gender}}/{{userInfo.city}}市/{{userInfo.job_years}}</text> 
+          <text class="">{{userInfo.gender}}/{{userInfo.city}}/{{userInfo.job_years}}</text> 
         </view>
         <view class='title_s3'>
           <text class="">{{userInfo.remark}}</text> 
@@ -58,7 +58,7 @@
     </view>
 
     <view class='sec2_2'>
-           {{resume.expectWork.work}}
+          <text>{{resume.expectWork.work}}</text> 
     </view>
 
      <view class='sec2_3'>
@@ -69,7 +69,7 @@
             标题
           </view>
           <view class='content_count'>
-           {{resume.expectWork.moreInfo}}
+          <text>{{resume.expectWork.moreInfo}}</text> 
          </view>
       </view>
 </view>
@@ -83,7 +83,7 @@
      <view class='Schild2'>
         <view class='text1'>{{item.post}}</view>
         <view class='text2'>{{item.company}}</view>
-        <view class='text3'>{{item.startTime}} - {{item.endTime}}</view>
+        <view class='text3'>{{item.startTime}} - {{item.endTime=='3000-12'?'至今':item.endTime}}</view>
      </view>
      <view class='Schild3'><navigator url="../../child/WorkExperience/WorkExperience?id={{index}}&type=workExperience">编辑</navigator></view>     
    </view>
@@ -92,7 +92,7 @@
             工作内容
             </view>
             <view class='content_count'>
-             {{item.jobContent}}
+            <text>{{item.jobContent}}</text> 
           </view>
     </view>
    </block>
@@ -107,7 +107,12 @@
    <view class='s3_title'>教育经验</view>
 
    <view class='sec_child' wx:for="{{resume.education}}" wx:key="this">
-     <view class='Schild1'><image style=' width: 87rpx;height: 87rpx;' src='https://api.17liepin.com/images/college/{{item.college_icon}}.jpg'></image></view>
+     <view class='Schild1'>
+     <image  style=' width: 87rpx;height: 87rpx;' src='https://api.17liepin.com/images/college/{{item.college_icon}}.jpg'></image>
+     <!-- <image wx:if="{{item.college_icon!='icon_default'}}" style=' width: 87rpx;height: 87rpx;' src='https://api.17liepin.com/images/college/{{item.college_icon}}.jpg'></image>
+    <image  wx:if="{{item.college_icon=='icon_default'}}" style=' width: 87rpx;height: 87rpx;border-radius:87rpx;' src='http://www.liujiarong.top/WX/moSchool.jpg'></image> -->
+     
+     </view>
      <view class='Schild2'>
         <view class='text1'>{{item.school}}</view>
         <view class='text2'>{{item.educationBack}}/{{item.profession}}</view>
@@ -161,7 +166,7 @@
             工作内容
           </view>
           <view class='content_count'>
-           {{item.projectContent}}
+            <text>{{item.projectContent}}</text> 
          </view>
       </view>
    </view>
@@ -174,7 +179,7 @@
 <view class='sec_other'>
     <view class='other_title'><text>自我描述</text><navigator url="../selfDescription/selfDescription?type=selfDescription.content">编辑</navigator></view>
     <view class='sec_count'>
-     {{resume.selfDescription.content}}
+    <text>{{resume.selfDescription.content}}</text> 
     </view>
 </view>
 
@@ -182,7 +187,7 @@
     <view class='sec_other' wx:for="{{resume.userDefine}}" wx:key="*this">
         <view class='other_title'><text>{{item.title}}</text><navigator url="/pages/child/customPlate/customPlate?id={{index}}&type=userDefine">编辑</navigator></view>
         <view class='sec_count'>
-        {{item.content}}
+       <text>{{item.content}}</text> 
         </view>
     </view>
 </block>

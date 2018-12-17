@@ -105,13 +105,13 @@ Page({
       },
       {
         'class': 'image6',
-        'image': 'Cperson',
+        'image': 'icon2',
         'mes': '职位管理',
         'fn': 'notlogin'
       },
       {
         'class': 'image7',
-        'image': 'Ctell',
+        'image': 'icon3',
         'mes': '收藏夹',
         'fn': 'notlogin'
       }

@@ -67,7 +67,9 @@ Page({
         num: options.id,
         infoChild: self.certificate[options.id],
         resumeId: self.resume_id,
-        moben: self.certificate[options.id].id
+        moben: self.certificate[options.id].id,
+        active: self.certificate[options.id].ger_type_id,
+        province: self.certificate[options.id].province
       })
     } else {
       this.setData({
@@ -78,7 +80,7 @@ Page({
       })
     }
 
-    //console.log(this.data.key, this.data.num, this.data.infoChild)
+    console.log(this.data.key, this.data.num, this.data.infoChild)
     //end
     if(options.approveID){
       this.setData({
@@ -564,6 +566,7 @@ Page({
 
       }
     }
+    console.log('setdatas', setdatas)
     let result = common.IsEmpty(setdatas);
     if (!result) {
       return false;

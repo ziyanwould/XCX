@@ -10,7 +10,7 @@ Page({
      company:"",
      position:"请输入",
      entrytime:"请选择",
-     endtime:"至今",
+     endtime:"3000-12",//用3000-12 替换至今
      switchs:true,
      input:null
 
@@ -203,6 +203,7 @@ Page({
         "end_Time": that.data.endtime + "-29T14:03:30.599Z"
 
       }
+      console.log('setdata',setdata)
     }
     let result = common.IsEmpty(setdata);
     if (!result) {

@@ -25,8 +25,9 @@ Page({
   onLoad: function (options) {
     //console.log("options",options)
     var arrc = common.sjc();
+    console.log(arrc);
     this.setData({
-      GraduationYear: arrc[2]
+      GraduationYear: arrc[1]
       
     });
     

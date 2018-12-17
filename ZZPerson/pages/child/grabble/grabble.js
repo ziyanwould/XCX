@@ -345,7 +345,8 @@ Page({
       historys: []
     })
   }
-  , gitval:function(event){
+  , 
+  gitval:function(event){
     var that = this;
     console.log(event.currentTarget.dataset.val);
     //收索历史记录
@@ -400,7 +401,8 @@ Page({
     }
   
   }
-  , clickMCity:function(){
+  ,
+   clickMCity:function(){
     wx.navigateTo({
       url: "/pages/AboutCompany/AboutCompany"
     }) 

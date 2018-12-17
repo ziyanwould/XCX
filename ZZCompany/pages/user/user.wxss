@@ -1,8 +1,6 @@
 
 /* pages/user/user.wxss */
-page{
-  height: 1000px;
-}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -134,15 +132,17 @@ margin-bottom: 20rpx;
   align-items:center;
    justify-content: space-between;
    margin:0 30rpx  2rpx 30rpx;
+   color: rgba(0, 0, 0, 0.8);
 }
 .quit{
-  margin: 160rpx 30rpx ;
+  margin:  30rpx ;
   background: #139AE3;
   color: #FFFFFF;
 }
 .list .left{
   display: flex;
    justify-content:center;
+   font-size: 28rpx;
 }
 .detail{
   margin-top: 20rpx;

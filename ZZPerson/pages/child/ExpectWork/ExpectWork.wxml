@@ -39,7 +39,7 @@
   标题内容
 </view>
 <view class='text_count'>
-  <textarea placeholder='请填写补充说明...' style='width:100%' bindinput='watchPassWord' data-self='info.expectWork.moreInfo' value='{{ info.expectWork.moreInfo}}'>
+  <textarea placeholder='标题请少于16个字' style='width:100%' bindinput='watchPassWord' data-self='info.expectWork.moreInfo' value='{{ info.expectWork.moreInfo}}'>
   </textarea>
 </view>
 <button bindtap='save' class='save'>保存</button> 

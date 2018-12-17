@@ -134,7 +134,7 @@
        查看简历
       </view> -->
        <view class='time' wx:if='{{!log}}'>
-           <image style='width:30rpx;height:30rpx;' src='http://www.liujiarong.top/WXImg/upTime.png'></image>
+           <image style='width:30rpx;height:30rpx;' src='http://www.liujiarong.top/WXImg/ioc/upTime.png'></image>
            <text style='font-size:25rpx;color:#CED4D9;padding-top:6rpx;'>{{time}}</text>
       </view>
     </view>
@@ -152,7 +152,7 @@
         <block wx:for='{{items.child}}' wx:for-item='child'  wx:key='{{this}}'>
 
        
-            <view class='count' wx:if='{{child.countTitle}}' bindtap='{{child.fn}}'>
+            <view class='count' wx:if='{{child.countTitle}}' bindtap='{{child.fn}}' wx:if='{{child.see}}'>
               <view class='Left'><text>{{child.countTitle}}</text></view>
               <view class='Right'><text>{{child.countCount}}</text> <icon class="iconfont icon-xiayiye del_ico idx_ico"></icon></view>
             </view>
@@ -336,7 +336,7 @@
         <view class='first'>
            <view class='fLeft'>
               <view class='nameSex'>
-                <text>{{resumePart.baseUserData.real_name}}</text><image class='redetailWom' src="{{resumePart.baseUserData.sex=='女'?'http://www.liujiarong.top/WXImg/redetailWom.png':''}}"></image>
+                <text>{{resumePart.name}}</text><image class='redetailWom' src="{{resumePart.baseUserData.sex=='女'?'http://www.liujiarong.top/WXImg/redetailWom.png':''}}"></image>
               </view>
                <view class='tags'>
                 <text>{{resumePart.baseUserData.age}}岁</text>
@@ -366,11 +366,11 @@
 
         <view class='showDe' wx:if='{{switchde}}'>
          <view class='shLeft'>
-           <view class='list'><image class='redetail01' src='http://www.liujiarong.top/WXImg/redetail01.png'></image>证书类别：{{resumePart.certificate[0].ger_type_name}}</view>
-            <view class='list'><image class='redetail03' src='http://www.liujiarong.top/WXImg/redetail03.png'></image>证书状态：{{resumePart.certificate[0].state}}</view>
-             <view class='list'><image class='redetail05' src='http://www.liujiarong.top/WXImg/redetail05.png'></image>证书用途：{{resumePart.certificate[0].useRe}}</view>
-                <view class='list'><image class='redetail02' src='http://www.liujiarong.top/WXImg/redetail02.png'></image>注册情况：{{resumePart.certificate[0].registration}}</view>
-             <view class='list'><image class='redetail04' src='http://www.liujiarong.top/WXImg/redetail04.png'></image>证书所在地：
+           <view class='list'><image class='redetail01' src='http://www.liujiarong.top/WXImg/ioc/redetail01.png'></image>证书类别：{{resumePart.certificate[0].ger_type_name}}</view>
+            <view class='list'><image class='redetail03' src='http://www.liujiarong.top/WXImg/ioc/redetail03.png'></image>证书状态：{{resumePart.certificate[0].state}}</view>
+             <view class='list'><image class='redetail05' src='http://www.liujiarong.top/WXImg/ioc/redetail05.png'></image>证书用途：{{resumePart.certificate[0].useRe}}</view>
+                <view class='list'><image class='redetail02' src='http://www.liujiarong.top/WXImg/ioc/redetail02.png'></image>注册情况：{{resumePart.certificate[0].registration}}</view>
+             <view class='list'><image class='redetail04' src='http://www.liujiarong.top/WXImg/ioc/redetail04.png'></image>证书所在地：
             <block wx:if='{{resumePart.certificate[0].province!="不限"}}'>
              {{resumePart.certificate[0].province?resumePart.certificate[0].province+'-':''}}
             </block>
@@ -380,7 +380,7 @@
             </block> -->
              {{resumePart.certificate[0].location}}
              </view>
-                <view class='list' wx:if='{{resumePart.certificate[0].b_card!=0}}'><image class='redetail01' src='http://www.liujiarong.top/WXImg/redetail01.png'></image>B证状态：
+                <view class='list' wx:if='{{resumePart.certificate[0].b_card!=0}}'><image class='redetail01' src='http://www.liujiarong.top/WXImg/ioc/redetail06.png'></image>B证状态：
                   <block wx:if="{{resumePart.certificate[0].b_card==1}}">带B证</block>
                   <block wx:if="{{resumePart.certificate[0].b_card==2}}">不带B证</block>
                   <block wx:if="{{resumePart.certificate[0].b_card==3}}">考B证</block>
@@ -410,10 +410,10 @@
 
         <view class='showDe active' wx:if='{{!switchde}}'>
          <view class='shLeft'>
-           <view class='list'><image class='redetail01' src='http://www.liujiarong.top/WXImg/redetail01.png'></image>期望职位：{{resumePart.expectWork.work}}</view>
-            <view class='list'><image class='redetail07' src='http://www.liujiarong.top/WXImg/redetail07.png'></image>期望薪资：{{resumePart.expectWork.monthlyPay}}元/月</view>
-             <view class='list'><image class='redetail08' src='http://www.liujiarong.top/WXImg/redetail08.png'></image>工作类型：{{resumePart.expectWork.positionType}}</view>
-               <view class='list'><image class='redetail06' src='http://www.liujiarong.top/WXImg/redetail06.png'></image>求职状态：{{resumePart.baseUserData.job_status}}</view>
+           <view class='list'><image class='redetail01' src='http://www.liujiarong.top/WXImg/ioc/redetail01.png'></image>期望职位：{{resumePart.expectWork.work}}</view>
+            <view class='list'><image class='redetail07' src='http://www.liujiarong.top/WXImg/ioc/redetail07.png'></image>期望薪资：{{resumePart.expectWork.monthlyPay}}元/月</view>
+             <view class='list'><image class='redetail08' src='http://www.liujiarong.top/WXImg/ioc/redetail09.png'></image>工作类型：{{resumePart.expectWork.positionType}}</view>
+               <view class='list'><image class='redetail06' src='http://www.liujiarong.top/WXImg/ioc/redetail06.png'></image>求职状态：{{resumePart.baseUserData.job_status}}</view>
          </view>
          <!-- <view class='shRight'>
              
@@ -450,7 +450,7 @@
     </view>
     <view class='list' wx:for='{{resumePart.workExperience}}' wx:key='{{this}}'>
       <view class='time'>
-      {{item.startTime}}--{{item.endTime}}
+      {{item.startTime}}--{{item.endTime=='3000-12'?'至今':item.endTime}}
       </view>
       <view class='tags1'><image class='redetail11' src='http://www.liujiarong.top/WXImg/redetail11.png'></image>{{item.company}}</view>
       <view class='tags2'><image class='redetail12' src='http://www.liujiarong.top/WXImg/redetail12.png'></image>{{item.post}}</view>
@@ -470,7 +470,7 @@
 
     <view class='list'  wx:for='{{resumePart.projectExperience}}' wx:key='{{this}}'>
      <view class='time'>
-      {{item.startTime}}--{{item.endTime}}
+      {{item.startTime}}--{{item.endTime=='3000-12'?'至今':item.endTime}}
      </view>
       <view class='tags3'><image class='redetail13' src='http://www.liujiarong.top/WXImg/redetail13.png'></image>{{item.projectName}}</view>
       <view class='secondTitle'>项目内容：</view>
@@ -508,10 +508,11 @@
    
      
      <view class='list' wx:for='{{resumePart.certificate}}' wx:key='{{this}}'>
-       <view class='time'>
+     
+       <view class='tags5'><image class='redetail15' src='http://www.liujiarong.top/WXImg/redetail15.png'></image>{{item.NameCertificate}}</view>
+         <view class='time'>
         {{item.startTime}}--{{item.endTime}}
        </view> 
-       <view class='tags5'><image class='redetail15' src='http://www.liujiarong.top/WXImg/redetail15.png'></image>{{item.NameCertificate}}</view>
        <view class='fourTCount'>
           <view>证书单位：{{item.organization}} </view>
           <view>证书名称：{{item.title}} </view>

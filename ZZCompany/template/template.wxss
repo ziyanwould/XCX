@@ -40,9 +40,9 @@ swiper image {
     /* min-height: 160rpx; */
  }
  .partTime .left image{
-   width: 88rpx;
-   height: 88rpx;
-   border-radius: 88rpx;
+   width: 135rpx;
+   height: 135rpx;
+   border-radius: 135rpx;
  }
 .partTime .right .title image{
   width: 30rpx;
@@ -50,6 +50,7 @@ swiper image {
 } 
 .partTime .right .title{
  display: flex;
+ font-weight: bold;
 }  
 .partTime .right .title text{
  font-size: 34rpx;
@@ -67,7 +68,7 @@ swiper image {
 
 .partTime .right .name text{
   font-size: 30rpx;
-  color: #737373;
+  color: #6D6D6D;
 }  
 .partTime .right .message image{
   width: 24rpx;
@@ -86,6 +87,7 @@ swiper image {
 .partTime .right .message{
   display: inline-flex;
   align-items:center;
+  color: #919191;
 }
 .partTime .right,.partTime .left{
   justify-content:flex-start;
@@ -784,7 +786,8 @@ margin: 0 24rpx;
 }
 .positionCount .title{
   font-size: 34rpx;
-  color: #5b5b5b;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
   padding: 30rpx 0 20rpx 0;}
 .positionCount .evaluate .count{
 
@@ -798,6 +801,7 @@ margin: 0 24rpx;
    padding: 0 30rpx 30rpx 30rpx;
 }
 .positionCount .time{
+  margin-top: 10px;
   font-size: 27rpx;
   color: #5b5b5b;
   padding-bottom: 20rpx;
@@ -825,7 +829,7 @@ margin: 0 24rpx;
   /* padding-bottom: 30rpx; */
 }
 .positionCount  .work .list{
-  border-top: 1rpx  dotted #F1F0F4;
+  border-top: 3rpx  dotted #F1F0F4;
   padding-top: 30rpx;
   margin-top: 30rpx;
 }

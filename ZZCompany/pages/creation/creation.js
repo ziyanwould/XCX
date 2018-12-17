@@ -69,7 +69,8 @@ Page({
             {
               countTitle:'职位薪资',
               countCount:'请选择',
-              fn:'choosePay'
+              fn:'choosePay',
+              see:true
             }
           ],
         },
@@ -79,29 +80,34 @@ Page({
             {
               countTitle: '职位类别',
               countCount: '请选择',
-              fn: 'post'
+              fn: 'post',
+              see: true
             },
             {
               countTitle: '招聘人数',
               countCount: '请选择',
-              fn: 'receuit'
+              fn: 'receuit',
+              see: true
             },
             {
               countTitle: '工作地区',
               countCount: '请选择',
-              fn: 'area'
+              fn: 'area',
+              see: true
             }
             ,
             {
               countTitle: '工作经验',
               countCount: '请选择',
-              fn: 'exp'
+              fn: 'exp',
+              see: true
             }
             ,
             {
               countTitle: '学历要求',
               countCount: '请选择',
-              fn: 'education'
+              fn: 'education',
+              see: true
             }
           
           ],
@@ -133,7 +139,8 @@ Page({
             {
               countTitle: '职位薪资',
               countCount: '请选择',
-              fn: 'FchoosePay'
+              fn: 'FchoosePay',
+              see: true
             }
           ],
         },
@@ -143,29 +150,40 @@ Page({
             {
               countTitle: '证书类别',
               countCount: '请选择',
-              fn: 'Ftype'
+              fn: 'Ftype',
+              see: true
+            },
+            {
+              countTitle: 'B证情况',
+              countCount: '请选择',
+              fn: 'bz',
+              see: false
             },
             {
               countTitle: '注册情况',
               countCount: '请选择',
-              fn: 'Fcase'
+              fn: 'Fcase',
+              see: true
             },
             {
               countTitle: '证书状态',
               countCount: '请选择',
-              fn: 'Fstate'
+              fn: 'Fstate',
+              see: true
             }
             ,
             {
               countTitle: '用证地区',
               countCount: '请选择',
-              fn: 'Farea'
+              fn: 'Farea',
+              see: true
             }
             ,
             {
               countTitle: '证书用途',
               countCount: '请选择',
-              fn: 'Fuse'
+              fn: 'Fuse',
+              see: true
             }
 
           ],
@@ -270,12 +288,22 @@ Page({
     let value = wx.getStorageSync('worktype')
     console.log("otherms", that.data.otherms)
     console.log("allms", that.data.allms)
+    // console.log('value', value)
     if (value) {
       if (that.data.activeIndex==0){
-        that.setData({
-          'otherms.select[1].child[0].countCount': value.value,
-           pID: value.id
-        })
+        if (value.parent_id == 1 || value.parent_id == 2 ){/**增对B证 */
+          that.setData({
+            'otherms.select[1].child[0].countCount': value.value,
+            'otherms.select[1].child[1].see': true,
+            pID: value.id
+          })
+        }else{
+          that.setData({
+            'otherms.select[1].child[0].countCount': value.value,
+            pID: value.id
+          })
+        }
+  
       }else{
         that.setData({
           'allms.select[1].child[0].countCount': value.value,
@@ -386,7 +414,7 @@ Page({
     });
     if (that.data.activeIndex == 0) {
       that.setData({
-        'otherms.select[1].child[3].countCount': that.data.province + ' ' + that.data.city
+        'otherms.select[1].child[4].countCount': that.data.province + ' ' + that.data.city
       })
     } else {
       that.setData({
@@ -426,23 +454,28 @@ Page({
     })
   },
   FchoosePay(){
-    let arry = [ "1.5W-3.5W", "3.5W-4.5W", "4.5W-5.5W", "5.5W-6.5W","6.5W以上","面议"];
+    let arry = ["0.3w-1w", "1w-1.5w", "1.5w-2.5w", "2.5w-3.5w", "3.5w-5w","5w以上"];
     let ele = 'otherms.select[0].child[1].countCount';
+    this.selsect(arry, ele)
+  },
+  bz() {
+    let arry = ["带B证", "不带B证", "考B证"];
+    let ele = 'otherms.select[1].child[1].countCount';
     this.selsect(arry, ele)
   },
   Fcase(){
     let arry = ["转注", "初始", "不限"];
-    let ele = 'otherms.select[1].child[1].countCount';
+    let ele = 'otherms.select[1].child[2].countCount';
     this.selsect(arry, ele)
   },
   Fstate(){
     let arry = ["闲置中", "快到期", "未拿证","不限"];
-    let ele = 'otherms.select[1].child[2].countCount';
+    let ele = 'otherms.select[1].child[3].countCount';
     this.selsect(arry, ele)
   },
   Fuse(){
     let arry = ["资质", "项目", "不限"];
-    let ele = 'otherms.select[1].child[4].countCount';
+    let ele = 'otherms.select[1].child[5].countCount';
     this.selsect(arry, ele)
   },
   FtitleInput(e){
@@ -491,11 +524,11 @@ Page({
           {
 
             "Gertificate_Type_Id": that.data.pID,
-            "Reg_Status": that.data.otherms.select[1].child[1].countCount,
-            "Gertificate_Status": that.data.otherms.select[1].child[2].countCount,
+            "Reg_Status": that.data.otherms.select[1].child[2].countCount,
+            "Gertificate_Status": that.data.otherms.select[1].child[3].countCount,
             "Province": that.data.province,
             "City": that.data.city,
-            "Gertificate_Use": that.data.otherms.select[1].child[4].countCount,
+            "Gertificate_Use": that.data.otherms.select[1].child[5].countCount,
           }
         ]
       }

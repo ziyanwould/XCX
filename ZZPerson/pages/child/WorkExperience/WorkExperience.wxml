@@ -43,8 +43,8 @@
      <view class='sel_left'>离职时间</view>
     <picker class="weui-btn" mode="date" start="1949-09-01"  value="{{entrytime}}" fields="month"  bindchange="bindDateChange">
      <view class='sel_right'>
-         <text wx:if='{{key}}'>{{infoChild.endTime}}</text>
-         <text wx:if='{{!key}}'>{{endtime}}</text>
+         <text wx:if='{{key}}'>{{infoChild.endTime=='3000-12'?'至今':infoChild.endTimee}}</text>
+         <text wx:if='{{!key}}'>{{endtime=='3000-12'?'至今':endtime}}</text>
          <image src='http://www.liujiarong.top/WX/wx_unfold.png'></image>
      </view>
     </picker>

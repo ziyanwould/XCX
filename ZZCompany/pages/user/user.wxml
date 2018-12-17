@@ -37,7 +37,7 @@
               </text> 
               </view>
          
-              <image class='image5' src='{{Company_Logo?Company_Logo:"http://www.liujiarong.top/WXImg/logos.png"}}'></image>
+              <image class='image5' src='{{Company_Logo?Company_Logo:"http://www.liujiarong.top/WXImg/logoss.png"}}'></image>
               <button class='edit' bindtap='edit'>编辑</button>
      </view>
 
@@ -77,7 +77,7 @@
      <button class='list buttonx'  open-type="openSetting" bindopensetting="handler" bindtap='mapinfo'>
         <view class='left'>
            <view class='imgCen'> 
-               <image style='width:28rpx;height:28rpx'  src='http://www.liujiarong.top/WX/images/wx_retroaction.png'></image>
+               <image style='width:28rpx;height:28rpx'  src='http://www.liujiarong.top/WXImg/ioc/icon1.png'></image>
            </view>
            <text>授权定位</text>
         </view>
@@ -90,7 +90,7 @@
      <button class='list buttonx'  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
         <view class='left'>
            <view class='imgCen'> 
-               <image style='width:28rpx;height:28rpx'  src='http://www.liujiarong.top/WX/images/wx_retroaction.png'></image>
+               <image style='width:28rpx;height:28rpx'  src='http://www.liujiarong.top/WXImg/ioc/icon4.png'></image>
            </view>
            <text>授权用户信息</text>
         </view>

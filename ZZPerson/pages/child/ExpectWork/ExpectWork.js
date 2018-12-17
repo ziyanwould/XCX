@@ -56,7 +56,10 @@ Page({
     
     })
     if(info){
-      active: this.data.info.expectWork.job_type_id
+      that.setData({
+        active:this.data.info.expectWork.job_type_id
+      })
+     
     }
   
   },

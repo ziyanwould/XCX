@@ -8,7 +8,9 @@
 
       <view class='tcount1' wx:if="{{gps}}" bindtap="open" >{{changeJob}} <image style='width:18rpx; height:11rpx;' src='http://www.liujiarong.top/WX/Comup.png'  wx:if="{{company}}"></image></view>
 
-    <view class="Pinput" ><input class=" {{!gps ? 'active' : ''}}" value='{{count}}' auto-focus="true" bindinput='watchPassWord'></input> <image style='width:52rpx; height:52rpx;' src='http://www.liujiarong.top/WX/images/search.png'></image></view>
+    <view class="Pinput" ><input class=" {{!gps ? 'active' : ''}}" value='{{count}}' bindconfirm="urlTime" confirm-type="search" auto-focus="true" bindinput='watchPassWord'></input> 
+    
+    <image style='width:52rpx; height:52rpx;' src='http://www.liujiarong.top/WX/images/search.png'></image></view>
     <view class='tcount2'  wx:if="{{gps}}" bindtap="urlTime">{{Fbutton}}</view>
   </view>
   <!-- 搜索内容呈现页 -->

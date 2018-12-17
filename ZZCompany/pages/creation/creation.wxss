@@ -11,3 +11,15 @@ page{
 .weui-navbar{
   background: #FFFFFF;
 }
+.Left text{
+  font-size: 28rpx;
+}
+.commom .title{
+  font-size: 32rpx;
+}
+.textarea .title{
+  font-size: 32rpx;
+}
+.weui-navbar__title{
+  font-size: 32rpx;
+}

@@ -104,7 +104,7 @@
   一句话 介绍
 </view>
 <view class='see_textarea'>
-  <textarea placeholder='集众人之力，成细节之美！' style='width:100%' value='{{edit_textarea}}' maxlength="{{noteMaxLen}}" bindinput="bindWordLimit"  class='text_count'>
+  <textarea placeholder='' style='width:100%' value='{{edit_textarea}}' maxlength="{{noteMaxLen}}" bindinput="bindWordLimit"  class='text_count'>
   </textarea>
   <view class='Alert'>{{currentNoteLen|0}}/{{noteMaxLen}}</view>
 </view>
