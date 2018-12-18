@@ -300,7 +300,7 @@ Page({
     }
     //更新地址授权信息
     that.mapinfo()
-    
+    that.getMessage();
   },
 
   /**
@@ -417,6 +417,9 @@ Page({
     let that = this;
     let login = wx.getStorageSync('token');
     let oppid = wx.getStorageSync('oppid');
+    if(!oppid){
+      oppid ="out"
+    }
     console.log("mes",login,oppid)
     wx.showModal({
       title: '温馨提示',
@@ -549,6 +552,7 @@ Page({
         utils.post('api/common/wx_login_phone_token', datas).then((res) => {
           console.log(res);//正确返回结果
           // console.log(res.dic.has_Verify)
+          that.getMessage();
           if (res.dic.has_Verify == 0) {
             wx.showModal({
               title: '温馨提示',
@@ -774,7 +778,7 @@ Page({
       console.log(res);//正确返回结果
       console.log("信息记录", res)
 
-      if (res.count == 0) {
+      if (res.count == 0 || res.count == undefined) {
         that.setData({
           'comlist.[5].RTitle': '',
         });

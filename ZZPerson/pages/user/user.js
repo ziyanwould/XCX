@@ -290,7 +290,8 @@ Page({
               })
               setTimeout(function () {
                 that.getuseinfomation();
-                that.tubiao()//更新认证
+                that.tubiao();//更新认证
+                that.getMessage();
               }, 250)
 
               //更新认证状态
@@ -745,7 +746,7 @@ createResume:function(createpostion){
       success: function (res) {
         console.log("信息记录", res.data.data.count)
 
-        if (res.data.data.count==0){
+        if (res.data.data.count == 0 || res.data.data.count==undefined){
           that.setData({
             'jobList[5].text':'',
           });

@@ -513,7 +513,22 @@ Page({
       return false;
     }
     if (that.data.activeIndex==0){
-      url = 'api/position/public_part_position',
+      url = 'api/position/public_part_position';
+        let Bcard = that.data.otherms.select[1].child[1].countCount;
+        let Bun=0;
+      switch (Bcard) {
+          case "带B证":
+          Bun=1
+          break;
+         case "不带B证":
+          Bun = 2
+          break;
+         case "考B证":
+          Bun = 3
+          break;
+        default:
+          Bun = 0
+       }
       datas = {
         "Position_Title": that.data.otherms.select[0].child[0].input,
         "Company_Name": app.globalData.userinfo.Company_Name,
@@ -525,6 +540,7 @@ Page({
 
             "Gertificate_Type_Id": that.data.pID,
             "Reg_Status": that.data.otherms.select[1].child[2].countCount,
+            "B_Card": Bun,
             "Gertificate_Status": that.data.otherms.select[1].child[3].countCount,
             "Province": that.data.province,
             "City": that.data.city,
@@ -532,7 +548,7 @@ Page({
           }
         ]
       }
-      console.log("兼职",that.data.otherms)
+      console.log("兼职", that.data.otherms, datas)
     }else{
       url = 'api/position/public_full_position';
       datas = {

@@ -43,6 +43,11 @@
               <view class='child_tag' >{{message.certificate["0"].cert_use}} </view>
             <view class='child_tag' >{{message.certificate["0"].reg_status}} </view>
              <view class='child_tag' >{{message.certificate["0"].cert_status}} </view>
+          <!-- B证状态 -->
+          <text class='child_tag' wx:if='{{message.certificate["0"].b_card==1}}'>带B证</text>
+          <text class='child_tag' wx:if='{{message.certificate["0"].b_card==2}}'>不带B证</text>
+          <text class='child_tag' wx:if='{{message.certificate["0"].b_card==3}}'>考B证</text>
+          <!-- 结束 -->
      </view>
      <view class='tag' wx:if='{{!message.certificate["0"]}}'>
             <!-- <view class='child_tag' >{{message.certificate["0"].fir_type_name}} </view>
